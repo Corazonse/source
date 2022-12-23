@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a = 123;
+        /*
+            在js中，如果
+                -需要表示16进制的数字，则需要 以 0x开头
+                -需要表示 8 进制的数字，则需要 以 0o开头
+                -需要表示 2 进制的数字，则需要 0b开头不是所有浏览器的都支持
+
+            a = "0o70"
+            转换为number的时候有些会转义成 八进制 有些 十进制
+            a = parseInt(a,10) 给他传递第二个参数(进制) 就成十进制了
+        
+                */
+        //    a = 0xff;
+        //    a = 0o66;
+        a = 0b1011111111111111
+        console.log(a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

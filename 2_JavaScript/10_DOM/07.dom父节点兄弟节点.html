@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 获取父节点兄弟节点的属性
+        // 1.parentNode
+        //     获取当前节点的父节点
+        // 2.previousSibling
+        //     表示当前节点的 前 一个兄弟节点
+
+        // 3.nextSibling
+        //     表示当前节点的 后 一个兄弟节点
+
+
+        // 绑定单级响应的函数
+        //     idStr 要绑定单机响应函数的对象的id值
+        //     fun 时间的回调函数，当单机元素时，该函数将会被触发
+        function myClick(idStr, fun) {
+            var btn = document.getElementById(idStr);
+            btn.onclick = fun;
+
+        };
+        myClick("bj", function () {
+            alert("hello");
+            // var beijing = document.getElementById("bj");
+
+            // var pn = beijing.parentNode;
+
+            // alert(pn.innerHTML);
+        });
+
+
+    </script>
+</head>
+<body>
+<ul>
+    <li id="beijing">北京</li>
+    <li>上海</li>
+    <li>合水</li>
+    <li>广州</li>
+    <button id="bj">北京</button>
+</ul>
+<script>
+    // 绑定单级响应的函数
+    //     idStr 要绑定单机响应函数的对象的id值
+    //     fun 时间的回调函数，当单机元素时，该函数将会被触发
+    function myClick(idStr, fun) {
+        var btn = document.getElementById(idStr);
+        btn.onclick = fun;
+
+    };
+    myClick("bj", function () {
+        // alert("hello");
+        var beijing = document.getElementById("bj");
+
+
+        // var pn = beijing.parentNode;
+
+        var pn = beijing.nextElementSibling;
+        // 获取北京
+        alert(beijing.innerText)
+        alert(pn.innerHTML);
+        // 只获取文本 不要标签
+        alert(pn.innerText);
+    });
+
+
+</script>
+
+</body>
+</html>

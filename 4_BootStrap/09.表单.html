@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+<!-- 表单用于用户做交流的一个网页控件 良好的表单设计能够让网页用户更好的沟通。
+表单中常见的元素主要包括 ：文本下拉框 ，下拉选择框 ，单选按钮，复选按钮 ，文本域等。
+
+    .form-control
+
+-->
+<!-- 输入框text .form-control  .input-lg（较大） .input-sm(较小)-->
+<!-- 因为会占一行 所以让栅格网格系统可以优化 -->
+<div class="row">
+    <div class="col-md-3">
+        测试一<input type="text" class="form-control">
+        测试二<input type="text" class="form-control input-lg">
+        测试三<input type="text" class="form-control input-sm">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <!-- 下拉框 -->
+        <select class="form-control">
+            <option value="">请选择城市</option>
+            <option value="">上海</option>
+            <option value="">合水</option>
+        </select>
+        <!-- 多选 很拉  .form-control -->
+        <select class="form-control" multiple="multiple">
+            <option value="">请选择城市</option>
+            <option value="">上海</option>
+            <option value="">合水</option>
+        </select>
+    </div>
+</div>
+<hr>
+<!-- 文本域   可以用栅格控制大小 .form-control-->
+<textarea name="" id="" cols="30" rows="10">你好</textarea>
+<textarea name="" id="" cols="30" rows="10" class="form-control">你好</textarea>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- crossorigin="anonymous" 跨域不会受到警告 -->
+    <script crossorigin="anonymous" src="./bootstrap-3.4.1-dist/js/jQuery-3.6.1.js"></script>
+    <style>
+        #result {
+            width: 300px;
+            height: 100px;
+            border: 1px red solid;
+        }
+    </style>
+</head>
+<body>
+<!-- CORS---跨域资源共享
+        CORS是官方的跨域结局方案 他的特点是不需要在客户端
+        做任何特殊操作 完全是在服务器中进行处理 支持 get post
+        请求。跨域资源共享标准新增了一组HTTP首部字段。允许服务器
+        声明哪些源站通过浏览器优先权限访问哪些资源
+    CORS怎么工作
+        CORS是通过设置一个响应头来告诉浏览器 该请求允许跨域 浏览器收到该响应
+        就会对响应放行
+    CORS的使用
+        主要是服务器的设置
+        router.get("/testAJAX",function(req,res))
+
+
+
+-->
+<button>点击发送 JSONP 请求</button>
+<div id="result"></div>
+<script>
+    const btn = document.querySelector('button')
+
+    btn.onclick = function () {
+        // 创建对象
+        const x = new XMLHttpRequest()
+        // 初始化设置
+        x.open("GET", "http://127.0.0.1/8000/cros-server")
+        // 发送
+        x.send();
+        // 绑定事件
+        x.onreadystatechange = function () {
+            if (x.readyState === 4) {
+                if (x.status >= 200 && x.status < 300) {
+                    console.log(x.response);
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

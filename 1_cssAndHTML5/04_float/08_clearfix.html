@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 消除外边距重叠 子元素和父元素 */
+        .box1 {
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+
+        }
+
+        /* 用 disp:table 完美解决问题 */
+        .box1::before {
+            content: "";
+            display: table;
+        }
+
+        .box2 {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            margin-top: 100px;
+        }
+
+        /* 最终版本 clearfix代码,table比上一任好用好多的
+            当你有遇到外边距重叠问题，高度塌陷问题直接用一个代码块↓解决
+        */
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+</body>
+</html>

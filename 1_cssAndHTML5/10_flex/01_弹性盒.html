@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+
+            width: 500px;
+            border: 3px solid red;
+            font-size: 50px;
+            /* 把ul设置为弹性容器 */
+            display: flex;
+            /* 指定容器的弹性元素的排列方式和
+                    可选值
+                    -row 默认值 行（左向右）当然国家的语言习惯有关系
+                    -column 垂直排列 （上向下）
+                    - row-reverse 反向水平排列（右向左）   
+                    - column-resverse 反向垂直排列（下向上）
+            主轴：弹性元素排列的方向称为主轴（row 主轴便是自左向右）
+            侧轴：
+                与主轴垂直方向的称为侧轴（类似坐标系）
+            */
+            flex-direction: row;
+        }
+
+        li {
+            height: 100px;
+            width: 200px;
+            background-color: #bfa;
+            text-align: center;
+            line-height: 100px;
+            /*弹性元素属性
+                -flex-grow 指定弹性元素伸展的系数
+                    指父元素有多余的空间时，子元素如何伸展
+                    父元素剩余空间会 按比例 进行分配。值越大增长的越多
+                -flex-shrink 指定弹性元素的收缩系数，当父元素的空间不足以
+                    容纳所有的子元素 如何进行对子元素进行收缩
+
+            
+            
+            */
+            /* flex-grow: .2; */
+
+        }
+
+        li:nth-child(2) {
+            background-color: yellow;
+            flex-shrink: 1;
+        }
+
+        li:nth-child(3) {
+            background-color: aqua;
+            flex-shrink: 3;
+        }
+    </style>
+</head>
+<body>
+<!--
+    flex （弹性盒，伸缩盒）
+        -是css中又一布局手段，他主要用来代替浮动来完成页面的布局
+        -flex可以是元素具有弹性，让元素可以跟随页面的大小改变而改变
+            弹性容器：
+                -要使用弹性盒，必须将一个元素设置为弹性容器
+                -我们通过display来设置弹性容器
+                -display:flex 设置块级的弹性容器（一般情况下都用这个）
+                -display:inline-flex 设置为行内的弹性容器
+            弹性元素：
+                -弹性容器的 直接子元素 是弹性元素（弹性项）
+                -一个元素可以同时是弹性容器 弹性元素（可以嵌套）
+ -->
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            perspective: 800px;
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            /* 设置3d变形效果 就不会变成纸片人了 */
+            transform-style: preserve-3d;
+            animation: run 3s infinite;
+
+        }
+
+        /* 设置动画 */
+        @keyframes run {
+            from {
+                transform: rotateY(0) rotateX(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg) rotateX(45deg);
+                margin-top: 500px;
+            }
+        }
+
+        .cube > div {
+            width: 200px;
+            height: 200px;
+            /* 透明效果 */
+            opacity: .5;
+            position: absolute;
+        }
+
+        .cube div img {
+            width: 200px;
+            height: 200px;
+            vertical-align: top;
+        }
+
+        .box1 {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .box2 {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .box3 {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .box4 {
+            transform: translateZ(100px);
+        }
+
+        .box5 {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .box6 {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- 创建外部容器 -->
+<div class="cube">
+    <!-- 引入图片 -->
+    <div class="box1">
+        <img src="./14.复仇者联盟素材/3.png" alt="">
+    </div>
+    <div class="box2">
+        <img src="./14.复仇者联盟素材/2.png" alt="">
+    </div>
+    <div class="box3">
+        <img src="./14.复仇者联盟素材/3.png" alt="">
+    </div>
+    <div class="box4">
+        <img src="./14.复仇者联盟素材/4.png" alt="">
+    </div>
+    <div class="box5">
+        <img src="./14.复仇者联盟素材/5.png" alt="">
+    </div>
+    <div class="box6">
+        <img src="./14.复仇者联盟素材/8.png" alt="">
+    </div>
+
+
+</div>
+</body>
+</html>

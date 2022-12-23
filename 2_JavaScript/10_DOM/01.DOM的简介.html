@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // DOM Document Object Model 文档对象模型
+        // DOM可以对html页面操作web页面
+        // 文档
+        //     整个HTML
+        // 对象
+        //     网页的每一个节点转换成对象
+        // 模型
+        //     使用模型表示对象间的关系，方便获取对象
+        /*
+            节点            nodeName    nodeType    nodeValue
+                文档节点    #document     9             null
+        
+                元素节点    标签名         1             null
+
+                属性节点    属性名         2             属性值
+
+                文本节点    #text         3              文本内容
+        
+        
+        */
+        //    浏览器提供整个文档节点（整个网页） 这个对象时window属性 可以在页面中直接使用
+
+        //    获取按钮对象
+        // document.write("获取按钮");
+        // // 通过id获取元素
+        // var btn = document.getElementById("btn");
+        // // 修改按钮文字
+        // btn.innerHTML = "修改后的按钮";
+    </script>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script>
+    document.write("获取按钮");
+    // 通过id获取元素
+    var btn = document.getElementById("btn");
+    // 修改按钮文字
+    btn.innerHTML = "修改后的按钮";
+</script>
+</body>
+</html>

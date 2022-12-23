@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    console.log(b)//undefined b称为变量提升
+    var b = 10
+    fun2()//可调用  函数提升
+    function fun2() {
+        console.log(fun2)
+
+    }
+
+    // fun3()//不能调 var声明只是值还是函数罢了
+    var fun3 = function () {
+        console.log(fun3)
+        console.log(2)
+
+    }
+    <!--
+        变量提升
+            通过var定义的会提前执行但是还没赋值
+        函数提升
+            通过function声明的函数可以提前调用
+        为什么会这样
+            -
+
+     -->
+
+
+</script>
+
+</body>
+</html>

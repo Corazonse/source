@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+<!-- 按钮
+    基础样式 .btn
+
+    附加样式 btn-primary btn-info btn-success ... 不同颜色
+
+    多标签支持: 使用a div 等制作按钮
+
+    按钮大小： 使用 .btn.lg .btn.sm等等不同尺寸
+-->
+<button class="btn">你好</button>
+<button class="btn btn-danger">你好</button>
+<button class="btn btn-primary">你好</button>
+<!-- 把其他的标签变成按钮 -->
+<a href="#" class="btn">超链接</a>
+<hr>
+<span class="btn btn-success btn-lg"> span </span>
+<span class="btn btn-success"> span </span>
+<span class="btn btn-success btn-sm"> span </span>
+<span class="btn btn-success btn-xs"> span </span>
+<!-- 按钮禁用 -->
+<hr>
+<button class="btn btn-danger" onclick="alert('Hello')" disabled>禁用</button>
+<!-- 表面禁用但是还是能点击 -->
+<button class="btn btn-danger disabled" onclick="alert('Hello')">禁用</button>
+<hr>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #result {
+        width: 200px;
+        height: 100px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+<!--
+    但是ie噶了
+
+    按下按钮接受服务端内容
+    按钮第一次会把返回的结果进行缓存
+    下一次摁会直接获取缓存内容
+    这样对于时效性较强的数据服务器不能有效返回
+        -->
+<button class="btn"> 点击发送请求</button>
+<div id="result">
+
+</div>
+<script>
+    // 获取button元素
+    const btn = document.querySelector(".btn")
+    const result = document.getElementById("result")
+
+    btn.addEventListener('click', function () {
+        const xhr = new XMLHttpRequest
+        // 如果是ie 就获取时间戳 时间不一样就会再获取一个
+        xhr.open("GET", "http://localhost:8000/server-IE/ie?t=" + Date.now())
+        xhr.send()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    result.innerHTML = xhr.response
+                }
+            }
+        }
+        console.log('test');
+    })
+
+
+</script>
+</body>
+
+</html>

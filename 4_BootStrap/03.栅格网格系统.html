@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+<!-- 使用栅格网络系统必须引入bootstrap的css
+        .row数据行 必须包括在容器 .container内
+        在 行.row 中可以添加 列.column 只有 列 才可以作为 行 容器的直接子元素
+        但列数之和不能超过评分的总列数 比如12，大于12就会自动切换到下一行
+-->
+<!--    container,row, 超小屏xs(xsmall phone 自动)  小屏sm(small tablets 750px)
+    中屏md(middle desktops 970px), 大屏lg(larger desktops 1170px)
+ -->
+<div class="container">
+    <!-- 行元素 -->
+    <div class="row">
+        <!-- 列元素 col-屏幕类型-数值 -->
+        <div class="col-md-4 col-lg-4 col-sm-4">四列</div>
+        <div class="col-md-8 col-lg-8 col-sm-8">八列</div>
+    </div>
+    <!-- 分割线  -->
+    <hr>
+    <div class="row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-1">1</div>
+        <div class="col-md-1">1</div>
+        <div class="col-md-1">1</div>
+    </div>
+    <hr>
+    <div class="row">
+        <!-- 列偏移 往右边偏移 但是总数依旧不能大于12-->
+        <div class="col-md-4 col-md-offset-2">4</div>
+        <div class="col-md-4">4</div>
+        <div class="col-md-2">2</div>
+    </div>
+</div>
+
+</body>
+
+</html>

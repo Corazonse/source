@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun() {
+            // return 和 break 的区别
+            /*
+                break 退出当前循环
+                continue 跳过当前步骤
+                return 直接退出当前函数
+
+                返回值可以是任意的数据类型
+                也可以是对象，也可以是一个函数
+
+                函数里面面也可以声明函数 对你选哪个
+
+
+            */
+            alert("函数开始执行")
+
+            for (var i = 0; i < 5; i++) {
+                console.log(i);
+            }
+
+            alert("函数执行完毕")
+        }
+
+        fun();
+
+        function fun3() {
+            function fun4() {
+                alert("我是fun4")
+
+            }
+
+            return fun4;
+
+        }
+
+        a = fun3();
+
+        a();
+        // 上下两者等值 只是缺少了a这个媒介
+        fun3()();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

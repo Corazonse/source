@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            函数作用域（整体的局部）
+                -调用函数时就创建行数作用域，函数执行完毕以后，函数作用域销毁
+                -每调用一次函数就会创建一个新的函数作用域，他们之间是互相独立的
+                -函数作用域是一个局部的，在函数作用域中可以访问到全局作用的变量
+                    在全局作用域中无法访问到函数作用于的变量
+                -当在函数作用域中操作一个变量时，它会现在自身作用域中寻找，如果有则直接使用
+                -如果没有就会在 上一级 作用域中寻找。（如果全局作用域还没有找到的话就报错 ReferenceError）
+                -若果在函数中要访问全局的变量 可以 window.变量
+                -在函数作用域中也会有提前声明的特性 var，使用函数声明也会在函数中所有代码执行之前执行
+                    -函数作用域也就是一个小的全局 具有其特性
+                
+                */
+        var a = 10;
+
+        function fun() {
+            var a = 12;
+            console.log("a = " + a);
+        }
+
+        console.log(a);
+        fun();
+        var c = 33;
+
+        function fun5() {
+            c = 10;//改变了外变的c 没有使用var关键字则会设置为全局变量 window.c
+            // （但是声明了形参 就会成为函数里面的值，不会影响window 如 var a = 456 fun（a）{a = 123}  alert(a)=456）
+        }
+
+        fun5();
+        //    在哈娜书中，不适用var声明的变量都会成为全局变量
+        console.log(c);// 10
+
+        var e = 23;
+
+        function fun6(e) {
+            alert(e);
+        }
+
+        //    定义形参相当于在函数作用域声明了变量
+        fun6();//undefined
+        fun6(20);//20
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

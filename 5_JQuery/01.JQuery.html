@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+    </style>
+
+</head>
+<body>
+<!-- javaScript库 是一个封装好的特定的合集
+
+        write less, do more
+    jQuery js query js查询
+        快捷方便操作dom 里面基本都是函数方法 动画设计 Ajax交互 事件处理
+        轻量级 跨浏览器兼容 链式编程
+        事件 样式 动画支持 大大简化了DOM操作
+        支持插件扩展开发 有丰富的第三方插件：树形菜单 日期控件 轮播图
+        免费开源
+    -->
+
+<!-- 1.等着页面DOM加载完毕再去执行js代码  入口函数-->
+<!-- <script>
+    $(document).ready(function(){
+        $('div').hide();
+    })
+
+</script> -->
+<!-- 2.等着页面DOM加载完毕再去执行js代码  入口函数-->
+<script>
+    $(function () {
+        // 用$符号进行包装 div 然后进行调用
+        $('div').hide();
+    })
+</script>
+<div>
+
+</div>
+
+<!-- <script>
+    $('div').hide();
+</script> -->
+
+</body>
+</html>

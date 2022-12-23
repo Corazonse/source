@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    一般情况下不用自己磁盘服务器放视频音频，可以买别人的服务器服务然后连接，或者用类似腾讯视频网站放视频。
+
+    audio 标签用来向页面引用一个外部的音频（）也是一个替换元素
+        音频视频文件引入时，默认情况下不允许用户自己控制播放停止
+    属性：
+        controls是否允许用户播放
+        autoplay自动播放(如果设置里autoplay在打开页面会自动播放，但目前来讲大部分浏览器不会自动播放（防止吓人）)
+        loop循环播放
+
+        除了src来制定外部文件的路径以外，还可以通过source来
+ -->
+<body>
+<embed src="视频雨.mp4" width="1000" height="1000" type="video/mp4">
+<!-- embed 一般都兼容，但是自动播放  一般ie8用这个标签
+     type 大类型/小类型
+-->
+<audio src="视频雨.mp4" controls autoplay></audio>
+<audio controls>
+    对不起，您的浏览器不支持播放音频！请升级浏览器！
+    <source src="视频雨.mp4">
+    <source src="视频雨.mp4">
+    <embed src="视频雨.mp4" width="1000" height="1000" type="video/mp4">
+    <!--
+        有优先级，第一个能用就不会用第二个，第二个不能用就会显示无法运行 。这个格式更严谨
+
+     -->
+</audio>
+<!--
+    引用视频用video标签
+
+
+ -->
+<video controls>
+    <source src="视频雨.mp4">
+    <embed src="视频雨.mp4" width="1000" height="1000" type="video/mp4">
+</video>
+
+</body>
+</html>

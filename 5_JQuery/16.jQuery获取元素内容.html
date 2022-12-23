@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+</head>
+<body>
+<!-- 获取元素内容 相当于 innerHTML()
+        html()
+-->
+<div>你们好！</div>
+
+<input type="text" value="请输入嘻嘻嘻嘻">
+<script>
+    // 1.获取设置元素内容 html()   ()为空 就是获取 写值进去就是修改
+    console.log($("div").html())
+    $("div").html("123") //123
+    console.log($("div").html())
+    // 2.获取设置元素文本内容() text() == 原生的innerText()
+    console.log($("div").text())
+    $("div").text("123e")//123e
+    //3.获取设置表单值 val() 等于原生的 value
+    $("input").val("我们好")
+    console.log($("input").val());//获取输入框值
+
+
+</script>
+
+</body>
+</html>

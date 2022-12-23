@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* [属性名]选择含有制定属性的元素 */
+        /* [属性名=属性值]选择含有制定属性和属性值的元素 */
+        /* [属性名^=属性值]选择含有属性值指定值开头的选中 */
+        /* [属性名$=属性值]选择含有属性值结尾的值的选中 */
+        /* [属性名*=属性值]选择含有属性值某个值的值的选中 */
+        p[title^=abc] {
+            color: rgba(215, 172, 31, 0.922);
+
+        }
+    </style>
+
+</head>
+<body>
+<p title="abc">a</p>
+<p title="abcd">b</p>
+<p title="deabc">c</p>
+<p>d</p>
+<p>e</p>
+</body>
+</html>

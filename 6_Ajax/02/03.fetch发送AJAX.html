@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <!-- crossorigin="anonymous" 跨域不会受到警告 -->
+    <script crossorigin="anonymous" src="./bootstrap-3.4.1-dist/js/jQuery-3.6.1.js"></script>
+    <script crossorigin="anonymous" src="./bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!-- 主流Axios发送Ajax请求 -->
+<div class="container">
+    <h1>fetch发送Ajax请求</h1>
+    <hr>
+    <button class="btn btn-success">AJAX请求</button>
+    <script>
+        const btn = document.querySelector(".btn")
+        btn.onclick = function () {
+            // 发送请求参数 fetch() 参数 url 可选的配置对象(请求方法 请求信息 请求体)
+            fetch("http://127.0.0.1:8000/Fetch", {
+                method: "POST",
+                //headers 不能放中文 不然会报错
+                headers: {
+                    name: "zzz"
+                },
+                // 请求体
+                body: 'username=admin&password=admin'
+
+                // 返回结果
+            }).then(response => {
+                // 返回结果方法 text() 如果返回的是json就该json()
+                // return response.text(); 字符串
+                return response.json();
+
+            }).then(response => {
+                console.log(response);
+            })
+        }
+    </script>
+
+</div>
+
+
+</body>
+
+</html>

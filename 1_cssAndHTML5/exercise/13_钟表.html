@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 表盘 */
+        .crl {
+            width: 260px;
+            height: 260px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border: 10px solid black;
+            border-radius: 50%;
+            position: relative;
+
+        }
+
+
+        .clo-warpper {
+            width: 120px;
+            height: 120px;
+            animation: run 43200s infinite linear;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+        }
+
+        .clo {
+            height: 60px;
+            margin: 0 auto;
+            width: 6px;
+            background-color: black;
+
+        }
+
+        .min-warpper {
+            width: 180px;
+            height: 180px;
+            animation: run 3600s infinite linear;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+        }
+
+        .min {
+            height: 90px;
+            margin: 0 auto;
+            width: 4px;
+            background-color: yellow;
+        }
+
+        .sec-warpper {
+            width: 240px;
+            height: 240px;
+            animation: run 60s infinite linear;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .sec {
+            height: 120px;
+            margin: 0 auto;
+            width: 2px;
+            background-color: red;
+        }
+
+        @keyframes run {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+<!-- 钟表圆圈 -->
+<div class="crl">
+    <!-- 时针类 -->
+    <div class="clo-warpper">
+        <div class="clo">
+        </div>
+    </div>
+    <!-- 分针类 -->
+    <div class="min-warpper">
+        <div class="min">
+        </div>
+    </div>
+
+    <div class="sec-warpper">
+        <!-- 秒针类 -->
+        <div class="sec">
+
+
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

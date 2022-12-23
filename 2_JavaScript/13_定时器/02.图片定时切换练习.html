@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 183px;
+            margin: 50px auto;
+            /* 内联样式居中 */
+            text-align: center;
+
+
+        }
+    </style>
+</head>
+
+<body>
+<div id="outer">
+    <p id="info">
+
+    </p>
+    <img src="练习素材/1.jpg_.webp" alt="天猫">
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+    <button id="star">开始</button>
+    <button id="stop">停止</button>
+</div>
+<script>
+    // 点击按钮上下切换图片
+    // 获取两个按钮
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var star = document.getElementById("star");
+    var stop = document.getElementById("stop");
+
+    // 要切换图片就要修改img标签的src
+
+    // 获取img(这时是一个数组) 因为只有一个数 所以加索引就能拿到img
+    var img = document.getElementsByTagName("img")[0];
+    // 创建一个数组，用于保存数组路径;
+    var shu = ["练习素材/1.jpg_.webp", "练习素材/2.jpg_.webp", "练习素材/3.jpg_.webp", "练习素材/4.jpg_.webp", "练习素材/5.jpg_.webp",
+        "练习素材/6.jpg_.webp", "练习素材/7.jpg_.webp",
+        "练习素材/8.jpg_.webp"];
+    // 创建变量保存当前图片的索引
+    var i = 0;
+
+    var info = document.getElementById("info");
+    info.innerHTML = "一共有" + shu.length + "现在是第" + (i + 1) + "张";//括号来防止字符串拼串
+
+
+    // 分别来为两个按钮绑定击相应函数
+    prev.onclick = function () {
+
+        //  切换到上一张
+        i--;
+        if (i == -1) {
+            i = 7;
+        }
+        ;
+        img.src = shu[i];
+        // 因为每点按钮就要执行更新一次
+        info.innerHTML = "一共有" + shu.length + "现在是第" + (i + 1) + "张";//括号来防止字符串拼串
+
+    };
+
+    // 定义全局timer
+    var timer;
+
+    next.onclick = function () {
+        // 下一张
+        i++;
+        if (i == 8) {
+            i = 0;
+        }
+        img.src = shu[i];
+        info.innerHTML = "一共有" + shu.length + "现在是第" + (i + 1) + "张";//括号来防止字符串拼串
+    };
+    // 绑定开始按钮 如果多次点击就会开启多个 导致帕金森切换图片 且关闭只能关闭最后一个timer
+    star.onclick = function () {
+        // 开启之前把当前元素的定时器关闭就能解决帕金森问题
+        clearInterval(timer);
+        // 设置自动变换图片
+        timer = setInterval(function () {
+            i++;
+            if (i == 8) {
+                i = 0;
+            }
+            img.src = shu[i];
+            info.innerHTML = "一共有" + shu.length + "现在是第" + (i + 1) + "张";//括号来防止字符串拼串
+        }, 1000);
+    };
+    stop.onclick = function () {
+        // clearInterval()可以傳遞任一參數 有效則停止 無效也不會報錯 无事发生
+        clearInterval(timer);
+    }
+
+</script>
+</body>
+
+</html>

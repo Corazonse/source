@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+</head>
+<body>
+<!--
+    jquery 主要是遍历 创建 添加 删除元素操作
+        jquery虽然有隐式迭代但是对所有的div执行相同的操作
+        1.遍历方法  domEle 是dom元素对象 不是jquery对象
+                    所以想要使用jquery方法 需要给这个dom元素转换为jquery对象$(domEle)
+            $("div").each(function(index,domEle){
+                xxx;
+            })
+        2.遍历方法
+            $.each(object,function(index,element){
+                xxx;
+                })
+            1.$each()方法可用于遍历任何对象 只要勇于数据处理 比如数组对象
+            2.李曼的函数 有2个参数 index是每个元素的索引号 element遍历内容
+
+ -->
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<script>
+    let arr = ["red", "green", "blue"]
+    let amount = 0
+
+    // 第一种
+    // $("div").each(function(index,domEle){
+    //     // 回调函数第一个参数一定是索引号 遍历  this可以使domEle
+    //     $(this).css("color",arr[index])
+
+    //     console.log(index);
+    //     console.log(domEle);
+    //     // domEle.CSS(); 报错 domEle不是jq方法  计算文本值总数
+    //     amount += parseInt($(this).text())
+    // })
+
+    console.log(amount);
+
+    // 第二种迭代方式  主要处理数据 对象
+    $.each($("div"), function (i, ele) {
+        console.log(i);
+        console.log(ele);
+    })
+    $.each(arr, function (i, ele) {
+        console.log(i)
+        console.log(ele)
+    })
+
+
+</script>
+
+</body>
+</html>

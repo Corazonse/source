@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /*
+                为每一个超链接都绑定一个单击响应函数
+            
+            */
+            //    实现点击按钮之后添加超链接
+            var u1 = document.getElementById("u1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                var li = document.createElement("li");
+                li.innerHTML = "<a href='javaScript:;' class='link'>超链接</a>";
+
+                u1.appendChild(li);
+                //     for(var i = 0 ; i<allA.length ; i++){
+                //     allA[i].onclick = function(){
+                //         alert("asd")
+
+                //    };
+                // }
+
+            }
+
+            var allA = document.getElementsByTagName("a");
+            // 遍历所有allA 绑定单击响应函数    性能并不好
+            //    for(var i = 0 ; i<allA.length ; i++){
+            //     allA[i].onclick = function(){
+            //         alert("asd")
+
+            //    };
+
+
+            // }
+            // 尝试只绑定一次时间，即可应用到多个元素上，即使元素是后添加的
+            // 将其绑定给共同的祖先元素（ul）
+
+            // 事件的委派
+            //     - 指将元素统一绑定给一个共同的祖先元素，在后代增加或者修改时
+            //     -后代元素触发也会冒泡到祖先元素 从而通过祖先元素的响应函数来处理时间
+            // -时间委派是利用冒泡，通过委派可以减少时间绑定的次数，提高程序的性能
+
+            u1.onclick = function (event) {
+                event = event || window.event
+                // 如果触发对象时期望元素则执行 否则不执行
+                // event.target 就是表示出发事件的对象
+                if (event.target.className == "link") {
+                    alert("点击成功！")
+                }
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+<button id="btn01">添加一个超链接</button>
+<ul id="u1">
+    <li><a href="javaScript:;" class="link">超链接1</a></li>
+    <li><a href="javaScript:;" class="link">超链接2</a></li>
+    <li><a href="javaScript:;" class="link">超链接3</a></li>
+</ul>
+</body>
+</html>

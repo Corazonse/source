@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 判断是否为偶数
+        function sum(a) {
+            return (a % 2 == 0);
+        }
+
+        // 计算圆的面积
+        function circle(r) {
+            return Math.PI * r * r;
+        }
+
+        // circle()
+        //     -调用函数，使用函数的返回值
+        // circle
+        //     -函数对象，直接使用函数的对象
+
+
+        // 控制台中中出一个人的信息 输出 name,age,gender,address
+        // 实参可以是任意数据类型 也可以是一个对象 也可以是一个函数
+        // 当我们参数过多时 可以将参数封装都一个对象中。通过对象传递
+        function say(o) {
+            console.log(o.name, o.age, o.gender, o.address);
+        }
+
+        var obj = {
+            name: "孙悟空",
+            age: 18,
+            address: "花果山",
+            gender: "man"
+
+        };
+
+        // console.log(sum(0));
+        // console.log(circle(5));
+        say(obj);
+
+        function fun2(a) {
+            // console.log(a);
+            a(obj)
+        }
+
+        fun2(say)
+        // 将一个匿名函数作为实参放到一个函数
+        fun2(function () {
+            alert("ahahah")
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

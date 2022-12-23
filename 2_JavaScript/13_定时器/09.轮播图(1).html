@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            /* 设置居中和 位置 */
+            margin: 100px auto;
+            width: 183px;
+            height: 144px;
+            position: relative;
+            background-color: pink;
+            overflow: hidden;
+
+        }
+
+        #imgList {
+            list-style: none;
+            position: absolute;
+            /* 设置偏移量 每向左移动183px就显示到下一张图片 */
+            /* left: 0; */
+
+
+        }
+
+        #imgList li {
+            float: left;
+
+        }
+
+        #nav {
+            position: absolute;
+            bottom: 5px;
+
+        }
+
+        #nav a {
+            /* 设置超链接浮动 宽高 */
+            float: left;
+            width: 10px;
+            height: 10px;
+            /* 设置左右外边距 */
+            margin-right: 3px;
+            opacity: 0.5;
+            background-color: red;
+
+        }
+
+        /* 设置鼠标移入效果 */
+        #nav a:hover {
+            background-color: black;
+            opacity: 0.5;
+
+
+        }
+    </style>
+    <script src="./08.定时器练习.js"></script>
+    <script>
+        window.onload = function () {
+            // 获取img-list
+            var img = document.getElementById("imgList");
+            // 获取img-list的宽度
+            var imgArr = document.getElementsByTagName("img");
+            // 自动设置list-img的宽度
+            img.style.width = 183 * imgArr.length + "px";
+            // 利用js设置导航按钮居中
+            var nav = document.getElementById("nav");
+            var outer = document.getElementById("outer");
+
+            // 获取容器宽度 和 按钮宽度之和和中间margin-right值之和--一半
+            nav.style.left = (outer.offsetWidth - nav.offsetWidth) / 2 + 3 + "px";
+
+            // 默认显示图片索引
+            var index = 0;
+            // 获取所有的a
+            var allA = document.getElementsByTagName("a");
+            // 设置默认选中 的效果
+            allA[index].style.background = "black";
+
+            var timer;
+
+            // 点击超链接切换到指定的图片
+            // 为所有超链接绑定单击响应函数 先执行完for再会执行单击响应函数
+            for (var i = 0; i < allA.length; i++) {
+                // 为每一个超链接都添加一个属性 索引
+                allA[i].num = i;
+
+                allA[i].onclick = function () {
+                    // 关闭自动定时器
+                    clearInterval(timer);
+
+                    // 获取点击超链接的索引，并将其设置成index
+                    index = this.num;
+                    // 切换图片
+                    // img.style.left = index * -183 + "px";
+                    setA();
+                    // 使用move函数来执行
+                    // 参数:
+                    // box 盒子
+                    // target 执行动画的目标
+                    // speed 速度 正数负数决定方向
+                    // speed 速度2 判断速度的正负值 如果0-500 speed必须为正值（默认） 500-0移动speed为负值
+                    // attr 要执行动画的样式
+                    // callback 回调函数将会在函数执行完毕后执行
+                    move(img, -183 * index, 20, "left", function () {
+                        // 点击动画完毕再次开启自动动画
+                        autoChange();
+
+                    });
+
+
+                }
+            }
+            // 设置定时器 自动切换图片
+
+            autoChange();
+
+            // 定义一个方法用于设置选中的a
+            function setA() {
+                // 遍历所有的a 让背景颜色设置为红色
+                for (var i = 0; i < allA.length; i++) {
+                    // 设置为空串 让他的颜色为默认颜色 就是（红色）
+                    // 不能设置为红色是因为内联样式会设置的比hover更高
+                    allA[i].style.background = "";
+                }
+                ;
+                // 点击就变黑
+                allA[index].style.background = "black";
+
+            };
+
+            // 创建一个函数 来开启自动切换图片
+            function autoChange() {
+                // 开启定时器 每隔一段时间调用一下定时器
+                timer = setInterval(function () {
+                    // console.log('----------------------------');
+                    // console.log('加之前',index);
+                    // console.log('加之后',index);
+                    // console.log('----------------------------');
+
+                    if (index >= imgArr.length - 2) {
+                        img.style.left = -183 * index;
+                        index = -1;
+                    }
+
+                    index++;
+                    move(img, -183 * index, 50, "left", function () {
+                        // 修改导航点
+                        setA();
+                    });
+                }, 1500)
+            }
+
+
+        };
+    </script>
+    <script>
+
+    </script>
+</head>
+
+<body>
+<div id="outer">
+    <ul id="imgList">
+        <li><img src="./练习素材/1.jpg_.webp" alt=""></li>
+        <li><img src="./练习素材/2.jpg_.webp" alt=""></li>
+        <li><img src="./练习素材/3.jpg_.webp" alt=""></li>
+        <li><img src="./练习素材/4.jpg_.webp" alt=""></li>
+        <li><img src="./练习素材/5.jpg_.webp" alt=""></li>
+        <!-- <li><img src="./练习素材/1.jpg_.webp" alt=""></li> -->
+    </ul>
+    <!-- 创建导航按钮 -->
+    <div id="nav">
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+    </div>
+
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery-3.6.1.js"></script>
+    <style>
+        div {
+            padding: 20px;
+            margin: 50px;
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+
+        .box1 {
+            height: 100px;
+            background-color: black;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <div class="box1">
+
+    </div>
+</div>
+<script>
+    $(function () {
+        // 尺寸
+        // width能得到宽度 innerWidth包括padding outerWidth包括边框  加margin在括号加个参数true
+        console.log($("div").width());
+        $("div").width(300)
+        //    偏移
+        $("div").offset({top: 10, left: 10})
+
+        //
+        /*
+            offset() left top两个值
+            元素相对于获取元素的位置 相对于文档的偏移坐标 跟父亲没有关系
+            向设置偏移就传递一个对象格式的 offset({top:10,left:10})
+
+            position() 能获取相对于父亲的偏移 但是不能设置
+
+            */
+    })
+</script>
+</body>
+
+</html>

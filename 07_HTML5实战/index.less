@@ -1,0 +1,1122 @@
+// 手机京东下拉动画
+@keyframes run {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 300px;
+  }
+}
+
+// 顶部容器
+.nav-top {
+  width: 100%;
+  height: 30.8px;
+  background-color: rgb(227, 228, 229);
+  margin-bottom: 6px;
+
+  // 顶部容器内容器
+  .top-list {
+    width: 1190px;
+    height: 30.8px;
+    margin: 0 auto;
+    position: relative;
+
+    // 飞机广东
+    .local {
+      display: inline-block;
+      height: 30.8px;
+      width: 57px;
+
+      .plane {
+        color: red;
+        font-size: 12px;
+      }
+
+      text-align: center;
+      line-height: 30px;
+      font-size: 12px;
+
+      &:hover {
+        background-color: rgb(255, 255, 255);
+
+        & + .local-extend {
+          display: block;
+        }
+      }
+    }
+
+    // 地址广东的扩展
+    .local-extend {
+      height: 463px;
+      width: 321px;
+      z-index: 1000;
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgba(153, 153, 153, .5);
+      border-top: none;
+      position: absolute;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, .3);
+      padding: 2px;
+      display: none;
+      left: -1px;
+
+      &:hover {
+        display: block;
+      }
+    }
+  }
+
+  // 右侧导航栏
+  .nav {
+    display: inline;
+    margin: 0 auto;
+    width: 801.5px;
+    height: 30px;
+
+    // 设置导航条 总体向右浮动 li向左浮动
+    .nav-list {
+      float: right;
+      position: relative;
+
+      li {
+        line-height: 30.8px;
+        font-size: 12px;
+        display: block;
+        float: left;
+
+        a {
+          display: block;
+          color: rgb(153, 153, 153);
+          height: 30.8px;
+          width: 76.6px;
+          text-align: center;
+
+          &:hover {
+            color: red;
+          }
+        }
+
+        .white:hover {
+          background-color: rgb(255, 255, 255);
+        }
+
+
+        .redred {
+          color: red;
+        }
+
+        // 手机京东的小三角 小三角放在拓展div应该可以隐藏边框
+        .tri {
+          display: none;
+
+          &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -10%;
+            right: 121px;
+            top: 11px;
+            border-top: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-bottom: 10px solid rgb(255, 255, 255);
+
+          }
+        }
+
+
+        // 手机京东扩展
+        // 这里注释了 边框和padding 是因为hidden之后还会显示
+        // 所以我选择用动画的方式来展出阴影 边框 和拓展div
+        .iJD-extend {
+          width: 191px;
+          height: 0px;
+          z-index: 1000;
+          background-color: red;
+          position: absolute;
+          right: 37px;
+          background-color: rgb(255, 255, 255);
+          // border: 1px solid rgba(153, 153, 153, .5);
+          border-top: none;
+          position: absolute;
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, .3);
+          // padding: 5px;
+          // display: none;
+          overflow: hidden;
+
+          // 添加动画进去鲁  过渡效果 用不着run动画
+          // animation: run 1s  normal;
+          transition: all 1s;
+
+          // 二维码及里面的内容
+          div {
+            height: 70px;
+            width: 100%;
+            margin: 8px 0;
+            position: relative;
+
+            img {
+              width: 70px;
+              height: 70px;
+              display: block;
+            }
+
+            h2,
+            h3,
+            span {
+              position: absolute;
+            }
+
+            span {
+              font-size: 24px;
+              width: 25px;
+              height: 25px;
+              color: red;
+            }
+          }
+
+
+        }
+
+      }
+
+      // 设置分割线样式
+      .line {
+        color: rgba(153, 153, 153, 0.3);
+        margin: 0 2px;
+      }
+    }
+  }
+
+}
+
+// 中部外容器
+.w {
+  width: 1190px;
+  height: 130px;
+  margin: 0 auto;
+
+  .nav-min {
+    position: relative;
+
+    // 图片
+    .JD-img img {
+      position: relative;
+      width: 190px;
+      height: 120px;
+      z-index: 999;
+      float: left;
+    }
+
+    // 搜索框 购物车外容器
+    .search {
+      width: 100%;
+      height: 60px;
+      position: relative;
+
+      // 搜索框容器
+      .search-all {
+        display: block;
+        left: 250px;
+        bottom: 0px;
+        position: absolute;
+        width: 539.2px;
+        height: 35.2px;
+        border: 2px solid red;
+
+        // 搜索输入框
+        .input {
+          width: 400.6px;
+          height: 30px;
+          border: 0px;
+          top: 1px;
+          left: 7px;
+          position: absolute;
+
+          &:focus {
+            border: none;
+            outline: 0;
+          }
+
+        }
+
+        // 搜索图标
+        .kaca {
+          width: 60px;
+          height: 35px;
+          background-color: red;
+          font-size: 19px;
+          float: right;
+          line-height: 35px;
+          text-align: center;
+          color: azure;
+
+
+          &:hover {
+            background-color: rgb(202, 41, 41);
+
+          }
+        }
+
+        // 相机图标
+        .seek {
+          width: 60px;
+          height: 35px;
+          float: right;
+          text-align: center;
+          line-height: 35px;
+          font-size: 19px;
+
+          &:hover {
+            color: red;
+          }
+
+
+        }
+      }
+
+      // 模糊查询搜索栏
+      .mser {
+        position: absolute;
+        width: 480px;
+        height: auto;
+        border: 1px rgb(153, 153, 153) solid;
+        // height: 100px;
+        left: 250px;
+        top: 60px;
+        background-color: rgb(255, 255, 255);
+        z-index: 1001;
+        display: none;
+        overflow: hidden;
+        box-shadow: 1px 2px 1px rgba(0, 0, 0, .2);
+
+        p {
+          // margin-left: 5px;
+          font-size: 14px;
+          margin-top: 5px;
+          line-height: 20px;
+
+          &:hover {
+            background-color: rgba(153, 153, 153, .4);
+          }
+
+        }
+      }
+
+      // 购物车栏
+      .buy-car {
+        display: block;
+        width: 131.6px;
+        height: 37px;
+        position: absolute;
+        left: 820px;
+        bottom: 0px;
+        line-height: 37px;
+        font-size: 12px;
+        text-align: center;
+        border: 1px rgb(225, 225, 225) solid;
+        color: red;
+
+        span {
+          color: red;
+        }
+      }
+
+      .buy-car:hover {
+        border-color: red;
+
+        & > .buy-car-extend {
+          display: block;
+        }
+
+      }
+
+      // 购物车拓展
+      .buy-car-extend {
+        position: absolute;
+        width: 300px;
+        height: 70px;
+        z-index: 1000;
+        top: 37px;
+        right: -0.6px;
+        display: none;
+        border: 1px red solid;
+        background-color: rgb(255, 255, 255);
+      }
+
+    }
+
+    // 搜索框下方导航栏
+    .list1 {
+      font-size: 12px;
+      position: absolute;
+      left: 250px;
+      bottom: 44px;
+
+      a {
+        margin-right: 2px;
+        font-size: 12px;
+        color: rgb(153, 153, 153);
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+
+    // 搜索框下下方导航栏
+    .list2 {
+      position: absolute;
+      bottom: 0;
+      left: 200px;
+
+      ul li {
+        float: left;
+        font-size: 16px;
+        margin: 0 10px;
+
+        a {
+          color: black;
+
+          &:hover {
+            color: red;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
+// 设置w2 中间部分的页面以及样式
+.back-img {
+  img {
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    z-index: 0;
+  }
+}
+
+// 外层总容器
+.w2 {
+  width: 1190px;
+  height: 480px;
+  // background-color: #bfa;
+  position: relative;
+  // top: 2px;
+  margin: 0 auto;
+  z-index: 1;
+
+  //
+  .w2-left {
+    margin-top: 9px;
+    height: 474px;
+    width: 190px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+
+    li {
+      width: 190px;
+      height: 25px;
+
+      & a:nth-child(1) {
+        margin-left: 8px;
+      }
+
+      &:hover {
+        background-color: rgb(217, 217, 217);
+
+        & + div {
+          display: block;
+        }
+      }
+
+      // 文字 超链接
+      a {
+        text-align: center;
+        line-height: 25px;
+        color: black;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+
+    // 设置左侧的hover
+    div {
+      width: 998px;
+      height: 475px;
+      position: absolute;
+      background-image: url(./img/fengling.jpg);
+      // background-attachment: fixed;
+      background-size: cover;
+      margin: 0 auto;
+      display: none;
+      left: 190px;
+      top: 0;
+      z-index: 1009;
+    }
+  }
+
+  .w2-min {
+    position: absolute;
+    width: 590px;
+    height: 474px;
+    left: 200px;
+    top: 0px;
+    overflow: hidden;
+
+    // 设置轮播图pre 和next的按钮
+    .btn {
+      width: 25px;
+      height: 35px;
+      z-index: 1001;
+      position: absolute;
+      background-color: rgba(7, 6, 6, 0.2);
+      bottom: 230px;
+      line-height: 35px;
+
+      i {
+        color: white;
+      }
+
+      &:hover {
+        background-color: rgba(7, 6, 6, 0.5);
+      }
+
+    }
+
+    // 设置他们的小圆弧
+    .bn {
+      right: 0;
+      border-radius: 20px 0px 0px 20px;
+
+      i {
+        float: right;
+      }
+    }
+
+    .bp {
+      border-radius: 0px 20px 20px 0px;
+    }
+
+
+    .img-list {
+      position: relative;
+      width: 590px;
+      height: 474px;
+
+      li {
+
+        // bottom:
+        img {
+          width: 590px;
+          height: 474px;
+          // position: absolute;
+          // right: 400px;
+          // bottom: 0;
+        }
+      }
+    }
+
+
+    .po {
+      width: 109px;
+      height: 13.8px;
+      // background-color: blue;
+      position: absolute;
+      left: 40px;
+      bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1001;
+      // background-color: red;
+
+      & a:nth-child(1):active {
+        border: 3px rgba(255, 255, 255, .4) solid;
+        background-color: rgb(285, 255, 255);
+      }
+
+      i {
+        background-color: rgba(255, 255, 255, .4);
+        border-radius: 50%;
+        position: relative;
+        border: 3px transparent solid;
+        /* 裁剪边框的背景，让边框完全消失 */
+        background-clip: content-box;
+        width: 9px;
+        height: 9px;
+        float: left;
+
+        // border: none;
+        &:hover {
+          border: 3px rgba(255, 255, 255, .4) solid;
+          background-color: rgb(255, 255, 255);
+        }
+
+      }
+    }
+
+  }
+
+  // 轮播图下一个菜单
+  .w2-min2 {
+    width: 190px;
+    height: 473px;
+    // background-color: yellow;
+    position: absolute;
+    right: 200px;
+    top: 6px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+
+    div {
+      img {
+        width: 190px;
+        height: 155px;
+      }
+    }
+
+    .img2 {
+      margin-top: 1px;
+      // margin-bottom: 3px;
+    }
+  }
+
+
+  .w-right {
+    // background-color: yellow;
+    width: 190px;
+    height: 474px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .w-right1 {
+      width: 190px;
+      height: 102px;
+      // background-color: aqua;
+      position: relative;
+      font-size: 12px;
+
+      .dog {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        border-radius: 50%;
+        overflow: hidden;
+        left: 20px;
+        top: 20px;
+        line-height: 20px;
+
+        img {
+          width: 40px;
+          height: 40px;
+
+        }
+      }
+
+
+      .show {
+        height: 38px;
+        width: 106px;
+        position: absolute;
+        left: 68px;
+        top: 20px;
+
+        h6:hover {
+          color: red;
+        }
+
+        p {
+          position: absolute;
+          bottom: 2px;
+
+          a {
+            color: black;
+          }
+
+          a:hover {
+            color: red;
+          }
+        }
+      }
+
+      .w-right4 {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        width: 190px;
+        height: 30px;
+        bottom: 0;
+
+        i {
+          position: absolute;
+          width: 70px;
+          height: 25px;
+          top: 2px;
+          border-radius: 25px;
+          text-align: center;
+          line-height: 25px;
+        }
+
+        .newGuy {
+          background-color: red;
+          left: 20px;
+          font-size: 12px;
+          color: rgb(255, 255, 255);
+
+          &:hover {
+            background-color: rgb(220, 22, 35);
+          }
+
+        }
+
+        .plus {
+          right: 20px;
+          background-color: black;
+          color: rgb(150, 178, 144);
+          font-size: 12px;
+
+          &:hover {
+            background-color: rgb(220, 22, 35);
+            color: rgb(255, 255, 255);
+          }
+        }
+
+
+      }
+
+    }
+
+
+    .w-right2 {
+      border-top: 1px solid rgb(153, 153, 153);
+      border-bottom: 1px solid rgb(153, 153, 153);
+      width: 190px;
+      height: 130px;
+      // background-color: aqua;
+      position: relative;
+      margin-bottom: 6px;
+
+      .news {
+        height: 30px;
+        width: 190px;
+        line-height: 30px;
+
+        // background-color: aqua;
+        h2 {
+          margin-left: 20px;
+          color: black;
+          font-weight: bold;
+          display: inline-block;
+        }
+
+        a {
+
+          i {
+            margin-left: 50px;
+            display: inline-block;
+            font-size: 12px;
+            color: rgb(153, 153, 153);
+
+            &:hover {
+              color: red;
+            }
+          }
+        }
+
+      }
+
+      .newnew {
+        // background-color: red;
+
+        ul {
+          li {
+            height: 20px;
+            margin-top: 3px;
+
+            a {
+              width: 190px;
+              height: 20px;
+
+              .newa {
+                width: 28px;
+                font-size: 13px;
+                background-color: rgb(253, 238, 237);
+                color: red;
+
+                margin-left: 3px;
+
+              }
+
+              // 只显示单行内容多的省略
+              .new4 {
+                // background-color: aqua;
+                width: 150px;
+                line-height: 14px;
+                display: inline-block;
+                font-size: 14px;
+                color: black;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: relative;
+                top: 2px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .w-right3 {
+      width: 190px;
+      height: 240px;
+
+      // background-color: red;
+      a {
+        // background-color: aqua;
+
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+
+        .himg {
+          display: block;
+          height: 28px;
+          width: 28px;
+          margin: 0 auto;
+        }
+
+        .hspan {
+          display: block;
+          width: 63px;
+          height: 26.6px;
+          line-height: 26px;
+          text-align: center;
+          color: black;
+          font-size: 14px;
+
+        }
+
+        &:hover .hspan {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+.bottom {
+  margin: 0 auto;
+  width: 1190px;
+  height: 260px;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+
+  .sc {
+    height: 260px;
+    width: 190px;
+    position: absolute;
+    background-color: red;
+
+    .JDSC {
+      font-size: 28px;
+      margin: 40px 35px;
+      font-weight: 900;
+      color: rgb(255, 255, 255);
+    }
+
+    .smsc {
+      margin: 90px 40px;
+      font-size: 14px;
+      color: rgb(255, 255, 255);
+      margin-bottom: 20px;
+
+    }
+
+    span {
+      margin-left: 10px;
+      background-color: black;
+      color: rgb(255, 255, 255);
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+  }
+
+  .comm {
+    height: 260px;
+    width: 200px;
+    position: absolute;
+    border-right: 1px solid rgb(153, 153, 153);
+
+    // background-color: black;
+    &:hover h6 {
+      color: red;
+    }
+
+    img {
+      display: block;
+      height: 140px;
+      width: 140px;
+      margin: 20px auto;
+    }
+
+    h6 {
+      font-size: 14px;
+      width: 170px;
+      margin: 0 auto;
+      color: black;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 20px;
+
+    }
+
+    span {
+      font-size: 13px;
+      color: red;
+      margin-left: 72px;
+    }
+
+    .sp1 {
+      width: 180px;
+      // height: 20px;
+      display: block;
+      // line-height: 20px;
+      text-align: center;
+      color: rgb(153, 153, 153);
+    }
+
+    .sp2 {
+      width: 180px;
+      height: 25px;
+      display: block;
+      line-height: 25px;
+      text-align: center;
+      font: bolder;
+      color: black;
+    }
+
+    .di1 {
+      width: 82px;
+      height: 24px;
+      margin: 0 auto;
+      border-radius: 25px;
+      color: red;
+      border: 1px red solid;
+      background-color: rgb(255, 255, 255);
+
+      &:hover {
+        background-color: red;
+        border: 1px rgb(255, 255, 255) solid;
+
+        span {
+          color: rgb(255, 255, 255);
+        }
+
+      }
+
+      span {
+        width: 30;
+        display: inline;
+        font-size: 14px;
+        line-height: 24px;
+        margin-left: 4px;
+        font-weight: 900;
+      }
+
+
+    }
+
+  }
+
+}
+
+.con {
+  width: 1190px;
+  height: 5000px;
+  margin: 0 auto;
+
+  .con1 {
+    width: 1190px;
+    height: 980px;
+    margin: 0 auto;
+    background-color: #bfa;
+    margin-bottom: 20px;
+  }
+
+  .con2 {
+    width: 1190px;
+    height: 1005px;
+    margin: 0 auto;
+    background-color: black;
+    margin-bottom: 20px;
+  }
+
+  .con3 {
+    width: 1190px;
+    height: 1870px;
+    margin: 0 auto;
+    background-color: aqua;
+    margin-bottom: 30px;
+  }
+}
+
+.ele {
+  width: 58px;
+  height: 232px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 657px;
+  margin-left: 615px;
+
+  li {
+    a {
+      color: #333;
+    }
+
+    font-size: 14px;
+    width: 58px;
+    height: 38px;
+    text-align: center;
+    line-height: 19px;
+
+    padding: 10px 0;
+
+    &:hover a {
+      color: rgb(255, 255, 255);
+    }
+
+    &:hover {
+      background-color: red;
+    }
+  }
+}
+
+// 电梯动画
+@keyframes eleShow {
+  0% {
+    top: 0px;
+  }
+
+  100% {
+    top: 80px;
+  }
+}
+
+
+// 改变后的class 电梯 当鼠标滚动到指定大小时 添加样式
+.ele-fix {
+  position: fixed;
+  top: 80px;
+  // 加个动画
+  animation: eleShow 0.5s ease;
+}
+
+// 添加绑定各个楼层的样式样式的
+
+.ele1 {
+  ul {
+    .ele-1 {
+      background-color: red;
+
+      a {
+        color: rgb(255, 255, 255);
+      }
+    }
+
+
+  }
+}
+
+.ele2 {
+  ul {
+    .ele-2 {
+      background-color: red;
+
+      a {
+        color: rgb(255, 255, 255);
+      }
+    }
+
+
+  }
+}
+
+.ele3 {
+  ul {
+    .ele-3 {
+      background-color: red;
+
+      a {
+        color: rgb(255, 255, 255);
+      }
+    }
+
+
+  }
+}
+
+.ele4 {
+  ul {
+    .ele-4 {
+      background-color: red;
+
+      a {
+        color: rgb(255, 255, 255);
+      }
+    }
+
+
+  }
+}
+
+// 吸顶动画 给个负数起点实现动画
+@keyframes search_liShow {
+  0% {
+    top: -40px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+// 吸顶灯额外样式
+.search-li {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  height: 40px;
+  border-bottom: 2px solid red;
+  // box-shadow:2px 2px rgb(153, 153, 153) ;
+  // background-color: red;
+  z-index: 9999;
+  background-color: rgb(255, 255, 255);
+  animation: search_liShow 0.5s ease;
+
+  .search-all {
+    margin-left: 100px;
+    top: 7px;
+  }
+
+  .buy-car {
+    margin-left: 100px;
+    top: 7px;
+  }
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 打印 99 乘法表
+        for (var i = 1; i < 10; i++) {
+            for (var j = 1; j < i + 1; j++) {
+                document.write("<span>" + j + "*" + i + "=" + i * j + "</span>")
+            }
+            document.write("<br />")
+        }
+        document.write("<br />")
+        document.write("<br />")
+        // 打印100 以内的所有质数(优化版本 把因数化为b的开根号 就是主要因数了)
+        // Math.sqrt();
+        console.time("test");
+        outer:
+            for (var a = 2; a < 101; a++) {
+                var flag = true;
+                for (var b = 2; b < Math.sqrt(a); b++) {
+                    if (a % b == 0) {
+                        continue outer;
+                    }
+                }
+
+                document.write(a + "是质数")
+                document.write("<br />")
+
+            }
+        console.timeEnd("test");
+    </script>
+    <style type="text/css">
+        /* 给父元素设置宽度使其不换行 */
+        body {
+            width: 2000px;
+        }
+
+        /* 设置乘法表对齐样式 */
+        span {
+            display: inline-block;
+            width: 80px;
+
+
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

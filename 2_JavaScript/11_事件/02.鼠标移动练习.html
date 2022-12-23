@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 实现div 能够跟随鼠标移动 */
+
+
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            // 获取box1
+            var box1 = document.getElementById("box1");
+
+            // 绑定鼠标移动事件 document 就是綁定所有文檔
+            document.onmousemove = function (event) {
+                // 获取鼠标位置
+                event = event || event.window;
+                // 用户获取当前可见窗口的坐标 总是相对于可见窗口 所以出现滚动条不好使
+                var x = event.clientX;
+                var y = event.clientY; //初设的相对于文档的坐标
+
+                // 现在是相对页面的做坐标 IE8不行 若果需要兼容ie8
+                // var x = event.pageX;
+                // var y = event.pageY;
+
+                // 兼容目前所有浏览器的选中
+                var st = document.body.scrollTop || document.documentElement.scrollTop;
+                var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+                box1.style.left = x - 50 + sl + "px";
+                box1.style.top = y - 50 + st + "px";
+
+
+            }
+            // 初设的滚动条想法 chrome认为浏览器的滚动条是body 火狐等认为是html
+
+
+        }
+
+
+    </script>
+</head>
+
+<body style="height: 1000px; width: 10000px;">
+<div id="box1">
+
+
+</div>
+
+</body>
+
+</html>

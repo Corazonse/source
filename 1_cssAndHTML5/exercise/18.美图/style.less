@@ -1,0 +1,195 @@
+a {
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    color: rgb(197, 196, 196);
+  }
+
+}
+
+.top-bar-wrapper {
+  background-color: black;
+}
+
+// 顶部导航条
+.top-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 48px;
+  background-color: black;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    height: 20px;
+    width: 73px;
+  }
+}
+
+// 设置左侧导航的图标
+.left-menu {
+  &:hover {
+    .nav {
+      display: block;
+    }
+  }
+
+  // position: relative;
+  // 设置菜单
+  .nav {
+    position: absolute;
+    // 把九个值等式设置为0 所以width和height自动撑满
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    padding-top: 50px;
+    // 让他隐藏起来
+    display: none;
+
+    li {
+      // 设置间距80%
+      width: 80%;
+      margin: 0 auto;
+      border-bottom: 1px solid #767474;
+
+      a {
+        line-height: 44px;
+        font-size: 14px;
+        display: block;
+
+      }
+
+      &:last-child a {
+        // 使得最后一个行内块 网址就不能点击了（放大镜可以 原网站是这样的）
+        display: inline-block;
+        margin-right: 6px;
+      }
+
+      span {
+        color: #fff;
+        font-size: 14px;
+      }
+    }
+
+  }
+
+  // 设置菜单按钮
+  .menu-icon {
+    height: 48px;
+    width: 18px;
+    position: relative;
+
+    // 设置左侧导航的图标
+    li {
+      width: 18px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      transition: all .5s;
+    }
+
+    // 单独设置导航的三条线
+    li:nth-child(1) {
+      top: 18px;
+
+
+    }
+
+    li:nth-child(2) {
+      top: 24px;
+      transition: all .2s;
+
+    }
+
+    li:nth-child(3) {
+      top: 30px;
+
+    }
+
+    // 利用旋转 平移 转向 过渡 达到目的效果
+    // 正常情况下 这个效果要用js实现
+    &:hover {
+
+      li:nth-child(1) {
+        top: 24px;
+        // 向下选转
+        transform: rotateZ(45deg);
+      }
+
+      li:nth-child(2) {
+        visibility: hidden;
+      }
+
+      li:nth-child(3) {
+        top: 24px;
+        // 向上转
+        transform: rotateZ(-45deg);
+
+      }
+
+    }
+
+  }
+
+}
+
+// 设置媒体查询
+@media only screen {
+
+  // 断点768px
+  @media (min-width: 768px) {
+    .left-menu {
+      order: 2;
+      // 让元素占用剩下的空白空间（让他自己增长）
+      flex: auto;
+
+      // 显示菜单
+      .nav {
+        // 关掉定位 偏移量消失
+        position: static;
+        //让他横过来  因为前面有hover display：none仍然生效
+        // 所以这里 同样的display flex 设置为最高级
+        display: flex !important;
+        padding: 0;
+        justify-content: space-around;
+
+        li {
+          width: auto;
+          border: none;
+          // 重置margin
+          margin: 0;
+
+          a {
+            line-height: 48px;
+
+          }
+
+          span {
+            display: none;
+          }
+        }
+      }
+
+      // 隐藏三明治图标
+      .menu-icon {
+        display: none;
+
+
+      }
+
+    }
+
+    .logo {
+      order: 1;
+    }
+
+    .user-info {
+      order: 3;
+    }
+  }
+}

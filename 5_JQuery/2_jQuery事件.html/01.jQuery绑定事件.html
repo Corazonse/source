@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery-3.6.1.js"></script>
+</head>
+
+<body>
+<ul>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+</ul>
+<div style="height:100px;width:100px; background-color:pink"></div>
+<script>
+    //绑定鼠标事件 无限添加多个事件  还可以外部设置类 然后再添加 触发一次的就是one()
+    $("div").on({
+        mouseenter: function () {
+            $(this).css("background", "skyblue")
+        },
+        click: function () {
+            $(this).css("background", "black")
+        },
+        mouseleave: function () {
+            $(this).css("background", "pink")
+        }
+    })
+    // 事件委派 绑定的是ul  动的是li 可以给动态创建的绑定时间
+    $("ul").on(
+        "click", "li", function () {
+            alert(11)
+        })
+    // 事件解绑 off()方法
+    $("div").off("click")//不设置东西就是解绑所有的时间 包括委派
+
+
+</script>
+</body>
+
+</html>

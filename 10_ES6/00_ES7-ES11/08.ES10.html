@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    // Object fromEntries
+    // 二维数组
+    const result = Object.fromEntries([
+        ["name", "嘟嘟"],
+        ["xue", "du"]
+    ])
+    console.log(result);
+
+    // Map
+    const m = new Map()
+    m.set('name', "DUDU")
+    const result2 = Object.fromEntries(m)
+    console.log(result2);
+    // const result2 =
+    //字符串扩展的两个方法 trimStart trimEnd 分别清楚前后的空格字符串
+    let str = '  nihao    '
+    console.log(str.trimStart());
+    console.log(str.trimEnd());
+    console.log(str);
+
+    // ES10 flat(深度默认1) flatMap 能将数组维度降低 将 多维数组降
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, [1]]
+    console.log(arr.flat());
+
+    //flatMap  map本来这个操作会返回多个数组  flatMap返回一个一维数组
+    const arr2 = [1, 2, 3, 4];
+    const result3 = arr2.flatMap(item => [item * 10]);
+    console.log(result3);
+
+    /*
+        创建Symbol
+    */
+    let s = Symbol('尚硅谷')
+    console.log(s.description);
+</script>
+</body>
+
+</html>

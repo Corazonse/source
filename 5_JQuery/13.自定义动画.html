@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+<!-- jQuery 封装的各种动画效果
+
+        自定义动画
+        animate(params,[speed],[easing],[fn])
+        params 想要更改 样式 属性 以 对象 形式传递 属性名可以不用带引号
+        如果是复合属性则需要采用驼峰命名法 其余参数可以省略
+
+-->
+<button>动起来</button>
+<button>动回去</button>
+
+<div>
+
+</div>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+            $("div").stop().animate({
+                width: 200,
+                height: 200,
+                left: 300
+            }, 1000, function () {
+                console.log("动完了")
+            })
+        })
+        $("button").eq(1).click(function () {
+            $("div").stop().animate({
+                width: 100,
+                height: 100,
+                left: 0
+            }, 1000, function () {
+                console.log("回去了")
+            })
+        })
+
+    })
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 100px auto;
+        }
+
+    </style>
+    <script>
+        // 修改内联样式  优先级高 通过js一般立即显示 !important 玩
+
+        window.onload = function () {
+            // 点击按钮修改box1的大小
+            var btn01 = document.getElementById("btn01");
+            var box1 = document.getElementById("box1");
+
+            btn01.onclick = function () {
+                // 修改box1的宽度
+
+                /*  
+                    通过js修改css样式：
+                        语法:元素.style.样式名 = 样式值（字符串）
+                         注意：如果css样式名中含有 - 这种名字在js不合法 是减号；修改为驼峰命名法
+                */
+                box1.style.width = "300px";
+                box1.style.height = "300px";
+                box1.style.backgroundColor = "red";
+
+
+            };
+            // 再设置一个按钮
+            var btn02 = document.getElementById("btn02");
+
+            btn02.onclick = function () {
+                /*读取box1的样式
+                语法:元素.style.样式名
+                // 注意 通过该语法读取的都是内联样式
+            
+                
+                */
+
+                alert(box1.style.backgroundColor)
+                alert(box1.style.height)
+
+
+            }
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+<button id="btn01">点一个</button>
+<button id="btn02">点二个</button>
+<div id="box1">
+
+
+</div>
+</body>
+</html>

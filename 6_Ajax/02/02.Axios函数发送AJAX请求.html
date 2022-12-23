@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <!-- crossorigin="anonymous" 跨域不会受到警告 -->
+    <script crossorigin="anonymous" src="./bootstrap-3.4.1-dist/js/jQuery-3.6.1.js"></script>
+    <!-- 引用axios文件 -->
+    <script crossorigin="anonymous" src="../axios-1.x/dist/axios.js"></script>
+    <script crossorigin="anonymous" src="./bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!-- 主流Axios发送Ajax请求 -->
+<div class="container">
+    <h1>Axios发送Ajax请求</h1>
+    <hr>
+    <button class="btn btn-success">GET</button>
+    <button class="btn btn-primary">POST</button>
+    <button class="btn btn-info">Axios通用</button>
+</div>
+<script>
+    const btn = document.querySelectorAll("button")
+    // 配置baseURL 利用axios↓
+    axios.defaults.baseURL = 'http://localhost:8000'
+    btn[0].onclick = function () {
+        // GET请求 地址 参数
+        axios.get('/Axios', {
+            params: {
+                id: 100,
+                vip: 7
+            },
+            // 请求头信息
+            Headers: {
+                name: '嘟嘟嘟'
+                ,
+                id: 22
+            }
+            // 数据获取
+        }).then(value => {
+            console.log(value);
+        })
+
+    }
+    btn[1].onclick = function () {
+        // POST请求 地址 请求体 其他配置
+        axios.post('/Axios', {username: 'me'},
+            {
+                params: {
+                    id: 200,
+                    vip: 9
+                },
+                // 请求头信息
+                Headers: {
+                    name: '嘟嘟嘟'
+                    ,
+                    id: 22
+                }
+
+
+            });
+
+
+    }
+    // Axios通用方法发送请求
+    btn[2].onclick = function () {
+        // 传一个对象
+        axios({
+            // 请求方法
+            method: "POST",
+            // url参数
+            url: '/Axios',
+            params: {
+                vip: 10,
+                lv: 999
+            },
+            // 头信息参数
+            headers: {
+                a: 100,
+                b: 100
+            },
+            //  请求体参数
+            data: {
+                username: 'admin',
+                password: 'admin'
+            }
+            // then方法处理返回结果
+        }).then(response => {
+            // 结果
+            console.log(response);
+            // 响应状态码
+            console.log(response.status);
+            // 响应状态字符串
+            console.log(response.statusText);
+            // 响应头信息
+            console.log(response.headers);
+            // 响应体
+            console.log(response.data);
+
+        })
+
+
+    }
+</script>
+
+</body>
+
+</html>

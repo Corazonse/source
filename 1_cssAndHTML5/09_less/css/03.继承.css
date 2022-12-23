@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    position: relative;
+    width: 300px;
+    height: calc(100px + 100);
+    border: 1px solid;
+    margin: 50px auto;
+}
+
+.wrap .inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.wrap .inner:nth-child(1) {
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+}
+
+.wrap .inner:nth-child(2) {
+    height: 50px;
+    width: 50px;
+    background-color: deeppink;
+}
+
+/*# sourceMappingURL=./03.继承.css.map */

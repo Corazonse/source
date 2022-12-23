@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        Rest 参数与spread 扩展运算符在 ES6中 已经引入，不过 ES6 中只针对数组
+        在 ES9 中对象提供了像数组一样的rest 参数和扩展运算符
+
+    */
+    //    ...user 对对象能够一串多
+    // function connect({host,port,...user}){
+    //     console.log(host);
+    //     console.log(port);
+    //     console.log(...user);
+    // }
+
+    // connect({
+    //     host:"127.0.0.1",
+    //     port:3306,
+    //     username:'root',
+    //     password:'root',
+    //     type:"master"
+    // })
+
+    //  ...的对象的合并
+    const skillOne = {
+        q: "相位移动",
+        w: "全视之眼"
+    }
+    const skillTwo = {
+        e: "相位移动",
+        r: "全视之眼"
+    }
+    // .../skillOne => q:"相位移动", w:"全视之眼"
+
+    const lin = {...skillOne, ...skillTwo}
+    console.log(lin);
+
+
+</script>
+
+</body>
+</html>

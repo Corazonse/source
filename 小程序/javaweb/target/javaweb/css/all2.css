@@ -1,0 +1,94 @@
+.top{
+    width: 100%;
+    background-color: rgb(35,38,46);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.logo{
+    float: left;
+}
+.logo img{
+    height: 40px;
+}
+.top-mini{
+    margin: 0 auto;
+    width: 1290px;
+    height: 50px;
+    /*background-color: white;*/
+    line-height: 50px;
+    text-align: center;
+
+}
+.title{
+    font-size: 25px;
+    color: rgb(2,150,136);
+    /*transform: rotateY(360deg) translateZ(200px);*/
+}
+.title:hover{
+    color: white;
+    text-decoration: none;
+}
+.body-min{
+    margin: 0 auto;
+    margin-top:50px;
+    width: 1290px;
+    height: 550px;
+    /*background-color: pink;*/
+}
+.btn1{
+    text-decoration: none;
+    margin-top: 8px;
+    margin-right: 8px;
+    float: right;
+    width: 110px;
+    background-color: rgb(2,150,136);
+    display: block;
+
+}
+.btn1:hover{
+    background-color: rgba(2,150,136,0.6);
+}
+.btn1-a{
+    color: white;
+}
+.btn1-a:hover{
+    text-decoration: none;
+    color: white;
+}
+.min{
+    width: 100%;
+    height: 550px;
+}
+.min-left{
+    background-color: rgb(57,62,74);
+    height: 100%;
+    width: 200px;
+    position: relative;
+    display: inline-block;
+
+}
+.min-left ul{
+    position: absolute;
+    top: 100px;
+    left: 47px;
+}
+.min-left ul li button{
+    margin: 20px 0;
+}
+.min-right{
+    position: relative;
+    float: right;
+    height: 550px;
+    width: 1090px;
+    /*background-color: yellow;*/
+}
+
+#ifa{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    border-top:none ;
+}

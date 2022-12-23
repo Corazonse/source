@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+<body>
+<script>
+    let a
+    let b, c, d
+    let e = 100
+    let f = 521, g = 'You', h = []
+
+    // 1.变量不能重复声明
+    // let a = "xx"  报错
+
+    // 2.块级作用域 全局 函数 eval 只在代码块里面有效
+    // if else while for 都会出现块作用域
+
+
+    {
+        let girl = '周'
+        var girl2 = '周'
+    }
+    // console.log(girl); 看不到
+    console.log(girl2);
+
+    // 3.不存在变量提升
+    console.log(song); //undefined
+    // console.log(song2);//报错
+    var song = "你好"
+    let song2 = "你好"
+
+    //4.不影响作用域链 往外边 可以找到
+    {
+        let school = "松田"
+
+        function fn() {
+            console.log(school);
+        }
+
+        fn()
+    }
+
+</script>
+</body>
+</html>

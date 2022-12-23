@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            关键字可以退出switch或循环语句
+            但是 break 不可以在 if 使用 ！！！
+
+            break关键字 会立即终止离他最近的那个循环
+        
+            可以为循环语句创建一个 label ,来标识当前的循环
+            label:循环语句
+
+
+            continue 关键字可以用来跳过当次循环
+                同样continue也是默认只会离他最近的当次循环
+                 
+        */
+        //    测试性能计时器
+        //      在程序执行之前,开启计时器
+        // console.time("计时器名字")来开启计时器
+        // 他需要一个字符串作为参数，这个字符串将会成为计时器的表示
+        console.time("test")
+        outer:
+            for (var i = 0; i < 1; i++) {
+                console.log("你好");
+
+                for (var i = 0; i < 5; i++) {
+                    console.log("你好");
+                    if (i == 3) {
+                        break outer;
+                    }
+
+                }
+            }
+        console.timeEnd("test");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

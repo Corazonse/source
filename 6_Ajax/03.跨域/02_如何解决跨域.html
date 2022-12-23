@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <!-- crossorigin="anonymous" 跨域不会受到警告 -->
+    <script crossorigin="anonymous" src="./bootstrap-3.4.1-dist/js/jQuery-3.6.1.js"></script>
+    <!-- 引用axios文件 -->
+    <script crossorigin="anonymous" src="../axios-1.x/dist/axios.js"></script>
+    <script crossorigin="anonymous" src="./bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!--
+  JSONP 是非官方的跨域解决方案 只支持get请求
+  JSONP 怎么工作的
+      在网页一些标签天生就具有跨域能力 比如 img link iframe script
+      JSONP利用script标签的跨域能力来发送请求的
+  JSONP
+      1.动态的创建一个script标签
+          var script = document.createElement("script")
+      2.设置script 的src 设置回调函数
+          script = "http://localhost"
+
+-->
+<!-- 主流Axios发送Ajax请求 -->
+<div class="container">
+    <h1>解决跨域问题</h1>
+    <hr>
+    <button class="btn btn-success">GET</button>
+    <button class="btn btn-primary">POST</button>
+    <button class="btn btn-info">Axios通用</button>
+</div>
+<!-- 必须返回js代码才能正常解析 -->
+<script src="http://127.0.0.1:8000/JSONP"></script>
+<script>
+
+</script>
+
+</body>
+
+</html>

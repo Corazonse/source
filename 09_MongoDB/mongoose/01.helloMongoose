@@ -1,0 +1,33 @@
+/*
+    下载安装mongoose
+
+        npm i mongoose --save
+    1.在项目中引入mongoose
+        let mongoose = require("mongoose")
+    2.连接mongoDB数据库 端口号默认27017
+        mongoose.connect('mongodb://数据库的ip地址:端口号/数据库名',{useMongoClient:true})
+
+    3.断开数据库连接 一般不需要调用 只连接一次 除非项目停止服务器关闭
+         mongoose.disconnect()
+
+
+        --监听mongodb数据库的状态
+            在mongoose对象有一个属性叫做connection 该对象表示就是数据库的连接
+            通过监听该对象的状态 可以来监听数据库的连接与断开
+            数据库连接成功和数据库断开事件
+            mongoose.connection("open",function(){})
+            mongoose.connection("close",function(){})
+
+ */
+let mongoose = require("mongoose")
+//监听
+mongoose.connection.once("open", function () {
+    console.log("数据库连接成功")
+})
+mongoose.connection.once("close", function () {
+    console.log("数据库断开")
+})
+//连接
+mongoose.connect("mongodb://127.0.0.1/mongoose_test")
+
+mongoose.disconnect()

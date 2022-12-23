@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+    函数：
+        可以实现特定功能的n条语句的封装体
+        只有函数是可以执行的，其他类型不可以执行
+    为什么用函数:
+        可以复用 便于阅读交流
+    如何定义函数
+        函数声明
+
+        表达式
+
+    函数调用
+    test():
+    obj.test(): 通过对象调用
+    new test(): new调用
+    test.call/apply(obj): 临时让test成为obj方法
+
+
+
+
+
+ -->
+<script>
+    //函数声明
+    function fn() {
+        console.log("fn1");
+    }
+
+    // 表达式
+    var fn2 = function () {
+        console.log("fn2");
+    }
+
+    var obj = {}
+
+    function test2() {
+        this.xxx = '你好';
+    }
+
+    //obj.test2()  调用失败 不能直接调用
+    test2.call(obj)//obj.test2
+    console.log(obj.xxx);//可以让一个函数成为指定任意对象的方法进行调用 JS特色
+
+
+</script>
+
+</body>
+</html>

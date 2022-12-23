@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 延时调用 一个函数不马上执行 而是隔一段执行 
+        // 和定时调用的区别就是延时调用只调用一次
+        // 延时调用和定时调用实际上可以互相替代 根据开发需要自己选择
+        var num = 0;
+        var timer = setTimeout(function () {
+            console.log(num++);
+        }, 4000)
+        clearTimeout(timer);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    </script>
+
+    <style>
+        #info {
+            width: 300px;
+            height: 500px;
+            background-color: #bfa;
+            overflow: auto;
+
+        }
+
+
+    </style>
+    <script>
+        window.onload = function () {
+            // 绑定按钮 获取p标签
+            var info = document.getElementById("info");
+            var btn1 = document.getElementById("btn1");
+            var input = document.getElementsByTagName("input");
+            // 为p标签绑定滚动条事件
+            info.onscroll = function () {
+                // 检查是否滚动到底
+                if (info.scrollHeight - info.scrollTop == info.clientHeight) {
+                    // alert("你好");
+                    // 接触 两个那妞的 disable
+                    input[0].disabled = false;
+                    input[1].disabled = false;
+                }
+            }
+
+
+            btn01.onclick = function () {
+                //    判断滚动条滚动到底的形式 scrollHeight - scrollTop == clientHeight
+                //      当滚动条到底的实收判定 onscroll -
+                // alert(info.scrollHeight);
+                // alert(info.scrollTop);
+                // alert(info.clientHeight);
+                alert("注册成功！")
+
+
+            }
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+<h3>
+    注册注册注册
+</h3>
+<p id="info">
+    你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！你好，请滑到底！
+</p>
+<!-- 制造残废按钮 如果阅读完才允许点击提交 disabled="disabled"-->
+<input type="checkbox" disabled="disabled">阅读完才给√<br>
+<input type="submit" id="btn01" disabled="disabled" value="注册">
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+</head>
+<body>
+<!--
+    JQuery顶级对象 $
+    1.$是JQuery的别称
+    2.$也是JQuery的顶级对象 相当于原生js中的window
+
+    JQuery对象 和 DOM对象 （两者方法不一样b不能交叉使用）
+        JQuery对象本质就是利用$对DOM进行 包装后产生的对象(为数组形式储存)
+
+
+    JQuery对象 和 DOM对象转换
+        当需要使用 JQuery没有方法时候就要转换为DOM使用方法
+ -->
+<div>
+
+</div>
+<span>
+
+     </span>
+<img src="./1.jpeg" alt="">
+<script>
+    $(function () {
+        console.log(1);
+    })
+
+    // 这种原生js方式或属性获取的对象就是DOM对象
+    let div = document.querySelector('div')
+    let span = document.querySelector('span')
+    console.log(div)
+    console.log(span)
+    // JQuery对象只能使用JQuery方法获取的对象就是JQuery对象
+
+    console.log($('div'));
+    console.log($('span'));
+
+    // DOM对象转换为   jQuery对象直接获取
+    $('img')
+    // 我们已经使用原生js已经获取了的dom对象转变
+    let myImg = document.querySelector('img')
+    $(myImg)
+
+    // 把jquery对象转换为dom 两种方式 (就可以调用方法了 $('video')[0].play)
+    $('div')[0] //index是索引号 一个文件就写0
+    $('img').get(0)//index是索引号
+</script>
+
+</body>
+</html>

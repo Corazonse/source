@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    // 构造函数实现继承
+    // ES5传统方法
+    // 手机
+    function Phone(brand, price) {
+        this.brand = brand
+        this.price = price
+    }
+
+    //    添加方法
+    Phone.prototype.call = function () {
+        console.log("我可以打电话");
+    }
+
+    // 智能手机
+    function SmartPhone(brand, price, color, size) {
+        // 继承父类 this是SmartPhone的this
+        Phone.call(this, brand, price)
+        // 对子类独有的属性进行初始化
+        this.color = color
+        this.size = size
+    }
+
+    // 设置子构造函数的原型 为了继承父级的方法
+    SmartPhone.prototype = new Phone
+    // 做一个矫正 可以给子类对象添加更多的方法
+    SmartPhone.prototype.constructor = SmartPhone
+    SmartPhone.prototype.photo = function () {
+        console.log('拍照');
+    }
+    SmartPhone.prototype.game = function () {
+        console.log('游戏');
+    }
+    SmartPhone.prototype.xi = function () {
+        console.log('嘻嘻');
+    }
+
+    const cuizi = new SmartPhone("锤子", 249, "black", "5.5inch")
+    console.log(cuizi); //父类的方法在call
+    cuizi.call(); //父类的方法在call
+    console.log("分割线=============");
+
+    /*
+        ES6的类继承 和 e5的构造函数的一样继承
+
+    */
+    class Phone2 {
+        static name = "周永都"
+
+        // 构造方法 名字不能修改 必须是constructor
+        constructor(brand, price) {
+            this.brand = brand
+            this.price = price
+        }
+
+        // 方法必须使用该语法 不能使用ES5的完整形式
+        call() {
+            console.log("我可以打电话");
+        }
+    }
+
+    // 创建只能手机 并继承父类
+    class SmartPhone2 extends Phone2 {
+        constructor(brand, price, color, size) {
+            // 调父类的构造方法初始化
+            super(brand, price)// 等同于 Phone.call(this, brand, price)
+            this.color = color
+            this.size = size
+        }
+
+        photo() {
+            console.log("拍照");
+        }
+
+        game() {
+            console.log("游戏");
+        }
+
+        // 子类不能直接调用call在这里面（class里面） 所有要重写才能重名
+        //   子类对父类方法的重写 可以对子类声明一个和父类重名的方法
+        //  牛一下 父类的 call 改进了
+        call() {
+            console.log("我可以进行视屏通话");
+        }
+    }
+
+    const xiaomi = new SmartPhone2("小米", 249, "black", "5.5inch")
+    console.log(xiaomi);
+    xiaomi.call()
+    xiaomi.game()
+
+
+</script>
+
+</body>
+
+</html>

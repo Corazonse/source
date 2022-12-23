@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*
+        迭代器 iterator 是一种借口 为各种不同的数据结构提供统一的访问机制
+    任何数据结构 只要不输 iterator 接口（就是对象里面的一个属性） 就可以完成遍历操作
+    1) ES6 创造了一种新的遍历命令 for ...of iterator 接口主要供 for...of消费
+    2) 原生具备 iterator 接口的数据 可以用 for ...of 遍历
+    */
+    //    声明一个数组 for of 保存键值 for in保存的是键名
+    // const xiyou = ['1','2','3','4']
+    // for(let v of xiyou){
+    //     console.log(v);
+    // }
+
+    // 只要 数组有 Symbol.iterator 就可以用for of
+    // 工作原理就是 每次调用 里面的next的方法就会指第一个 next下一个 每次都
+    // 返回值（值和是否完成的状态）
+
+    // 自定义遍历数据
+    const baiji = {
+        name: "小学生",
+        stus: ["小狗",
+            "小猪",
+            "小鸡",
+            "小牛",
+            "小马",
+            "", "", "", "", "",],
+        [Symbol.iterator]() {
+            let index = 0
+            let _this = this
+            return {
+                next: function () {
+                    if (index < _this.stus.length) {
+                        //    返回对象 value done
+                        const result = {value: _this.stus[index], done: false}
+                        index++
+                        return result
+                    } else {
+                        return {value: undefined, done: true}
+                    }
+                }
+
+            }
+        }
+    }
+
+    for (let v of baiji) {
+        console.log(v);
+    }
+
+    //    baiji.stus.forEach() 这个也能迭代 但是不适合面向对象的思想
+
+</script>
+</body>
+</html>

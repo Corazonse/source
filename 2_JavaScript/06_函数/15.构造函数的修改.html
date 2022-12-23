@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            构造person函数
+                在person 的构造函数中，为每一个对象都添加了一个sayName方法，
+                目前我们的方法是在构造函数的内部创建的，也就是构造函数没执行一次就会
+                创建一个新的sayName方法 也就是所有的实例的sayName都是唯一的
+                也就是导致了构造函数执行一次就会创建一个新的方法
+                执行1000次就会创建1000个相同的新的方法
+                为了解决以上问题 ↑ 共享同一个方法
+                
+                将函数在全局作用域，污染了全局作用域的命名空间
+                而且定义在全局作用域中也很不安全
+                
+                */
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            // this.sayName = fun;
+            // 向对象中添加一个方法
+            // this.sayName = function () {
+            //     console.log("我是" + this.name)
+            // }
+        }
+
+        // 吧方法外调可以省内存，调用的是同一个函数  //使用原型对象 设置优化代码
+        Person.prototype.sayName = function fun() {
+            console.log("我是" + this.name)
+        }
+
+
+        //    创建实例
+        var per = new Person("孙悟空", 18, "男");
+        var per2 = new Person("猪八戒", 18, "男");
+        per.sayName();
+        per2.sayName();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

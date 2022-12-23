@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            background-color: blue;
+        }
+
+        /*
+            默认情况下父元素高度会被子元素撑开
+            如果子元素超过了父元素 子元素就会从父元素益处
+                使用overflow属性来设置父元素如何处理益处的子元素
+                    overflow：visible 默认值，子元素会益处，在父元素外部显示
+                    overflow：hidden 一剪梅，会把溢出的剪没了（但是不太好，会把文字等重要信息减掉）
+                    overflow：scroll 生成水平垂直双方向的滚动条（好用）
+                    overflow：auto根据需要生成滚动条（更灵活会根据需求生成滚动条）
+                    overflow-x:单独处理水平方向布局
+                    overflow-y:单独处理垂直方向布局
+                    */
+        .inner {
+            height: 200px;
+            background-color: aqua;
+            width: 100px;
+            margin-bottom: 100px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box1"></div>
+<div class="outer">
+    <div class="inner"></div>
+    <div class="inner"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02_CSS/reset.css">
+    <link rel="stylesheet" href="../06_font&background/css/all.css">
+    <style>
+        /* 高度不用设置，一般用内容撑开 */
+        .outer {
+            width: 303px;
+            margin: 0 auto;
+            /* 设置阴影 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+
+        /* 设置图片，因为图片有可能不一致与框框 */
+        .img-wrapper {
+            width: 100%;
+            /* 去除基线对齐所出现的空格 */
+            vertical-align: bottom;
+        }
+
+        /* 设置标题 */
+        .info,
+        star-wrapper {
+            padding: 0 18px;
+            color: #acaaaa;
+            font-size: 14px;
+        }
+
+        /* 可以用ps选中字 看字体大小格式 */
+        .info .title {
+            color: #717171;
+            font-size: 18px;
+            margin: 13px 0 15px 0;
+        }
+
+        .info .caregory i {
+            margin-right: 7px;
+            margin-left: 4px;
+
+        }
+
+        /* 设置简介的信息 */
+        .info .intro {
+            margin-left: 4px;
+            margin-top: 28px;
+            margin-bottom: 18px;
+            line-height: 20px;
+
+        }
+
+        /* 设置星星评价框 */
+        .star-wrapper {
+            border-top: 1px solid #e9e9e9;
+            height: 46px;
+            line-height: 46px;
+            color: #ddd;
+            padding: 0 18px;
+        }
+
+        /* 设置星星样式 让他浮动起来 */
+        .star {
+            float: left;
+
+        }
+
+        .star-wrapper .weibo {
+            float: right;
+        }
+
+        .star-wrapper .light {
+            color: #b9cb41;
+        }
+    </style>
+</head>
+<body>
+<!-- 创建外部容器 -->
+<div class="outer">
+    <!-- 创建图片容器 -->
+    <div class="img-wrapper">
+        <!-- 设置图片 -->
+        <img src="./02.网易新闻右侧列表/1.png" alt="体育电影">
+    </div>
+    <!-- 创建内容区容器 -->
+    <div class="info">
+        <h2 class="title">
+            动画电影
+        </h2>
+        <h3 class="caregory">
+            <i class="fas fa-map-marker-alt"></i> 动画
+        </h3>
+        <p class="intro">
+            这是一部迪士尼的动画电影，非常好看阿阿阿阿阿阿！！！
+        </p>
+
+
+    </div>
+    <!-- 创建评分的内容区 -->
+    <div class="star-wrapper">
+        <ul class="star">
+            <!-- 前面两颗是亮的星星 -->
+            <li class="fas fa-star light"></li>
+            <li class="fas fa-star light"></li>
+            <li class="fas fa-star"></li>
+            <li class="fas fa-star"></li>
+        </ul>
+        <ul class="weibo">
+            <li class="fab fa-weibo"></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

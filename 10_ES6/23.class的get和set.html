@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        在class内部进行设置
+        get 和 set
+            当对某个属性进行获取用get
+            当对某个属性进行设置用set
+
+
+    */
+    class Phone {
+        get prise() {
+            console.log("价格被获取了")
+            return "价格"
+        }
+
+        // set 必须设置一个参数
+        set prise(newP) {
+            console.log("设置价格");
+        }
+
+    }
+
+    //    实例化对象
+    let s = new Phone()
+    console.log(s.prise);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /* 根据滚轮调整box1大小 */
+            var box1 = document.getElementById("box1");
+            // 为box1绑定鼠标滚轮滚动的事件
+            // onmousewheel 鼠标滚轮滚动式事件 火狐不兼容（用DOMMouseScroll）
+            // 火狐那笔还要通过addEventListener() 函数来绑定
+            box1.onmousewheel = function (event) {
+                event = event || window.event;
+                // 获取鼠标滚轮的方向 正值往上滚 负值往下滚 120 火狐用event.detail
+                console.log(event.wheelDelta);
+                if (event.wheelDelta > 0) {
+                    box1.style.height = box1.clientHeight - 10 + "px";
+                } else {
+                    box1.style.height = box1.clientHeight + 10 + "px";
+                }
+                /*
+                    当滚动box1的滚动时 把浏览器的或者祖先滚动条关掉（默认行为）
+                    return false;
+                */
+                return false;
+
+            };
+
+
+        };
+
+
+    </script>
+    <style>
+
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: cyan;
+
+
+        }
+
+
+    </style>
+</head>
+<body style="height: 2000px;">
+<div id="box1">
+
+
+</div>
+</body>
+</html>

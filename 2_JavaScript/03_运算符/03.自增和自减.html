@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            自增
+                -通过自增可以使变脸在自身的基础上正价1
+                -对一个变量自增以后，元变量的值就会立即自增1（a++影响原变量）
+                -自增分为两种：a++ 和 ++a
+                无论是a++ 还是 ++a都会立即使原变量自增1
+                    不同的是a++ 和 ++a的值不同
+                    a++的值等于原变量的值（自增前的值） 先赋值再运算
+                    ++a的值等于原变量（自增后的值）
+            自减
+                -通过自身的自减可以在自身的基础上减1
+                无论是a-- 还是 --a都会立即使原变量自减1
+                a--的值等于原变量的值（自减前的值） 先赋值再运算
+                --a的值等于原变量（自减后的值）
+        
+        
+            自增自减练习答案{
+                1 10
+                2 11 12 12 20 19 18 18
+
+
+            }
+
+
+
+        */
+        var a = 1;
+        a++;
+        a++;
+        console.log("a = " + a);
+        var b = 1;
+        console.log(b++)
+        console.log("b = " + b);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    /*
+    ES6 提供了更接近传统语言的写法，引入了 Class(类)这个概念，
+    作为对象的模板。通过 class 关键字，可以定义类。基本上，
+    ES6 的 class 可以看作只是一个语法糖，它的绝大部分功能，ES5 都可以做到，
+    新的 class 写法只是让对象原型的写法更加清晰、更像面向对象编程的语法而已知识点:
+    1) class声明类
+    2) constructor 定义构造函数初始化
+    3)extends继承父类
+    4)super 调用父级构造方法
+    5)static定义静态方法和属性
+    6)父类方法可以重写
+
+
+    */
+    // ES5传统方法
+    //    手机
+    //    function Phone(brand,price){
+    //     this.brand = brand
+    //     this.price = price
+    //    }
+    // //    添加方法
+    //    Phone.prototype.call = function(){
+    //     console.log("我可以打电话");
+    //    }
+
+    //    let Huawei = new Phone("华为",1999)
+    //    console.log(Huawei);
+    //    Huawei.call()
+
+    class Phone {
+        static name = "周永都"
+
+        // 构造方法 名字不能修改 必须是constructor
+        constructor(brand, price) {
+            this.brand = brand
+            this.price = price
+        }
+
+        // 方法必须使用该语法 不能使用ES5的完整形式
+        call() {
+            console.log("我可以打电话");
+        }
+    }
+
+    let Huawei = new Phone("华为", 1999)
+    console.log(Huawei);
+    console.log(Huawei.name); //undefine 因为 name是静态成员
+    console.log(Phone.name); //周永都
+    Huawei.call()
+</script>
+
+</body>
+
+</html>

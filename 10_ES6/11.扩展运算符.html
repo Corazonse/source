@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    // ... 扩展运算符 能将 数组 转换为逗号分隔的 参数序列
+    // 声明数组
+    const edg = ["1", "2", "3"] //=>'1','2','3'
+    const edg2 = ["A", "B", "C"]
+
+    // 声明一个函数
+    function chu() {
+        console.log(arguments);
+    }
+
+    chu(...edg)
+    // 扩展运算符的应用
+    // 数组合并
+    const heti = [...edg, ...edg2]
+    console.log(heti);
+    // 数组克隆
+    const edg3 = [...edg2] //浅拷贝
+    console.log(edg3);
+    // 将伪数组转换为真正的数组
+    const divs = document.querySelectorAll("div")
+    const divArr = [...divs]
+    console.log(divArr); //变成数组了
+
+</script>
+
+</body>
+</html>

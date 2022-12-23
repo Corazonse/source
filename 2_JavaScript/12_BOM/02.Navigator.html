@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Navigator 航海家浏览器
+                        -代表当前浏览器的信息通过该对象可以识别不同的浏览器
+                        -由于历史有原因，Navigator对象中的大部分属性都已经帮助我们识别浏览器了
+                        -一般我们只使用userAgent(用户代理==浏览器)来判断浏览器信息
+                        userAgent 是一个字符串，这个字符串中包含有用来描述浏览器的信息的内容
+                            edge 浏览器user.Agent
+                            Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 
+                            (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33
+        */
+        console.log(navigator.userAgent);
+        if (/chrome/i.test(navigator.userAgent)) {
+            console.log("你是chrome");
+        } else if (/firefox/i.test(navigator.userAgent)) {
+            console.log("火狐");
+        } else if (/msie/i.test(navigator.userAgent)) {
+            // IE已经死了 和微软切割了 11已经找不到msie了
+            console.log("IE");
+        }
+        /*
+           如果通过userAgent还判断不了可以通过一些浏览器特有对象来判断浏览器的信息
+           如:ActiveObject ie的 edge噶了
+           ActiveObject in window edg的
+
+
+        */
+
+    </script>
+</head>
+<body>
+<h1>Navigator</h1>
+<a href="01.BOM.html">去BOM</a>
+</body>
+</html>

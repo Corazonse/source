@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- js的第七种数据类型 表示独一无二
+    symbol 的值是唯一的 用来解决命名冲突的问题
+    symbol 值不能与其他数据运算
+    symbol 定义的对象属性不能使用 for...in循环遍历
+        -但是可以使用Reflect.ownKeys来获取对矮星那个的所有键名
+
+-->
+<script>
+    let s = Symbol()
+    console.log(s, typeof s);
+    let s2 = Symbol("周永都")  //跟注释差不多 解释东西干什么 标志
+    let s3 = Symbol("周永都")  // s2 != s3
+    // Symbol.for 创建 可以根据字符串判定是否相等
+    let s4 = Symbol.for('1')
+    let s5 = Symbol.for('1')//s4 = s5
+
+    // 不能 与 其他数据进行运算 比较 字符串拼接
+
+    /**
+     *  Symbol使用场景
+     *      向对象添加方法 up down
+     *
+     *
+     * */
+    let game = {
+        name: "zyd",
+
+
+    }
+    let methods = {
+        up: Symbol(),
+        down: Symbol()
+    }
+    // 能够安全的     加进去
+    game[methods.up] = function () {
+        console.log("我可以改变形状");
+    }
+    game[methods.down] = function () {
+        console.log("我可以快速下降");
+    }
+    console.log(game);
+
+    let youxi = {
+        name: "狼人杀",
+        [Symbol('say')]: function () {
+            console.log("发言");
+        },
+        [Symbol('boom')]: function () {
+            console.log("自爆");
+        }
+    }
+
+    // Symbol 内置值 ES6内置了Symbol值 指向语言内部的使用方法
+    console.log(youxi);
+</script>
+
+</body>
+
+</html>

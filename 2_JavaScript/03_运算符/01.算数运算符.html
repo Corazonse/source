@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            运算符页脚操作符
+                通过运算符可以对一个或者多个值进行运算
+                    比如：typeof就是运算符 ，就可以获得一个值的类型
+                        它会将该值的类型一字符串的形式发回
+                            number string boolean undefined object
+            算术运算符
+                当对非number值进行运算时 会把这些值转换成number 再运算
+                任何值和 NaN做运算的结果都是 NaN
+                +
+                    +可以对两个值进行加法运算，并将结果返回
+                    若果对两个字符串进行运算 这回将两个字符串拼接返回 '123'+'123' =123123
+                    写比较长的字符串的时候 可以把多个字符串 用 + 换行拼接
+                    任何的值和字符串做加法运算，都会转换为字符串，然后和字符串进行拼接操作。 true + "hello" = truehello;
+                        我们可以利用这点将任意数据类型 + '' 即可将其转换成String 这是一种隐式的转换
+                -
+                    -可以对两个值进行剪发运算并且将结果返回
+                    -除了加法那样 减法运算 非number的数据都会转换为number 。 100 -true = 99;
+                    
+                *
+
+                /
+                    // 任何职做 - * / 运算时都会自动转换为Number
+                        我们可以利用这一特点做隐式的类型那个转换
+                        可以通过一个值 -0 *1 /1来将其转换成 Number
+                        原理和Number()函数一样，使用起来简单        
+                
+                
+                
+                %   取模运算 除商取余数
+
+
+        */
+        var a = 123;
+        var result = typeof a;
+        console.log(typeof result)
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

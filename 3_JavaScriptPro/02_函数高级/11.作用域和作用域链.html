@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+  1.作用域（静态 编写代码的时候就可以） 定义了就一直在
+   相对于指向上下文（动态执行的时候才出来） 函数上下文定义后 执行完就没了
+  2.分类
+    全局作用域
+    函数作用域
+    没有块作用域（ES6有了）
+  3.作用
+    隔离变量，不同作用域同名就不会有冲突
+
+
+  1.作用域链
+    由内到外依次找数据 找到就用 没有就报错
+
+-->
+<script>
+    if (0) {
+        var c = 3
+    }
+    console.log(c)//c可见的
+
+    var x = 10
+
+    function fn() {
+        console.log(x)//fn内部没有x 所以求上一步作用域（全局的10） show只是调用fn并非包含
+    }
+
+    function show(f) {
+        var x = 20
+        f()
+    }
+
+    show(fn)//10
+
+    var fn1 = function () {
+        console.log(fn1)
+    }
+    fn1()//fn1{}
+
+    var obj = {
+        fn2: function () {
+            console.log(this.fn2)//找到了 作用域内没有fn2变量 所以this.fn2 对obj的的属性查找才能访问
+            console.log(fn2)//沿着作用域找不到
+
+        }
+    }
+    obj.fn2()//报错
+
+</script>
+
+</body>
+</html>

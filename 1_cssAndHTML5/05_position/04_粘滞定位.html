@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02_CSS/reset.css">
+    <style>
+        /* 布局元素尽量用块元素 */
+        body {
+            height: 3000px;
+        }
+
+        .box1 {
+            width: 1170px;
+            height: 49px;
+            background-color: rgb(232 231 227);
+            margin: 100px auto;
+            position: sticky;
+            top: 10px;
+
+            /* 粘滞定位（兼容性不好）
+                    -当元素的position属性设置为sticky时则开启了元素的粘滞定位
+                    -不同的是粘滞定位可以在元素到达某个位置时将其固定  
+            
+            */
+        }
+
+        .box2 {
+            width: 167px;
+            height: 49px;
+            /* 设置向左浮动 */
+            float: left;
+            text-decoration: none;
+            font-weight: bold;
+            color: rgb(119 119 119);
+            /* 将文字垂直居中 */
+            line-height: 49px;
+
+
+        }
+
+        .box1 span {
+            font-size: 18px;
+            padding: 0 21px;
+        }
+
+        .box2:hover {
+            width: 167px;
+            height: 49px;
+            background-color: rgb(63 63 63);
+            color: rgb(206 205 201);
+
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <a class="box2" href="https://www.w3school.com.cn/h.asp" target="_blank"><span>HTML/CSS</span></a>
+    <a class="box2" href="https://www.w3school.com.cn/b.asp" target="_blank"><span>Browser Side</span></a>
+    <a class="box2" href="https://www.w3school.com.cn/s.asp" target="_blank"><span>Server Side</span></a>
+    <a class="box2" href="https://www.w3school.com.cn/p.asp" target="_blank"><span>Programming</span></a>
+    <a class="box2" href="https://www.w3school.com.cn/x.asp" target="_blank"><span>XML</span></a>
+    <a class="box2" href="https://www.w3school.com.cn/w.asp" target="_blank"><span>Web Building</span></a>
+    <a class="box2" href="https://www.w3school.com.cn/r.asp" target="_blank"><span>Reference</span></a>
+
+</div>
+</body>
+</html>

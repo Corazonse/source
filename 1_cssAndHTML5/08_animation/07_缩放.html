@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, BODY {
+            perspective: 800px;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            transition: all 2s;
+            margin: 200px auto;
+            /* 变形的原点
+                    默认center
+            
+            */
+            transform-origin: 20px 20px;
+        }
+
+        .box1:hover {
+            /*缩放
+                放大是把轴拉长 所以一般z轴通过缩放看不到效果
+                一般立方体能看到z轴缩放的效果 
+                对元素进行缩放
+                    scaleX()   水平方向缩放
+                    scaleY()    垂直方向缩放
+                    scale()     双方向缩放
+        
+            */
+            transform: scale(2);
+        }
+
+        .img-wrapper {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid red;
+            /* 这就不会撑开父元素 */
+            overflow: hidden;
+
+        }
+
+        img {
+            transition: all 2s;
+        }
+
+        .img-wrapper:hover img {
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="img-wrapper">
+    <img src="./1.png" width="200px" height="200px" alt="">
+</div>
+</body>
+</html>

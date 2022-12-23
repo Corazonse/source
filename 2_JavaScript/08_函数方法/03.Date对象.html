@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Date对象
+                -js中用Date对象表示一个时间
+        
+        */
+        //    直接使用构造函数创建date对象直接就会封装该行代码执行的时间
+        var d = new Date();
+        console.log(d);
+        //    常见指定时间对象，在构造函数中传递一个表示时间的参数
+        var d2 = new Date("1/1/2015 11:59:30");//格式
+        console.log(d2);
+        /*
+            方法
+                getDate(); 获取当前日期对象月份某一天 从1开始
+                getDay(); 返回当前一周中的某一天
+                    0-表示返回周日
+                getMonth()； 返回月份；0-11  表示一月
+                getFullYear() 获取当前年份
+        */
+        console.log(d2.getDate());
+        console.log(d2.getMonth());
+        /*
+            getTime()
+                -获取当前时间戳
+                表示从格林威治标准时间 1970年1月1日 0时 0分 0秒
+                到现在所花费的毫秒数
+                -计算机在底层保存的时间都是使用时间戳 也可以转换成时间
+        */
+        console.log(d2.getTime());
+        //  获取当前的时间戳
+        var time = Date.now();
+        // 可以用时间戳测试代码运行时间
+        console.log(time);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

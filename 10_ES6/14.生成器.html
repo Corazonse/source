@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    /*
+        生成器就是一个特殊的函数
+        异步编程  纯回调函数 node fs  ajax mongod
+    */
+    function* gen() {
+        // yield 表达式 每个yield都分割开代码 由next 方法执行
+        console.log("hello");
+        yield "你好"
+        console.log("hello1");
+        yield "函数代码的"
+        console.log("hello2");
+        yield "分隔符"
+        console.log("hello3");
+    }
+
+    let iterator = gen()
+    // 返回的是一个 迭代器对象
+    console.log(iterator);
+    // 要借助 iterator next才能让里面的内容运行
+    // iterator.next();//hello
+    // iterator.next();//hello1
+    // iterator.next();//hello2
+    // iterator.next();//hello3
+    for (let v of gen()) {
+        // 这里每次 next 的value值就是 yield
+        console.log(v);
+    }
+    console.log("==========================");
+
+    // 生成器函数的参数 next 方法可以穿回实参 也是当次next方法调用时返回的结果
+    function* gen2(arg) {
+        // yield 表达式 每个yield都分割开代码 由next 方法执行
+        console.log(arg);
+        let one = yield "你好2"
+        console.log(arg);
+        yield "函数代码的2"
+
+        yield "分隔符2"
+
+    }
+
+    let iterator2 = gen2("AAA")
+    console.log(iterator2.next());
+    console.log(iterator2.next());
+    console.log(iterator2.next());
+    // for(let v of gen2("aaa")){
+    //     // 这里每次 next 的value值就是 yield
+    //     console.log(v);
+    // }
+
+    console.log("异步编程实例=======================");
+    // 1s 后控制台输出111 2s后输出222 3s后输出333
+    // 传统做法 定时器嵌套 回调地狱
+    // setTimeout(() => {
+    //     console.log(111);
+    //     setTimeout(() => {
+    //         console.log(222);
+    //         setTimeout(() => {
+    //             console.log(333);
+    //         }, 3000)
+    //     }, 2000)
+    // }, 1000)
+
+    //生成器函数
+    function one() {
+        setTimeout(() => {
+            console.log(111);
+
+            iterator3.next()
+        }, 1000)
+    }
+
+    function two() {
+        setTimeout(() => {
+            console.log(222);
+
+            iterator3.next()
+        }, 2000)
+    }
+
+    function three() {
+        setTimeout(() => {
+            console.log(333);
+
+            iterator3.next()
+        }, 3000)
+    }
+
+    function* gen3() {
+        yield one()
+        yield two()
+        yield three()
+    }
+
+    let iterator3 = gen3()
+    // 暂停 为了实现实例2
+    // iterator3.next()
+
+
+    // 生成器函数实例2
+    // 模拟获取 用户数据 订单数据 商品数据
+    function getUser() {
+        setTimeout(() => {
+            let data = "用户数据"
+            //调用next方法并将数据传入next
+            iterator5.next(data)
+        }, 1000)
+    }
+
+    function getOrder() {
+        setTimeout(() => {
+            let data = "用户订单"
+            iterator5.next(data)
+        }, 1000)
+    }
+
+    function getGoods() {
+        setTimeout(() => {
+            let data = "商品数据"
+            iterator5.next(data)
+        }, 1000)
+    }
+
+    function* gen5() {
+        // 定义值接收data 异步进行的
+        let user = yield getUser()
+        console.log(user);
+        let order = yield getOrder()
+        console.log(order);
+        let goods = yield getGoods()
+        console.log(goods);
+    }
+
+    let iterator5 = gen5()
+    iterator5.next()
+</script>
+
+</body>
+
+</html>

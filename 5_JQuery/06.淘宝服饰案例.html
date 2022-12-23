@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .big-content {
+            width: 160px;
+            height: 100px;
+            margin: 200px auto;
+            background-color: pink;
+            position: relative;
+        }
+
+        .content {
+            width: 120px;
+        }
+
+        a {
+            font-size: 12px;
+            text-align: center;
+
+        }
+
+        li {
+            background-color: pink;
+            margin-top: 1px;
+        }
+
+        img {
+            height: 100px;
+            width: 120px;
+            float: right;
+            position: absolute;
+            top: -5px;
+            left: 29px;
+        }
+    </style>
+</head>
+<body>
+<div class="big-content">
+    <ul class="sli" style="width: 30px;">
+        <li><a href="#">淘宝</a></li>
+        <li><a href="#">天猫</a></li>
+        <li><a href="#">地猫</a></li>
+        <li><a href="#">淘猪</a></li>
+        <li><a href="#">狗东</a></li>
+    </ul>
+    <div class="content">
+        <div>
+            <a href="#"><img src="./16.淘宝/1.jpg_.webp" alt=""></a>
+        </div>
+        <div>
+            <a href="#"><img src="./16.淘宝/2.jpg_.webp" alt=""></a>
+        </div>
+        <div>
+            <a href="#"><img src="./16.淘宝/3.jpg_.webp" alt=""></a>
+        </div>
+        <div>
+            <a href="#"><img src="./16.淘宝/4.jpg_.webp" alt=""></a>
+        </div>
+        <div>
+            <a href="#"><img src="./16.淘宝/5.jpg_.webp" alt=""></a>
+        </div>
+    </div>
+</div>
+<script>
+
+
+    $(".sli li").mouseover(function () {
+        // 获取当前li的索引号
+        let index = $(this).index()
+        console.log(index);
+        // 让右侧的盒子相应的盒子隐藏
+        $(".content div").eq(index).show();
+        // 让其余的兄弟隐藏起来
+        $(".content div").eq(index).siblings().hide()
+    })
+
+
+</script>
+</body>
+</html>

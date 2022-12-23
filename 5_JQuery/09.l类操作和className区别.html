@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+</head>
+<body>
+<!-- 原生js的类会覆盖掉原先的类名 -->
+<div class="one"></div>
+<script>
+    let one = document.querySelector(".one")
+    one.className = "two" //这里会直接覆盖掉原来的 .one
+    $(".two").addClass("three")//追加了three 不会替换掉 two
+</script>
+
+</body>
+</html>

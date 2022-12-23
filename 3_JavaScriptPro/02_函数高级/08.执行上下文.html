@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+    代码分类
+        全局
+        局部
+    在执行全局代码前将window确定为  全局执行上下文
+    对全局数据进行预处理
+        -var定义的全局变量- ->undefined，添加为window属性
+        -function声明的全局函数==>赋值（fun）,添加window的方法
+        -this==》赋值（window）
+    函数执行上下文
+        在调用函数时，准备执行函数体之前，创建对应的函数执行上下文（虚拟的存于栈中）
+        对局部数据进行预处理
+            -形参变量 赋值为实参 添加为执行上下文属性
+            -argument 赋值，添加指向上下文属性
+            -var 定义的局部变量--undefined 添加执行上下文
+            -function声明的函数直接赋值 添加执行上下文
+            -this赋值 调用函数对象（直接调用函数this就是window）
+            开始执行函数体代码
+
+
+ -->
+<script>
+    //函数执行上下文
+    function fn(a1) {
+        console.log(a1); //3
+        console.log(a2); //undefined
+        console.log(a3);
+        a3() //a3
+        console.log(this);//window
+        console.log(arguments);//（2,3） 内数组 伪数组
+        var a2 = 3
+
+        function a3() {
+            console.log('a3');
+        }
+    }
+
+    fn(2, 3)//调用后才分配空间
+
+
+</script>
+
+
+</body>
+</html>

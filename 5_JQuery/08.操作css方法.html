@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+    <style>
+        .current {
+            background-color: red;
+            transform: rotate(360deg);
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all 0.5s;
+        }
+
+        .add {
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+<div class="add ">
+
+</div>
+
+
+<script>
+    $(function () {
+        // 1、添加类 addClass() 点击变红
+        // $("div").click(function(){
+        //     $(this).addClass("current")
+        // })
+        // 2、删除 类 点击后 边框不见了
+        $("div").click(function () {
+            $(this).removeClass("add")
+        })
+        // 3、切换类 判断有没有这个current 没有就加伤 有就去除
+        $("div").click(function () {
+            $(this).toggleClass("current")
+        })
+
+    })
+
+
+</script>
+
+</body>
+</html>

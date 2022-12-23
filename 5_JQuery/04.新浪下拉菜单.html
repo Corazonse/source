@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .nav {
+        height: 100px;
+        width: 80px;
+        margin: 200px auto;
+        text-align: center;
+
+    }
+
+    .wei {
+        background-color: aqua;
+        display: block;
+        width: 80px;
+        height: 20px;
+
+    }
+
+    .hide {
+        background-color: beige;
+    }
+
+    .hide li {
+        margin-bottom: 6px;
+
+    }
+
+    .hide li a {
+        display: block;
+    }
+
+
+</style>
+<body>
+<ul class="nav">
+    <li>
+        <a class="wei" href="">微博</a>
+        <ul class="hide">
+            <li>
+                <a href="#">私信</a>
+            </li>
+            <li>
+                <a href="#">评论</a>
+            </li>
+            <li>
+                <a href="#">转发</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function () {
+        $(".hide").hide()
+        // 鼠标经过的时候
+        $(".nav>li").mouseover(function () {
+            // $(this)  jQuery 当前元素 （li）
+            $(this).children("ul").show()
+        })
+        $(".nav>li").mouseout(function () {
+            $(this).children("ul").hide()
+        })
+    })
+
+</script>
+</body>
+</html>

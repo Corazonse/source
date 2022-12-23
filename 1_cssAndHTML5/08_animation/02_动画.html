@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            height: 800px;
+            width: 800px;
+            background-color: aqua;
+            /* 上述条件出现外边距折叠 开启解决  */
+            overflow: hidden;
+        }
+
+        /* 动画
+                动画和过渡类似，都是可以实现的一些动态的效果
+                不同的是过渡需要在某个属性 发生变化时才会触发
+                动画可以自动触发动态效果
+            设置动画效果：必须要设置一个关键帧，关键帧就是设置了动画
+            执行的每一个不走    
+        */
+        /* 关键帧 identitifier 就是名字 随你取 */
+        @keyframes zyd {
+            /*from 表示动画的开始位置 或写 0% */
+            from {
+                margin-left: 0;
+            }
+            /* 用 % 指定别的位置也行 */
+            /* to 动画的结束位置 100% */
+            to {
+                margin-left: 700px;
+                background-color: blue;
+            }
+        }
+
+        .box1 div {
+            height: 100px;
+            width: 100px;
+            margin-bottom: 100px;
+
+
+        }
+
+        .box2 {
+            background-color: aquamarine;
+            /* 设置box2的动画 */
+            /* 关键帧对应的名字 */
+            animation-name: zyd;
+            /* 关键帧对应的动画持续时间 */
+            animation-duration: 2s;
+            /* 动画的延时 */
+            animation-delay: 2s;
+
+            /* 动画的播放速度的操作 */
+            animation-timing-function: ease;
+
+            /* 动画迭代次数 次数 或 infinite无限次 */
+            /* animation-iteration-count: infinite; */
+
+            /* 表示动画执行的方向
+                   可选值：
+                   normal 正常默认值 from -> to
+                   reverse 反过来 to-> from
+                   alternate 重复执行动画时会反复执行 from->to后反复横跳
+                   alternate-reverse 重复执行动画时会反复执行 to->from后反复横跳
+                   */
+            animation-direction: alternate;
+
+            /* animation-play-state: 设置动画的执行状态
+            可选值
+                running 默认值 运行
+                paused 动画暂停
+            */
+            animation-play-state: running;
+            /* animation-fill-mode: 动画的填充模式;
+                默认值
+                    none 动画执行完毕元素回到原来位置
+                    forwards 动画执行完毕到元素停止到最后结束的位置
+                    backwards 动画延时等待时候 元素处于 开始位置（from）
+                    both 动画延时等待时候 元素处于 开始位置（from），
+                        动画执行完毕到元素停止到最后结束的位置
+                */
+            animation-fill-mode: both;
+
+            /* 同样有简写属性 animation：xxxxx */
+        }
+
+        .box3 {
+            background-color: red;
+            animation-name: zyd;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2">
+
+    </div>
+    <div class="box3">
+
+    </div>
+</div>
+</body>
+</html>

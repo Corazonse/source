@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        小米商城 - Xiaomi 12、Redmi K50、MIX FOLD,小米电视官方网站
+    </title>
+    <!-- 重置样式表和图标库 -->
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./index.html">
+    <style>
+        .black-background {
+            width: 9999px;
+            height: 40px;
+            background-color: rgb(51, 51, 51)
+        }
+
+        .all {
+            width: 1227px;
+            margin: 0 auto;
+        }
+
+        .all-top {
+            width: 9999px;
+            height: 40px;
+            font-size: 11px;
+            position: relative;
+            bottom: 51px;
+        }
+
+        .all-top-bigleft li {
+            list-style: none;
+            float: left;
+            position: relative;
+            margin: 0 auto;
+            line-height: 40px;
+        }
+
+        .top-left-content a {
+            text-decoration: none;
+            font-size: 12px;
+            color: rgb(177, 177, 177);
+
+        }
+
+        .top-left-content a:hover,
+        .all-top-bigright a:hover {
+            color: rgb(255, 255, 255);
+        }
+
+        .line {
+            color: rgba(66, 66, 66, .8);
+        }
+
+        .all-top-right {
+            float: left;
+
+        }
+
+        .all-top-bigright li {
+            list-style: none;
+            float: left;
+            position: relative;
+            margin: 0 auto;
+            line-height: 40px;
+            bottom: 12px;
+
+        }
+
+        .top-right-content {
+
+            text-decoration: none;
+            line-height: 40px;
+            margin: 0 auto;
+            font-size: 12px;
+            color: rgb(177, 177, 177);
+        }
+
+        .top-right-content a {
+            float: right;
+            text-decoration: none;
+            line-height: 40px;
+            margin: 0 auto;
+            font-size: 12px;
+            color: rgb(177, 177, 177);
+        }
+
+        /* 购物车模块 */
+        .buy {
+            width: 110px;
+            height: 40px;
+            position: relative;
+            left: 130px;
+            bottom: 51px;
+            float: right;
+            text-decoration: none;
+            background-color: rgb(66, 66, 66);
+        }
+
+        .buy:hover {
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        .buy:hover + .buy-list {
+            display: block;
+        }
+
+        .buy-list {
+            height: 10 pxpx;
+            width: 150px;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            top: 29px;
+            left: 140px;
+            display: none;
+
+        }
+
+
+        .buy-list:hover {
+            display: block;
+        }
+
+        /* 购物车内内容 */
+        .buy a {
+            font-size: 12px;
+            line-height: 40px;
+            margin: 0 auto;
+            position: relative;
+            left: 38px;
+            color: rgb(177, 177, 177);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏黑边 -->
+<div class="black-background"></div>
+<!-- 创建整体容器 -->
+<div class="all">
+    <!-- 创建顶部导航栏-->
+    <div class="all-top">
+        <!-- 创建左侧容器 -->
+        <div class="all-top-left">
+            <!-- 装下顶部导航的超链接和分割线 -->
+            <ul class="all-top-bigleft">
+                <li class="top-left-content"><a href="javascript:;">小米官网</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">小米商城</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">MIUI</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">loT</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">云服务</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">天星数科</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">有品</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">小爱开放平台</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">企业团购</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">资质证照</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">协议规则</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">下载app</a></li>
+                <li class="line">丨</li>
+                <li class="top-left-content"><a href="javascript:;">Select Location</a></li>
+
+            </ul>
+        </div>
+
+        <!-- 创建右侧容器 -->
+        <div class="all-top-right">
+            <ul class="all-top-bigright">
+                <li class="top-right-content"><a href="javascript:;">登录</a></li>
+                <li class="line">丨</li>
+                <li class="top-right-content"><a href="javascript:;">注册</a></li>
+                <li class="line">丨</li>
+                <li class="top-right-content"><a href="javascript:;">消息通知</a></li>
+            </ul>
+            <div class="buy"><a href="JavaScript:;">购物车</a></div>
+            <div class="buy-list">暂无记录</div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</div>
+</body>
+</html>

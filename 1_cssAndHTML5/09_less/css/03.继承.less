@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import url(./03.居中.less);
+// 垂直水平居中
+.wrap {
+  position: relative;
+  width: 110 + 190px;
+  // calc css原生计算 通过浏览器计算
+  height: ~"calc(100px + 100)"; //这个意思是 把里面的语句不通过less编译 原封不动的传过css
+  border: 1px solid;
+  margin: 50px auto;
+
+  .inner {
+    // 引用居中的混合
+    .middle();
+    // 引用混合
+    &:nth-child(1) {
+      .style(100px, 100px, pink);
+    }
+
+    &:nth-child(2) {
+      .style(50px, 50px, deeppink);
+    }
+  }
+}
+
+// 继承性能上优于混合灵活性就不如混合

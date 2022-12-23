@@ -1,0 +1,49 @@
+#container {
+    width: 80%;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main > .left {
+    float: left;
+    width: 25%;
+}
+
+.main > .right {
+    float: right;
+    width: 70%;
+    overflow: hidden;
+}
+
+.main > .right > .course {
+    width: 230px;
+    border: 1px solid #ccc;
+    text-align: center;
+    float: left;
+    margin: 8px 25px;
+}
+
+.main > .right > .course > p {
+    margin-top: 5px;
+}
+
+.main > .right > .course > p.name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.main > .right > .course > p.school {
+    color: #ffbb0f;
+}
+
+.main > .right > .course > p.number {
+    color: #bbb;
+}
+

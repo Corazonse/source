@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            电子邮件的正则表达式
+                规则
+                1  hello@  任意字母下划线
+                2  .com
+                任意字母下划线 @ 任意字母 . com（任意字母2-5位）
+        
+        */
+        var email2 = /^([\w]){1,}\@([A-z0-9]){1,}((\.com)|(\.com\.cn))$/g;
+        var email = prompt("输入一个邮箱号");
+        console.log(email2.test(email));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

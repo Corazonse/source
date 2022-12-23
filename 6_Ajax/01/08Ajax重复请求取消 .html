@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #result {
+        width: 200px;
+        height: 100px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+<!--
+   现实生活中 网速不能永远能让人满意
+   所以geiAjax做个超时设置  时间设置为2s
+        -->
+<button class="btn"> 点击发送请求</button>
+<button class="btn2"> 点击取消请求</button>
+<div id="result">
+
+</div>
+<script>
+    // 获取button元素
+    const btn = document.querySelector(".btn")
+    const btn2 = document.querySelector(".btn2")
+    const result = document.getElementById("result")
+
+    let xhr = null
+    // 设置表示变量
+    let isSending = false //是否正在发送AJAX请求
+
+
+    // 手动把请求取消
+    btn2.addEventListener('click', function () {
+        xhr.abort
+    })
+
+    btn.addEventListener('click', function () {
+        if (isSending) {
+            xhr.abort()
+        }  //如果正在发送 就取消前面的请求 创建新的请求
+
+        xhr = new XMLHttpRequest
+
+        // 修改 标识变量值
+        isSending = true;
+
+        // 增加一个超时设置 2s  请求超过2s就取消
+        // xhr.timeout = 2000;
+        // 网络异常回调
+        xhr.onerror = function () {
+            alert("你的网络似乎有问题")
+        }
+
+        // 如果是ie 就获取时间戳 时间不一样就会再获取一个
+        xhr.open("GET", "http://localhost:8000/server")
+        xhr.send()
+        // 只要状态为4 就无论是否失败与否请求 就
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                isSending = false;
+            }
+        }
+        console.log('test');
+    })
+
+
+</script>
+</body>
+
+</html>

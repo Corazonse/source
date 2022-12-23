@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./07.promise封装.js"></script>
+</head>
+<body>
+<script>
+    /*
+    *   自定义promise
+    * */
+    let p = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+        //    改变为异步
+            resolve("ok")
+        },1000)
+    })
+
+    console.log(p)
+    const res = p.then(value =>{
+        // console.log(value)
+        return "oh yeah"
+    },(reason)=>{
+        console.log(reason)
+    })
+    console.log(res)
+
+    // p.then().then()  catch
+//    测试.resolve
+    const p2 = Promise.resolve("OK")
+    console.log(p2)//成功
+//    测试.reject
+    const p3 = Promise.resolve("OK")
+    console.log(p3)//成功
+//    测试all
+    console.log("-----")
+    let result = Promise.all([p2,p3])
+    console.log(result)
+
+    let result2 = Promise.race([p2,p3])
+    console.log(result2)
+</script>
+</body>
+</html>

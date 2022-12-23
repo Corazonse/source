@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            相等运算符来比较两个值是否相等
+                若果相等就返回true，否则返回false
+            使用过  ==  运算
+                ==后如果两个值类型不同，则会转换为相同类型
+                然后再比较 大部分情况都是转换成数字
+        
+            不相等运算
+                !=  不相等也会对变量进行自动该类型转换，规则和 ==一样
+
+            ===  全等 判断两个值是否全等，他和 == 类似 ，但不会进行类型转换
+
+            !==  全不等 用来判断两个值是否不全都能，和全等相反  不会产生类型转换
+        
+        */
+        var a = 10;
+
+        console.log(a == 5);
+        console.log(a == "10");
+        //    这里是转换两个成了number(一般情况啊都是这样)
+        console.log(true == "1");
+        //    特殊 null== undefined（衍生自null） true
+        // NaN 不和任何值相等 包括他本身
+        // isNaN() 能检查一个值是否是NaN;
+        console.log(null == 0);//false
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

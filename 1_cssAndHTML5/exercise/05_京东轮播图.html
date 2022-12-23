@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02_CSS/reset.css">
+    <style>
+        .img-list {
+            width: 500px;
+            height: 470px;
+            margin: 100px auto;
+            position: relative;
+
+        }
+
+
+        .img-list li {
+            position: absolute;
+
+
+        }
+
+        /* 修改元素的层级来显示指定的图片*/
+        .img-list li:nth-child() {
+            z-index: 1;
+        }
+
+        /* 设置导航点的样式 */
+        .pointer {
+            position: absolute;
+            z-index: 9999;
+            bottom: 20px;
+            left: 10px;
+            /* ul开启相对定位目的是使ul中的pointer可以相对于ul定位而不是相对于初始包含块(html定位) */
+
+        }
+
+        .pointer a {
+            /* 设置 圆点 元素向左浮动 */
+            width: 10px;
+            height: 10px;
+            /* 内敛元素脱离文档流 就变成了块元素 */
+            float: left;
+            border-radius: 50%;
+            margin-left: 6px;
+            background-color: rgba(255, 255, 255, .3);
+            /* 为了让点点对其，所以让所有点都加上透明边框 */
+            border: 3px solid transparent;
+            /* 裁剪边框的背景，让边框完全消失 */
+            background-clip: content-box;
+        }
+
+        .pointer a.active,
+        .pointer a:hover {
+            background-color: #ffff;
+            border: 3px solid rgb(255, 255, 255, .3);
+        }
+
+    </style>
+</head>
+<body>
+<ul class="img-list">
+    <li>
+        <a href="https://pro.jd.com/mall/active/3ZYfZKGRAhbHzJySpRriJoGWo8v6/index.html?innerAnchor=100025520132&focus=3"
+           target="_blank"><img class="box1" src="./03.京东轮播图/前段练习素材/05_京东轮播图/2.webp" data-index="4" alt="京东好货"></a></li>
+    <li><a href="https://mall.jd.com" target="_blank"><img class="box1" src="./03.京东轮播图/前段练习素材/05_京东轮播图/3.jpg"
+                                                           alt="京东好货2"></a></li>
+    <li><a href="https://item.jd.com" target="_blank"><img class="box1" src="./03.京东轮播图/前段练习素材/05_京东轮播图/4.webp"
+                                                           alt="京东好货3"></a></li>
+    <li><a href="https://lps.jd.com" target="_blank"><img class="box1" src="./03.京东轮播图/前段练习素材/05_京东轮播图/5.jpg"
+                                                          alt="京东好货4"></a></li>
+    <li><a href="https://pro.jd.com" target="_blank"><img class="box1" src="./03.京东轮播图/前段练习素材/05_京东轮播图/6.jpg"
+                                                          alt="京东好货5"></a></li>
+    <li>
+        <a href="https://pro.jd.com/mall/active/3ZYfZKGRAhbHzJySpRriJoGWo8v6/index.html?innerAnchor=100013964134&focus=3"
+           target="_blank"><img class="box1" src="./03.京东轮播图/前段练习素材/05_京东轮播图/q.jpg" alt="京东好货6"></a></li>
+    <div class="pointer">
+        <a class="active" href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+    </div>
+</ul>
+</body>
+</html>

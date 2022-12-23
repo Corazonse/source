@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            数组的方法
+                slice(star,end)  （切片  包括star 不包括end）
+                    -从某个指定的数组返回某个元素
+                    -该方法不会改变原数组，二回截取到的元素封装到新的数组返回
+                    -第二个参数可以不写 第二个数默认就是数组长度
+                    -索引可以传递一个负值 就是从索引背后开始数的顺序
+        */
+
+        var arr = ["1", "2", "3", "4", "5", "6", "7"];
+        console.log(arr.slice(2, 3));
+        console.log(arr.slice(2, -1));
+        /*
+            数组方法
+                splice(star，end,add,add1...)  删除元素并向数组添加新元素
+                    -删除数组中的指定元素
+                    -使用splice()会影响到元素组，并将指定元素从元素组
+                    -中删除并将被删除的元素作为返回值返回
+                参数
+                    -star 开始位置索引
+                    -end  表示删除的数量
+                    -add  表示在删除元素前面添加的新元素(可以不写)
+        
+        */
+
+        console.log(arr.splice(0, 2));
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

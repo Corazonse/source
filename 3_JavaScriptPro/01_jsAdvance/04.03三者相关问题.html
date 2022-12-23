@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+    var a = xxx, a内存中保存的是什么
+    xxx是基本数据，保存的就是这个数据
+    xxx是对象就是保存的是对象的地址值
+    xxx是一个变量 保存的xxx的内存内容(基本数据 或者 地址值)
+
+    关于引用变量赋值问题
+    1.2个引用变量指向同一个对象，通过一个变量修改对象内部数据 （是一个地址值）
+    另一个变量看到的是修改之后的数据
+    2. 2个指向相同对象的引用变量 一个变量的指向别的对象 另一个不会改变
+ -->
+
+
+<script>
+    var obj1 = {name: 'tom'};
+    var obj2 = obj1; //就是把obj1的内存的内容保存给了obj2
+    obj1.name = "jack";
+    obj2.age = 2;
+    console.log(obj2.name); //jack
+    console.log(obj1.age); // 2
+
+    function fn(obj) {
+        obj.name = 'A';
+    }
+
+    fn(obj1);
+    console.log(obj2.name);//A
+
+    var a = {age: 12}
+    var b = a
+    a = {name: 'name', age: 13}
+    console.log(a.age, a.name, b.age); //13 'name' 12
+
+    function fn2() {
+        obj = {age: 18}
+    }
+
+    fn2(a);//15 在函数里面复制了 函数执行完了就成为垃圾对象了 就会被回收释放
+    console.log(a.age);//13
+    // console.log);//13
+
+
+</script>
+
+</body>
+</html>

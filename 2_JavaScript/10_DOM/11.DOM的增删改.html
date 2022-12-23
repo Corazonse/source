@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM</title>
+    <style type="text/css">
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="box1">
+    <ul id="city">
+        <li id="bj">北京</li>
+        <li>上海</li>
+        <li>合水</li>
+        <li>广州</li>
+    </ul>
+</div>
+<div id="btnList">
+    <div>
+        <button type="button" id="btn1">创建广州节点</button>
+    </div>
+    <div>
+        <button type="button" id="btn2">将广州节点插到北京前面</button>
+    </div>
+    <div>
+        <button type="button" id="btn3">删除北京节点</button>
+    </div>
+    <div>
+        <button type="button" id="btn4">读取city代码</button>
+    </div>
+    <div>
+        <button type="button" id="btn5">设置北京内的代码</button>
+    </div>
+</div>
+<script type="text/javascript">
+    function myClick(idStr, fun) {
+        var btn = document.getElementById(idStr);
+        btn.onclick = fun;
+    }
+
+    // 向city中添加广州 最优解方式
+    myClick("btn1", function () {
+        var city = document.getElementById("city")
+
+        var li = document.createElement("li");
+        li.innerHTML = ("广州");
+
+        city.appendChild(li);
+
+
+    });
+
+    // 在北京前面添加一个 春湾
+    myClick("btn2", function () {
+        // 创建新的li标签
+        var li = document.createElement("li");
+        // 给标签 添加春湾 文本
+        var gzText = document.createTextNode("春湾");
+        li.appendChild(gzText);
+        // 获取北京节点
+        var bj = document.getElementById("bj");
+        // 获取city节点
+        var city = document.getElementById("city");
+        city.insertBefore(li, bj)
+
+
+    });
+
+
+    // 修改北京的节点 为东京
+    myClick("btn5", function () {
+
+        var bj = document.getElementById("bj");
+        bj.innerHTML = "东京";
+        // city.appendChild("<li>背景</li>")
+
+
+    });
+</script>
+</body>
+</html>

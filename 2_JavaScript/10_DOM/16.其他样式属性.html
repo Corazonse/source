@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    </script>
+    <style>
+        #box1 {
+            height: 100px;
+            width: 100px;
+            padding: 10px;
+            background-color: blue;
+        }
+
+
+    </style>
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                /*      以下都是只读方法
+                    // clientWidth 获取可见宽度 包括内容区+内边距
+                       clientHeight 可见高度
+
+                       offsetWidth 获取元素整个的宽度 包括内容区+内边距+边框
+                       offsetHeight
+
+                       offsetParent 可以获取当前元素的定位父元素（父元素没有定位就继续往上祖先元素走一直到body）
+
+                       offsetLeft   返回当前元素相对于定位父元素的水平偏移量
+                       offsetTop    返回当前元素相对于定位父元素的垂直偏移量
+                 
+                       scrollWidth  -可以获得滚动条的高度 一整条
+                       scrollHeight -可以获得滚动条的宽度
+
+                       scrollLeft -获取横向滚动条 已滚动距离
+                       scrollTop -获取垂直滚动条 已滚动距离
+                      
+                       判断滚动条是都到底了
+                       当满足scrollHeight - scrollTop == clientHeight 垂直滚动条到底啦
+                      
+                       */
+                alert(box1.clientHeight)
+
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<button id="btn01">点击</button>
+
+<br>
+
+<div id="box1"></div>
+</body>
+</html>

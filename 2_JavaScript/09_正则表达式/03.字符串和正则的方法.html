@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = "1a2b3c4d5e6f7g8h";
+        /*
+            split()
+                -可以将字符串你拆分成一个数组
+                -方法可以传递一个正则表达式作为参数，这样方法将会根据正则表达式去拆分字符串
+                -这个方法不指定全局匹配也会全部拆分
+        */
+        // 移出全部字母
+        var result = str.split("a");
+        var result2 = str.split(/[A-z]/);
+        console.log(result);
+        console.log(result2);
+        /*
+        
+            search()
+                -可以搜索字符串中是否含有指定内容
+                -
+        
+        */
+        str3 = "hello acc hello abc acc";
+        result3 = str3.search("abc");
+        console.log(result3);//如果搜索到则返回第一个索引 反之-1
+        result4 = str3.search(/a[bc]c/);
+        console.log(result4);//正则表达式比按字符串灵活
+        /*
+            match()
+                -可以根据正则表达式作为参数，可以将符合条件的内容提取出来不
+                -match()匹配的内容会封装到数组中返回
+        */
+        var str4 = "1a2b3c4d5e6aASDAf7g8h";
+        //    只找了第一个 默认情况下找到第一个符合要求的内容，然后停止搜索
+
+        result5 = str4.match(/[A-z]/);
+        // 我们可以用全局匹配模式都搜索出来不 gi ig 可以同时匹配两种模式
+        result5 = str4.match(/[A-z]/gi);
+
+        console.log(result5);
+        // replace()
+        //  字符串中指定内容替换为新的内容
+        //      -参数：
+        // 1.被替换内容
+        // 2.新的内容
+        console.log(str4.replace("a", "@_@"));
+        // 这样能匹配到全局
+        console.log(str4.replace(/a/gi, "@_@"));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

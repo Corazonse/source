@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /*
+            向页面中输出连续的数字
+            
+            循环语句:
+                通过循环喻户可以反复的执行一段代码多次
+
+            while循环
+                -语法
+                    while(条件表达式){
+                        语句...
+                    }
+
+                -while语句对执行时,
+                    先对条件表达式进行求之判断
+                        如果为true 则执行循环体
+                        执行完毕后要是一直true一直执行
+                        条件不满足的时候就终止循环
+                创建一个循环，往往需要三个不走
+                    1.初始化一个变量
+
+                    2.在循环中设置一个条件表达式
+
+                    3.定义一个更新表达式，每次更新初始化变量
+                    
+                    死循环在开发中慎用！！ 可以使用break来终止循环
+        
+        */
+        var n = 1;
+        while (n <= 10) {
+            document.write(n++ + "<br/>");
+            if (n == 100) {
+                break;
+            }
+        }
+
+        /*
+           do{
+    
+           }while(条件表达式);
+           do...while 语句执行时，会先执行循环体，玄幻提执行完毕后再进行
+           while的判断 然后根据判断 true false 来是否执行。
+           所以 do..while至少会执行一次
+    
+    
+    
+    
+        */
+
+        var i = 1000;
+        var year = 0;
+        do {
+            i = i * 1.05;
+            year++;
+        } while (i <= 5000);
+        document.write(year + "<br />");
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

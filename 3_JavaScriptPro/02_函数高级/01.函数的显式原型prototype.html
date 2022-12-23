@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!--  java 基于类继承 js基于对象继承  所有对象的顶端都是object 所以都可以用得上toString()
+    原型 prototype属性 一个实例可能有多个原型对象
+    1.每个函数都有prototype属性 他默认指向object空对象即为原型对象
+    原型对象中 有一个属性constructor 他指向函数对象
+
+    2.给原型对象添加属性（一般都是方法）
+    作用：函数的所有势力对象自动拥有原型中的属性（方法）
+
+ -->
+<script>
+    // date 内置方法
+    // 1.每个函数都有prototype属性 他默认指向object空对象即为原型对象
+    console.log(Date.prototype, typeof Date.prototype);
+
+    function Fun() {
+
+    }
+
+    // 默认是空对象
+    console.log(Fun.prototype);
+
+    console.log(Fun.prototype);
+    // 原型对象中 有一个属性constructor 他指向函数对象 构造函数和原型对象有相互引用的关系
+    // 我中有你你中有我
+    console.log(Date.prototype.constructor === Date);//true
+    console.log(Fun.prototype.constructor === Fun);//true
+
+    //  给原型方法添加属性(一般是方法)===>势力对象可以访问
+    Fun.prototype.test = function () {
+        console.log("ni");
+    }
+    var fun = new Fun()
+    fun.test()
+
+</script>
+
+</body>
+
+</html>

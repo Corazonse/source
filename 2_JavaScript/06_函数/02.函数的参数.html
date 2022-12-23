@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            定义一个求两个值和的函数
+                设置形参，多个形参用逗号隔开
+                在函数内部声明了两个变量
+                但是并不赋值
+            调用函数时浏览器不会检查参数的类型（他可以是任意类型）
+            所以注意是否有可能会接收到非法的参数，如果有可能需要对参数进行类型的检查
+        */
+
+        function sum(a, b) {
+            console.log(a + b);
+        }
+
+        //    调用函数是，解析器也不会检查实参的数量
+        // 多余的参数不会赋值，实参少于形参 则会变成 undefined
+        sum(10, true);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

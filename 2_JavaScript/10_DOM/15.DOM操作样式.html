@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    </script>
+    <style>
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+
+    </style>
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                // 获取元素当前显示的样式
+                // 语法
+                //  元素.currentStyle.样式名   只有ie能用 只读
+                // 他可以读取当前元素正在显示的样式
+
+
+                // alert(box1.currentStyle.width);
+                // 其他浏览器可以使用
+                /*getComputedStyle() 这个方法获取当前样式 只读
+                window方法  直接使用
+                两个参数
+                    1.要获取的元素
+                    2.可以传递的伪元素，一般都传送null
+                    没有设置width 不会得到auto 而是一个长度
+                    IE8 不支持及以下
+*/
+                // 引用方法
+                var obj = getStyle(box1, "width");
+                alert(obj)
+
+
+                /*
+                    定义一个函数，用来获取指定元素的当前的样式
+                        第一个参数： obj 获取样式的元素
+                                ：  name 要获取的样式名
+                */
+            }
+
+
+            function getStyle(obj, name) {
+                // 正常浏览器
+                // 判定对象是否存在 要是ie8会返回undefined
+                if (window.getComputedStyle) {
+                    return getComputedStyle(obj, null)[name];//优先使用这个方法 [name]指的是返回该方法的属性值
+                } else {
+                    // IE8的方式
+                    return obj.currenStyle[name];
+                }
+
+            }
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+<button id="btn01">点击</button>
+
+<br>
+
+<div id="box1"></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            条件运算符 三元运算符 (三元运算符 能嵌套 但是不方便阅读)
+                语法:
+                    条件表达式?语句1:语句2:
+                条件运算符执行时，首先对条件表达式进行求职
+                    如果该值为true，则执行语句1.并返回执行结果
+                    如果该值为false，则执行语句2,并返回执行结果
+                如果条件表达式 执行语句为非布尔值 会转换成 布尔值
+        
+        */
+        var a = 10;
+        var b = 20;
+        var c = 30;
+        a > b ? alert("a") : alert("b");
+
+        var max = a > b ? a : b;
+        var max = max > c ? max : c;
+        console.log(max);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

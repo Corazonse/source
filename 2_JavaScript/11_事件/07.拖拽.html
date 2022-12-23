@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /*
+                拖拽box1元素
+                    -1.当鼠标摁下开始拖拽 2.移动图标就跟着动 3.放手就固定在当前位置
+                        onmousedown         onmousemove     onmouseup
+            
+            
+            */
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            box1.onmousedown = function (event) {
+                // 捕获所有点击 防止拖拽到其他元素 兼容并只有IE8+ 克鲁和其他浏览器不行
+                // 所以要判断是否需要开启捕获
+                if (box1.setCapture) {
+                    box1.setCapture();
+                }
+
+                event = event || window.event;
+                // 设置鼠标初始值 鼠标点击地方-盒子边缘里定位相对位置距离
+                var ol = event.clientX - box1.offsetLeft;
+                var ot = event.clientY - box1.offsetTop;
+
+
+                document.onmousemove = function (event) {
+                    // 获取鼠标的位置 修改box1的位置
+                    event = event || window.event;
+
+                    var left = event.clientX - ol;
+                    var top = event.clientY - ot;
+
+
+                    box1.style.left = left + "px";
+                    box1.style.top = top + "px";
+                    box1.onmousemove = null;
+                    // 在document绑定可以在哪里松手都可以
+                    document.onmouseup = function () {
+                        // 鼠标松开让两个时间没有存在意义
+                        // 当鼠标松开时 取消拖拽时间
+                        document.onmousemove = null;
+                        // 取消松开事件  把他当成一次向事件
+                        document.onmouseup = null;
+                        // 判断是否需要关闭捕获
+                        box1.releaseCapture && box1.releaseCapture();
+
+                    }
+
+                };
+                // ie8不能用 算了 ie已经死了
+                return false;
+            };
+            // 当拖拽的一个页面中的内容时，浏览器默认去搜索引擎中搜索内容
+            // 导致拖拽异常，如果不网 可以通过 return false 取消行为；
+
+            // setCapture() 能够捕获所有相关事件值（一次生效） btn01（设置） btn02 点击btn2 也会触发1
+
+
+        };
+
+    </script>
+
+    <style>
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+文集文集文集
+<div id="box1">
+
+
+</div>
+<div id="box2">
+
+</div>
+
+</body>
+
+</html>

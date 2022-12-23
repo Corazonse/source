@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* p::first-letter{
+
+            font-size: 50px
+            ;
+        } */
+
+        p::first-line {
+
+            font-size: 50px;
+            background-color: red;
+        }
+
+        p::selection {
+            background-color: chartreuse;
+
+        }
+
+        p::before {
+            content: '[';
+            color: blue;
+        }
+
+        p::after {
+            content: ']';
+            color: blue;
+        }
+
+        /*
+            伪元素。表示页面中一些特殊的并不真实存在的元素（特殊的位置）
+            ::first-letter 选中第一个字
+            ::first-line 选中第一行
+            ::selection 表示选中
+            ::after 元素的最前（不显示那个
+            ::before 元素的最后  而且无发选中)
+
+        */
+    </style>
+
+</head>
+<body>
+<p>1234561178abc</p>
+</body>
+</html>

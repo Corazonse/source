@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            为什么在button下面写script标签
+                浏览器加载一个页面时，是按照自上向下的顺序加载的
+                读取到一行就运行一行
+                如果将script标签卸载页面上边；
+                在代码执行时，页面还没加载出来 还没有按钮
+                
+                最优体验写下面（根据公司需求）
+                    让页面优先出来
+                
+                解决办法 onload事件
+                onload会在整个页面加载完毕再触发
+                window.onload = function(){
+                    alert("hello");
+                };
+        
+        
+        */
+        //    为window绑定 加载完页面才允许 确保在DOM代码执行之前所有页面加载完毕
+        window.onload = function () {
+            // 获取
+            var btn = document.getElementById("btn");
+            // 按钮绑定函数
+            btn.onclick = function () {
+                alert("点击！");
+
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+<button id="btn">
+    哼啊啊啊啊啊啊啊啊
+</button>
+<!-- script标签写下面为了页面加载完毕再执行js代码 -->
+<script>
+
+
+</script>
+
+</body>
+
+</html>

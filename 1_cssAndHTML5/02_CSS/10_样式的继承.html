@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 
+        样式的继承：我们为一个元素设置的样式同时也会应用到他的后代元素上
+
+        继承的设计是为了方便我们的开发，利用继承我们可以将一些通用的勇士统一设置到共同的祖先元素上，
+        这样只需要设置一次即可让所有的元素都具有该样式
+        注意：并不是所有样式都会继承
+            ：比如背景相关的，布局相关的等等这些都不会被继承（防止乱继承乱套了）
+    */
+
+    p {
+        color: tomato;
+    }
+
+    div {
+        color: brown;
+    }
+
+    body {
+        font-size: 20px;
+    }
+</style>
+<body>
+<!--p标签能放行内元素但不能放任何的块元素  -->
+<p>
+    我是一个p元素
+    <span>我是p元素中的span</span>
+</p>
+<span>
+    我是p元素外的span
+</span>
+<div>
+    我是div
+    <span>我是div里面的span  <em>我是孙子span的儿子</em></span>
+</div>
+</body>
+</html>

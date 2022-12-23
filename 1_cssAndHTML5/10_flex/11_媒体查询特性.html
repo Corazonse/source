@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*                                与  只有  或  非  */
+        /*  横屏竖屏也在这个范围  连接条件 and  only   ,  not
+            媒体特性：
+                width 视口的宽度
+                height 视口的高度
+                 /* 当你的视口是 width 500px的时候里面的内容生效
+                min width 视口的最小宽度
+                max width  视口的最大的宽度
+        */
+
+
+        /* 一般只看宽度 */
+        /* min max 表示width的最小 或者最大能接受的界限- 
+            样式切换的分界点，我们称其为 断点也就是网页的样式会在这个点发生布局的变化
+            一般比较常用个的断点的结构
+
+            小于 768px ---超小屏幕 max-width:768px;
+            大于 768px ---小屏幕 min-width:768px;
+            大于 992px ---中型屏幕 min-width:992px;
+            大于 1200px --- 大屏幕 min-width:1200px;
+
+        */
+        /* 大有500 或者小于300生效 */
+        @media (min-width: 500px),(max-width: 300px) {
+            body {
+                background-color: red;
+
+            }
+        }
+
+        /* 600 到 700之间 */
+        @media screen and (min-width: 600px) and (max-width: 700px) {
+            body {
+                background-color: #bfa;
+
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>

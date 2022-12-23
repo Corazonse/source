@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    /*
+    私有属性 #xxx
+    */
+    class Person {
+        name;
+        #age;
+
+
+        //    构造
+        constructor(name, age) {
+            this.name = name;
+            this.#age = age;
+        }
+
+        getName() {
+            console.log(this.#age);
+        }
+    }
+
+    //    实例
+    const girl = new Person("xi", 212)
+    // 必须在类里面
+    // console.log(girl.#age);
+    console.log(girl.name);
+    //    通过方法在内部调出来私有属性
+    girl.getName()
+
+    /*Promise.allSettled 必定返回成功的值
+        数组参数 每个元素都是一个对象 有结果状态 和结果值
+    */
+    //    正则提取方法 String.prototype.matchAll
+    let str = `
+    <ul>
+        <li><a>肖生克的救赎
+            <p>上映时间:1994-09-10</p>
+        </li>
+        <li><a>阿甘正传</a>
+            <p>上映时间:1994-09-10</p>
+        </li>
+    </ul>`
+    //声明正则
+    const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/sg
+    //调用方法 可迭代对象 数据批量提取
+    const result = str.matchAll(reg);
+    //     // 迭代 一次解决
+    //     for (let v of result)
+    //     {console.log(v);
+    // }
+    const arr = [...result]
+    console.log(arr);
+
+    /*
+        可选链操作符 xxx?.xxx?.  xxx是否传入传入再读下一个
+        免去层层判断烦恼
+    */
+    //    动态 import(路径)  按需加载 懒加载
+    // 返回的是 promise值 成功的值就是按需加载要暴露的对象
+
+    // 新的数据类型 大整形 +n BigInt（n）  用于加减极大数 记得都转变成bigint
+    let n = 22n;
+
+    // globalThis  始终指向全局对象
+
+</script>
+
+</body>
+
+</html>

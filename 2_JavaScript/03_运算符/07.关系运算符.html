@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            通过关系运算符可以比较两个值之间的大小关系
+                如果关系成立它会返回true 如果关系不成立则返回false
+
+                >
+                >=
+
+                <
+                <=
+
+                非布尔情况下
+                    -会把其转换成 number 再比较返回；
+                    -任何值和NaN比较都是返回false
+                    -若果符号两侧的值都是字符串，不会将其转换成数字进行比较 
+                        而会分别比较字符串的 Unicode编码，比较字符编码的时候
+                        是一位一位比 若果两位一样则比较下一位，可以借用他用来对英文进行排序 
+                        比较中文没有意义。
+                        如果比较两个字符串的数字，可能会得到不可预期的效果
+                        注意：在比较两个字符串的数字时，一定一定一定要转型 +
+
+
+                ==
+
+                !=
+        */
+        var a = 6 <= 10;
+        console.log(a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

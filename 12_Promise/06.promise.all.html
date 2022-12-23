@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 6.Promise.all 方法:(promises) => {}
+        (1) promises: 包含 n 个 promise 的数组
+        说明: 返回一个新的 promise, 只有所有的 promise 都成功才成功，只要有一个失败了就直接失败
+
+    * 7. Promise.race 方法:(promises) =>{}
+    * 就是进行赛跑 谁先改变状态谁就是 .race的最终结果
+        (1) promises: 包含 n 个 promise 的数组
+        说明: 返回一个新的 promise,第一个完成的 promise 的结果状态就是最终的结果状态
+    *
+    *
+    * */
+    /*
+    * promise 的几个关键的问题
+    * */
+    //改变promise对象的状态
+    let p = new Promise((resolve,reject) =>{
+        resolve("ok") //pending => fulfilled
+        reject("error") //pending => reject
+        throw "出问题了" //pending => reject
+    })
+    //两个回调都会执行 状态改变后 对应的回调都会执行
+    p.then((value)=>{
+        console.log("回调1")
+    })
+    p.then((value)=>{
+        console.log("回调2")
+    }).then((value)=>{
+        console.log(value
+        )
+    },(reason)=>{
+        console.log(reason)})
+//    问题二 then()先执行 还是改变状态 resolve reject先执行
+    // 情况一 上述情况 是resolve改变状态先执行
+//    情况二  异步任务情况下 比如给 p 加一个setTime(,1000) 就会先执行 then()  这种情况居多
+//    什么时候拿到数据 then()方法执行的时候 就拿到数据
+//    问题三  promise怎么串联多个任务 因为 promise返回的then()是个promise 所以可以无限套娃
+//    问题四  promise异常穿透 可以在
+    //     --最后 指定失败的回调 当前操作出现了异常都会在最后的回调中处理throw中途抛出 末尾放catch也能接收到
+//    问题五  中断promise 链 有且只有一种方式 在回调函数中 返回一个pending 状态的 promise对象
+//                 return new Promise(()=>{})
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+// 通过import引用 其他 less 到当前 方便模块化 方便后期维护 
+@import "./syntax2.less";
+
+
+.box1 {
+  // 在less中所有的数值都可以直接运算
+  // +-*/
+  height: 100px+100px;
+  width: 100px;
+  background-color: #bfa;
+}
+
+// 调试问题 一般改less 在浏览器看源码（源码显示的是 css的行数 改代码要找到less 文件）

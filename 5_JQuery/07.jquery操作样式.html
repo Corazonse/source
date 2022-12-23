@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+
+
+<script>
+    $(function () {
+        // 但给属性名就返回属性值 , ""
+        console.log($("div").css("width"))
+        //   $("div").css("width","300px")
+        //   $("div").css("height",300)
+        console.log($("div").css("width"))
+        //   一次改多个
+        $("div").css({
+            width: 300,
+            height: 300,
+            backgroundColor: "red"
+            // 若果是复合(有-的)属性必须使用驼峰命名法 不是数字必须加 ""
+        })
+
+
+    })
+
+
+</script>
+
+</body>
+</html>

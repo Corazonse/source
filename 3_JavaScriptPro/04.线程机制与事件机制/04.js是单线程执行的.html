@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+    1.何如证明js执行时单线程的？
+    setTimeout() 的回调函数时在主线程执行的
+    定时器回调函数 只有在运行栈中的代码全部执行完后才有可能执行
+    2.为什么js要用单线程模式，而不用多线程模式？
+    JavaScript的单线程 与他的的用途有关 防止多线程一起操作出现误操作
+    作为浏览器的脚本语言 js的主要用途是用户交互 及操作DOM
+    这决定他只能是单线程 否则会带来很复杂的同步问题
+    3.代码的分类
+    初始化代码   （先执行 就算setTimeout 0 也得等初始化的代码执行完）
+    回调代码    （等初始化代码执行完）
+    4.js引擎执行代码的基本流程
+    先执行初始化代码 包含一些特别的代码  回调函数（异步执行） ——>等待初始化代码执行完才有可能会执行的代码
+    设置 定时器
+    绑定 监听
+    发送ajax请求
+    后面的某个时刻才会执行回调代码
+ -->
+
+<script>
+    setTimeout(function () {
+        console.log("你好1"
+    }, 1000)
+    setTimeout(function () {
+        console.log("你好2")
+    }, 2000)
+    setTimeout(function () {
+        console.log("你好3")
+    }, 5000)
+    setTimeout(function () {
+        console.log("你好4")
+    }, 0) //y因为包含了回调函数 得等待初始代码执行完才开始执行
+    function fn() {
+        console.log("你好0")
+    }
+    fn()
+    alert("al之前")
+    console.log("————");//暂停当前之心城执行，（2022年暂停了）同时暂停计时 确定后就恢复
+    alert("al之后")
+
+
+</script>
+
+</body>
+</html>

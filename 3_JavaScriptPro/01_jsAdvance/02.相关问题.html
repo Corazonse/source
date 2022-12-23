@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+    undefined 和 null 有什么区别
+    undefined代表定义了未赋值
+    null代表定义了赋值了知识值为null
+
+    null初始赋值表明对象要赋值为对象
+    最后赋值让对象成为垃圾对象便于回收
+
+    严格区分数据类型 和 变量类型
+        数据类型
+        基本 和 对象类型
+        变量的类型
+        基本类型 保存就是基本类型的数据
+        引用类型 保存的是地址值
+
+
+
+ -->
+<script>
+    var a;
+    console.log(a);
+    // 起始值为null
+    var a = null;
+    a = ['sdf', 12]
+    console.log(a);
+    a = null;//让a指向对象成为垃圾对象(被浏览器垃圾回回收器回收)
+
+    var f = function () {
+
+    }
+    console.log(typeof f); //function f保存的是function的地址值
+
+
+</script>
+
+
+</body>
+</html>

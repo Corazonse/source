@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 在浏览器內实现全选 全不选 反选 并最后提交的效果 */
+    </style>
+</head>
+
+<body>
+<!-- form标签就是来装input这些按钮 -->
+<form action="xxx" method="post">
+        <span>你喜欢的3A大作?
+            <br>
+        </span><input type="checkbox" name="test" id="checkboxAllOrNot"><span>全选\全不选</span>
+    <br/>
+    <input type="checkbox" name="items" value="原神" id="yuan"><span>原神</span>
+    <input type="checkbox" name="items" value="王者荣耀"><span>王者荣耀</span>
+    <input type="checkbox" name="items" value="迷你世界"><span>迷你世界</span>
+    <input type="checkbox" name="items" value="明日方舟"><span>明日方舟</span>
+    <input type="checkbox" name="items" value="和平精英"><span>和平精英</span>
+    <br>
+    <input type="button" value="全  选" id="all">
+    <input type="button" value="全不选" id="not">
+    <input type="button" value="反  选" id="res">
+    <input type="button" value="提  交" id="postt">
+</form>
+
+
+<script>
+    var all = document.getElementById("all");
+    // 获取五幻神(数组)
+    var items = document.getElementsByName("items");
+    // 获取全选框
+    var test = document.getElementsByName("test");
+    all.onclick = function () {
+        // 遍历items
+        for (var i = 0; i < items.length; i++) {
+            // 利用checked来修改选中状态 false不选 true为选
+            items[i].checked = true;
+        }
+        test[0].checked = true;
+    };
+    // 全不选框
+    var not = document.getElementById("not");
+    not.onclick = function () {
+        // 遍历items
+        for (var i = 0; i < items.length; i++) {
+            // 利用checked来修改选中状态 false不选 true为选
+            items[i].checked = false;
+        }
+        test[0].checked = false;
+    };
+
+    // 反选框
+    var res = document.getElementById("res");
+    res.onclick = function () {
+        // 遍历items
+        for (var i = 0; i < items.length; i++) {
+            // 利用checked来修改选中状态 false不选 true为选
+            if (items[i].checked) {
+                items[i].checked = false;
+            } else {
+                items[i].checked = true;
+            }
+
+
+        }
+        ;
+        // 在凡选择这里也同步一下 全选框和单选框
+        for (var i = 0; i < items.length; i++) {
+            // 在这里设置让全选框默认全选 这样直接可以引用下面的if判断
+            checkboxAllOrNot.checked = true;
+            // 判断是否勾选全选框
+            if (!items[i].checked) {
+                checkboxAllOrNot.checked = false;
+
+            }
+
+
+        }
+    }
+    // 提交
+    var postt = document.getElementById("postt");
+    postt.onclick = function () {
+        // 遍历items
+        for (var i = 0; i < items.length; i++) {
+            // 利用checked来修改选中状态 false不选 true为选
+            if (items[i].checked) {
+                alert(items[i].value)
+            }
+
+        }
+        ;
+    }
+    // 全选不选框 都和 另外四个同步框
+    var checkboxAllOrNot = document.getElementById("checkboxAllOrNot");
+    checkboxAllOrNot.onclick = function () {
+        for (var i = 0; i < items.length; i++) {
+            // 绑定全选和五幻神
+            items[i].checked = this.checked;
+        }
+    };
+
+    //  五个多选框和单选框同步
+    for (var i = 0; i < items.length; i++) {
+        items[i].onclick = function () {
+            // 在这里设置让全选框默认全选 这样直接可以引用下面的if判断
+            checkboxAllOrNot.checked = true;
+            for (var j = 0; j < items.length; j++)
+                if (!items[j].checked) {
+                    checkboxAllOrNot.checked = false;
+                    break;
+                }
+        }
+
+
+    }
+
+</script>
+</body>
+
+</html>

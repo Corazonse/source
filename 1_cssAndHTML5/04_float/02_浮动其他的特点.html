@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 浮动不会盖住文字所以可以由此制作文字环绕 */
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            float: left;
+        }
+
+        /* 元素设置浮动以后，将会从文档流中脱离，从文档流中脱离以后，元素的一些特点会发生变化 */
+        /* 脱离文档流特点:
+             块元素
+                 1块元素不再独占页面一行
+                 2脱离文档流后。快匀速的高度和宽度默认都会被撑开
+             行内元素
+                 行内元素脱离文档流后会变成块元素，特点和块元素一样（可以设置宽高）
+                 脱离文档流后不再区分块和行内了
+
+        */
+        .box2 {
+            background-color: aliceblue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<p>阿斯顿法国爱斯达克绿肥红瘦快递惊魂复健科闪电发货灰色空间煅浮海石寄快递粉红色的芬克金黄色的会计法皇室典范十多发开始的富士康的副驾驶的反馈2</p>
+<div class="box2">hello</div>
+</body>
+</html>

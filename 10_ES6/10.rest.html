@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //ES6 引入 rest 参数 用于函数的参数 用于代替 arguments
+    // ES5 获取实参方式 对象
+    function date() {
+        console.log(arguments);
+    }
+
+    date("1", "2", "3")
+
+    // rest参数 数组 rest参数(...args)必须放在所有参数背后
+    function date2(...args) {
+        console.log(args);//可用 filter some every map 方法
+    }
+
+    date2("1", "2", "3")
+
+
+</script>
+
+</body>
+</html>

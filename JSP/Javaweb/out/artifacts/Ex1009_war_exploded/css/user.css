@@ -1,0 +1,22 @@
+.user {
+    text-align: center;
+    width: 100%;
+}
+
+.user > .panel {
+    margin: 20px auto;
+    width: 360px;
+    background-color: #ddd;
+    border: 2px solid #ededed;
+    box-shadow: 2px 2px 2px #aaa;
+}
+
+.user > .panel > h2 {
+    width: 360px;
+    padding: 8px 0;
+    background-color: #ffc44e;
+}
+
+.user > .panel > p {
+    margin: 20px auto;
+}

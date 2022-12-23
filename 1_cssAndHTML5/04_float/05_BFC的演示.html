@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            height: 200px;
+            width: 200px;
+            background-color: rgb(27, 130, 220);
+            overflow: hidden;
+
+
+        }
+
+        .box2 {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            /* 设置overflow:hidden开启BFC让元素不被覆盖 */
+
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box1">
+    <div class="box3">
+
+    </div>
+</div>
+<!-- <div class="box2">
+
+</div> -->
+
+
+</body>
+
+</html>

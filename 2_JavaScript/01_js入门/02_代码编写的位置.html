@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./02_d代码编写的位置.js">
+        // js 代码 自上到下一行行执行的
+        // 可以将js代码编写到外部js文件中，然后通过script标签引入
+        // 写到外部文件中可以在不同的页面中同时引用,也可以利用到浏览器的缓存机制
+        // 推荐使用啊啊啊啊啊啊啊啊啊啊啊
+        // 内外都有script 一单用于引入外部文件,就不能编写代码了,及时编写了浏览器也会忽略
+        // 如有需要就在内部再创建一个script标签编写内部代码
+        alert("我是script标签中的代码");
+
+    </script>
+
+</head>
+<body>
+<!-- 我们可以将js代码编写到标签的onclick属性中
+    双引号里面得放单引号 防止嵌套
+    点击就会执行
+    虽然可以写在标签的属性中，但是他们属于结构与行为耦合，不方便维护，不推荐
+-->
+<button onclick="alert('别搞我啊啊啊');">点我</button>
+<!-- 可以将js代码可在超链接的href属性中，这样点击超链接时，会执行js代码 -->
+<a href="javascript:alert('哼哈啊啊啊啊啊啊啊');">你也点我一下</a>
+</body>
+</html>

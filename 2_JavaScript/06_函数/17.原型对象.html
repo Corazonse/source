@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            原型对象也是对象 所以说他也有原型 当我们使用一个对象的属性或者方法时
+                先会在自身中寻找
+                    -自身中有，则使用
+                    -没有 则去原型中须按照
+                    -没有 去原型中的原型去寻找
+                        直到找到object的原型就是尽头
+                        依然没找到就返回undefined
+                    很多自带的方法在原型的原型中
+                    比如 hasOwnProperty
+        
+        */
+        function MyClass() {
+            var age = 19;
+            this.age = age;
+
+        }
+
+        //    向mc原型对象中添加name属性
+        MyClass.prototype.name = "原型中的name";
+        var m1 = new MyClass();
+        //    检查m1里面是否有name 因为 prototype中也有name 所以会返回true
+        console.log("name" in m1);
+        //    可以使用对象的hasOwnProperty()检查对象自身中是否含有该属性
+        // 使用该方法只有对象里自身有 该属性才会返回 true 该方法存在原型内
+        console.log(m1.hasOwnProperty("age"));
+
+        // m1 的原型的原型就是 object 再原型就是 null
+        console.log(m1.__proto__.__proto__.__proto__);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            通过成徐输入如下的图形
+            *
+            **
+            ***
+            ****
+            *****
+
+            再循环内部再创建一个循环来控制属性的高度
+            &nbsp 就是网页端的空格
+        
+        */
+        for (var i = 1; i < 2; i++) {
+            document.write("*<br/>");
+            for (var a = 1; a < 2; a++) {
+                document.write("**<br />");
+            }
+            for (var b = 1; b < 2; b++) {
+                document.write("***<br />");
+            }
+            for (var c = 1; c < 2; c++) {
+                document.write("****<br />");
+            }
+            for (var d = 1; d < 2; d++) {
+                document.write("*****<br />");
+            }
+        }
+        //   改良版
+        for (var i = 0; i < 9; i++) {
+            for (var j = 0; j < i + 1; j++) {
+                document.write("*&nbsp&nbsp");
+            }
+            //    换行
+            document.write("<br />")
+        }
+        document.write("<br />")
+        //   改良版
+        for (var i = 5; i > 1; i--) {
+            for (var j = 0; j < i - 1; j++) {
+                document.write("*&nbsp&nbsp");
+            }
+            //    换行
+            document.write("<br />")
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="target.html">
+    <!-- value提交的值
+        autocomplete自动补全功能 默认开启on 关闭 off
+        readonly 表示只读 数据会提交
+        disabled 表示禁用   数据不会提交
+        autofocus 设置表单项自动获取焦点（刚刷新页面就会选中它）
+    -->
+    <input type="text" name="username" value="999" autocomplete="on" readonly>
+    <input type="text" name="username" value="888" autofocus>
+</form>
+<br>
+<!-- 提交按钮 -->
+<input type="submit">
+<!-- 按钮 -->
+<input type="button" value="按钮">
+<!-- 重置 -->
+<input type="reset">
+<br>
+<!-- 会自动检测格式邮箱格式  但是不兼容 -->
+<input type="email">
+<br>
+<!-- 选中颜色 兼容性不高 -->
+<input type="color" name="color" id="">
+<br>
+<!-- 功能和上一样 但是自结束标签 所以更加灵活 -->
+<button type="submit">提交</button>
+<button type="reset">重置</button>
+<button type="button">按钮</button>
+</body>
+</html>

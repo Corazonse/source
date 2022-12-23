@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 为div的子元素span设置一个字体颜色为红色（span）
+        作用：选中制定父亲元素的制定子元素
+        语法：父元素>子元素
+        语法：父元素>子元素>子元素(制定孙子)
+        
+        */
+        /* div>span{ */
+
+
+        /* 后代元素选择器
+            作用：制定元素内制定后代元素
+            语法：祖先 后代
+        */
+        div span {
+
+            color: aqua;
+        }
+
+        /*
+            选中下一个兄弟元素
+                语法：前一个+下一个（选中最下那一个）
+                语法：前一个~下一个（选择下边所有兄弟）
+        */
+
+    </style>
+</head>
+
+<!--
+    父元素
+        -直接包含子元素的元素叫父元素
+    子元素
+        -直接被父元素包含的元素是子元素
+    祖先元素
+        -直接或间接包含后代元素的元素叫祖先元素
+        -一个元素的父元素也是它的祖先元素
+    后代元素
+        -直接或间接被祖先元素包含的元素叫做后代元素
+        -子元素也是后代元素
+    兄弟元素
+        -拥有相同的父亲元素是兄弟元素
+-->
+<body>
+<div>
+
+    我是div
+    <p>
+        我是div里面的p
+        <span>
+                我是p里面的span元素
+            </span>
+    </p>
+
+    <span>
+            我是div的span
+        </span>
+</div>
+
+
+</body>
+</html>

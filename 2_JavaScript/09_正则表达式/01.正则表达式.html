@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            正则表达式
+                -admin
+            -邮件的规则（定义规则）
+                1.xxx@xx.com
+                2.
+                3.
+            正则表达式用于定义一些字符串的规则
+                计算机可以根据正则表达式，来检查一个字符串是否符合规则
+                获取将字符中符合规矩的内容提取出来 object类型
+            语法
+                var reg = new RegExp("正则表达式","匹配模式")
+        
+        */
+        var reg = new RegExp("a");//检查字符串中是否含有a 严格区分大小写
+        var str = "a";
+        var reg2 = new RegExp("a", "i");//d=第二个数有i g 两个可选值 i（忽略大小写）g（全局模式）
+        /*
+            正则表达式的方法
+                test()
+                    -使用这个方法可以检查一个字符串是否符合正则表达式的规则
+                    -如果符合就true 不符合就是 false
+        
+        */
+        var result = reg.test(str);
+        console.log(reg.test("asd"));
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

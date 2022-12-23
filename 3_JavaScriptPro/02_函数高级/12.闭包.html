@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!--
+    JS两大神兽
+        原型 闭包
+    闭包
+        当一个（子）内部函数引用了嵌套的（父）外部函数的函数变量时就产生了闭包
+        理解 在Chrome工具下
+        理解一：被嵌套内部的函数 大部分人理解
+        理解二：整一块函数 闭包存在于内部函数中
+    产生条件
+        函数嵌套
+        内部函数引用外部函数数据（变量或者函数） 执行外部函数 不一定需要调用内部函数
+
+
+
+
+
+
+ -->
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+<button>按钮6</button>
+
+<script>
+    // 获取按钮 btn只是一个伪数组 他的length是个不固定值每次都要计算
+    var btn1 = document.getElementsByTagName("button")
+    // 循环遍历监听  前面加上可以让他只计算一次提高代码效率
+    // for i 是 全局变量
+    for (var i = 0, length = btn1.length; i < length; i++) {
+        var btn = btn1[i]
+        btn.index = i
+        // 在我点击之前函数 已经执行完了 所以i一直等于3
+        btn.onclick = function () {
+            alert("第" + (this.index + 1) + "个")// 3 3 3
+        }
+    }
+
+    // 写法二 利用闭包   456
+    for (var i = 3, length = btn1.length; i < length; i++) {
+        (function (i) {//局部i
+            var btn = btn1[i]//局部
+            btn.onclick = function () {
+                alert("第" + (i + 1) + "个")// 3 3 3
+            }
+        })(i)//全局i
+    }
+
+    // 闭包
+    function fn1() {
+        var a = 2
+
+        function fn2() {//执行了函数定义就能产生闭包
+            console.log(a)//引用了外部函数的变量即使没有调用也产生了闭包
+        }
+    }
+
+
+</script>
+
+</body>
+
+</html>

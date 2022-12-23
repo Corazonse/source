@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 第二种 -->
+    <style>
+        p {
+            color: aquamarine;
+            font-size: 100px;
+        }
+    </style>
+    <!-- 第三种 -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!--
+    网页三部分
+    结构（html）
+    表现（CSS）
+    行为（JAVAScript）
+CSS
+    -层叠样式表
+    -网页实际上是一个多层的结构，通过CSS可以分别为页面的每一层设置样式
+    而最终我们能看到的是网页的最上边一层
+    -总之一句话，CSS用来设置网页中的元素样式
+
+ -->
+<!--
+   使用CSS来修改元素样式
+   第一种方式（内联样式）
+       -在标签内部通过style属性来设置元素样式（不推荐使用）
+           第一种方式（内联样式，行内样式）:
+           -在标签内部通过Style属性来设置元素样式
+           -问题
+               使用内联样式，只能对一个标签生效，如果希望影响多个元素必须都得复制一遍
+               当样式发生变化时，还得一个个修改，非常不方便
+           -注意：开发时一定不使用内联样式
+   第二种方式（内部样式表）
+       -将样式表写到head的styl标签里
+       -然后通过CSS的选择器来选中袁术并未其设置各种样式，只需要修改一处即可全部应用
+       -内部样式表更加方便对样式进行复用
+       问题：只能在一个页面使用，他里面的样式不能跨页面进行复用
+   第三种方式（外部样式表）最佳实践
+       -可以将CSS样式编写到外部的CSS文件中
+       然后通过林肯标签引入外部的CSS
+       -外部样式表可以通过link标签进行引入，
+       意味着只要想用这些样式的网页都可以进行将其引用
+       使用样式可以在不同页面进行复用
+       将样式编写到外部的CSS文件中，可以使用到浏览器缓存机制，
+       从而加快网页的加载速度，提高用户体验
+
+
+
+   -->
+<!-- 第一种 -->
+<p style="color:brown;font-size: 60px;">少小离家老大回，乡音无改鬓毛衰</p>
+<p>今天天气真不错</p>
+<p>今天nmmd</p>
+</body>
+</html>

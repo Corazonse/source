@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            函数也可以成为对象的属性，
+            如果一个函数作为一个对象的属性保存
+            那么我们成这个函数时这个对象的 方法
+            调用函数就是说调用这个对象的 方法(method)
+            
+            但是它只是名称上的区别没有其他的区别
+        */
+        var obj = new Object();
+
+        obj.name = "孙悟空";
+        obj.age = 19;
+
+        function fun() {
+
+        }
+
+        //    对象的属性可以使任意的数据类型，也可以是一个函数
+        obj.sayName = function () {
+            console.log(obj.name);
+        }
+        // 调用方法
+        obj.sayName();
+        //调用函数
+        fun();
+        // 另外的写法
+        var obj2 = {
+            name: "猪八戒",
+            age: "18",
+            sayName: function () {
+                console.log(obj2.name);
+            }
+        };
+        obj2.sayName;
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

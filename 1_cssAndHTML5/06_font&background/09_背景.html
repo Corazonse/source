@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            background-color: antiquewhite;
+            /* 设置背景图片
+                -background-image 用于设置背景图片
+                -如果设置图片和背景颜色，这样背景颜色将会成为图片的背景色
+                -如果背景的图片小于元素就会平铺撑满元素
+                -如果背景图片和元素一样大，则会正常显示
+            
+            */
+            background-image: url(../exercise/01.京东图片列表/1.png);
+            /* or background-image:url("../exercise/01.京东图片列表/1.png"); */
+            /* backgr-repeat 用于设置背景的重复方式
+                可选值：
+                    repeat 默认值，背景会沿着x轴 y轴双方向重复
+                    repeat-x
+                    repeat-y 分向x y两轴方向重复
+                    no-repeat 背景图片不重复
+
+            
+            
+            */
+            background-repeat: no-repeat;
+            /* 通过top left right bottom center 几个表示方向的词来设置背景图片位置
+            九宫格设置 水平值 垂直值。必须同时写两个值，如果只写一个则第二个默认center，。
+            */
+            background-position: center left;
+            /* 通过偏移量来指定背景图片的位置：
+            
+                水平方向的偏移量 垂直方向变量
+
+            */
+            background-position: 50px 30px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+
+</div>
+</body>
+</html>

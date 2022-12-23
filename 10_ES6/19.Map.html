@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        Map 数据结构 它类似对象 也是键值对的集合。但是 键 的范围不限于字符串
+        各种类型的值 包括对象 都可以当做键 Map 也实现了 iterator 接口 所以
+        可以使用扩展运算符 和 for of 进行遍历
+        方法
+        size 返回map的元素个数
+        set 郑加一个新的要元素返回当前的map
+        get 返回键名对象的键值
+        hsa 检查是否含有某个元素 返回boolean
+
+
+    */
+    let m = new Map()
+
+    m.set("name", "周永都")
+    m.set("change", function () {
+        console.log("改变的函数");
+    })
+    let key = {
+        school: 'wod'
+    }
+    m.set(key, ["一中", "二中", "三中"])
+    console.log(m.get(key));
+</script>
+
+</body>
+</html>

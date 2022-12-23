@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    数据库 database
+        数据库是一个仓库 可以放集合
+    集合 collection
+        集合类似数组 在集合放文档
+    文档 document
+        文档是数据库中最小的单位 我们存储和操作内容都是文档
+
+    增加
+     db.student.insert({name:"pig"})//add a coll
+     db.student.find()
+     db.student.insert([
+     {name:"sha"},
+     {name:"sha1"},
+     {name:"sha2"}
+     ObjectId("6378db2693075508ce72dfa1")
+     时间戳 防止相同数据也可以自己获取 但是建议还是自动生成
+     db.student.insertOne({name:"pig"})
+     db.student.insertMany({name:"pig"})
+
+     db.find() //查询所有符合文件的文档 不存条件这就查询所有 fund()可以接收一个对象 可以作为参数
+     db.find({age:28}) 也可以用逗号隔开
+
+     db.collection.findOne()  查询符合条件的第一个文档返回的就是一个对象 .xxx 就可以直接拿回值
+     db.collection.find().count() 查询数量
+
+     db.xxx.find({}); 先找
+     db.collection.update({查询条件,新对象}) update()默认新对象替换旧对象  可以实现 one 和many两者的功能
+      updateOne()只修改一个
+     updateMany可以修改多个
+     $set 修改指定属性    如果需要修改制定属性则需要使用 修改操作符
+     db.xxx.update({
+     "id":ObjectID("xxxxxxx") }
+     {$set:{
+     name:"沙和尚"
+     }}
+       )
+      $upset 删除指定属性    如果需要修改制定属性则需要使用 修改操作符
+     db.xxx.update({
+     "id":ObjectID("xxxxxxx") }
+     {$upset:{
+     name:"沙和尚"
+     }}
+     )
+
+     删除文档  一般定义一个字段让数据假删不会直接抹除数据
+     one and many都有
+     db.collection.remove() 可以根据条件删除文档 方式和find()一样 justOne只删除一个 必须传参 空对象就会全部删除
+        db.xxx.drop()清空集合 性能更佳 集合没了
+        db.xxx.dropDatabase()清空集合 性能更佳 集合没了 数据库没了
+
+     db.collection.deleteOne()
+     db.collection.deleteMany()
+
+     一般查询的方法直接 查看教程文档
+
+     文档之间的关系
+        一对一 one to many
+            -在mongoDB 可以通过内嵌的文档形式来体现出 一对一的关系
+            db.oneToOne.insert{
+            name："潘金莲",husband:{
+            name:"武大郎"
+
+            }
+         }
+        一对多
+        多对多
+
+        查找语法 排序语法 增加语法都可以查查
+
+        一下三个可以都可以不按顺序使用
+
+        limit 界限大于小于
+
+        skip
+
+        sort()能指定排序规则{xxx:1，xxx:-1}
+            -1表示升序 -1表示降序 先比第一个 再比第二个
+
+        在查询时可以在第二个参数位置设置投影
+        db.xxx.find({},{name:1,id:0})  要显示员工姓名 但不显示id
+
+
+
+
+    mongoose就是用面向对象的方式操作数据库
+        可以在文档创建
+        mongoose中为我们提供了几个新对象
+        模式约束对象 .Schema对象定义约束了数据库的文档结构
+
+        model
+        model 对象作为集合中所有文档的表示 相当于monggoDB 数据库中集合collection
+
+        Document
+            Document表示集合中的具体文档 相当于集合的一个具体文档
+
+
+
+
+
+-->
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <style>
+        li {
+            list-style: none;
+        }
+
+        li::before {
+            /* 在conten查找凶爪编码 */
+            content: "\f1b0";
+            /* 适用的字体 就可以查all.css源码 */
+            /* fas用↓ */
+            font-family: "Font Awesome 5 Free";
+            /* fab 用 Font Awesome 5 Brands */
+            color: blanchedalmond;
+            /* 这个一定得加 ↓ */
+            font-weight: 900;
+
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>锄禾日当午</li>
+    <li>海底和下图</li>
+    <li>我在放屁啊</li>
+    <li>啊啊啊啊啊</li>
+    <li>啊啊啊啊啊</li>
+</ul>
+<!-- 也可以使用实体的方式使用图标字体
+格式：  fas 类  &#x编码;
+有个阿里的库类似方法 我没记录
+    -->
+<span class="fas">&#xf0f3;</span>
+</body>
+</html>

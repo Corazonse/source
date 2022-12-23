@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            position: absolute;
+            left: 0px;
+
+
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 获取box1
+            var box1 = document.getElementById("box1");
+            // 获取btn01
+            var btn01 = document.getElementById("btn01");
+            var btn02 = document.getElementById("btn02");
+            // 先定义timer
+            var timer;
+
+            // 实现点击按钮使得 box1向右移动
+            btn01.onclick = function () {
+                // 绑定定时器
+
+                // 防止帕金森
+                clearInterval(timer);
+                timer = setInterval(function () {
+
+                    // 获取原来的 left 值然后绑定定时器 绑定getStyle方法 并转换成int 方便加减
+                    var oldValue = parseInt(getStyle(box1, "left"));
+                    // 设置新值
+                    var newValue = oldValue + 5;
+
+                    // 判定是否越界
+                    if (newValue > 500) {
+                        newValue = 500;
+                    }
+
+
+                    if (newValue == 500) {
+                        clearInterval(timer);
+                    }
+
+                    box1.style.left = newValue + "px";
+
+
+                }, 30);
+
+            };
+
+            btn02.onclick = function () {
+                // 绑定定时器
+
+                // 防止帕金森
+                clearInterval(timer);
+                timer = setInterval(function () {
+
+                    // 获取原来的 left 值然后绑定定时器 绑定getStyle方法 并转换成int 方便加减
+                    var oldValue = parseInt(getStyle(box1, "left"));
+                    // 设置新值
+                    var newValue = oldValue - 5;
+
+                    // 判定是否越界
+                    if (newValue < 0) {
+                        newValue = 0;
+                    }
+                    if (newValue == 0) {
+                        clearInterval(timer);
+                    }
+
+                    box1.style.left = newValue + "px";
+
+                }, 30);
+
+            };
+
+
+        };
+
+
+        // 获取元素任意样式 当前显示的样式
+        function getStyle(obj, name) {
+            // 正常浏览器
+            // 判定对象是否存在 要是ie8会返回undefined
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];//优先使用这个方法 [name]指的是返回该方法的属性值
+            } else {
+                // IE8的方式
+                return obj.currenStyle[name];
+            }
+
+        };
+
+
+    </script>
+</head>
+
+<body style="position: relative;">
+<button id="btn02">向左移动</button>
+<button id="btn01">向右移动</button>
+
+<div id="box1">
+
+</div>
+</body>
+
+</html>

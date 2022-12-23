@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+</head>
+<body>
+<!--
+    固有属性 如 <a> 自带的href
+        prop()
+    获取自定义属性
+        attr()
+    数据缓存data()
+        data()方法可以在指定的元素上存取数据 并不会修改DOM元素结构 一单页面刷线
+        之前存放的数据都将会被移出
+
+ -->
+<a href="http://www.baidu.com" title="百度">你好</a>
+<input type="checkbox" name="" id=" " checked>
+<div index="1" data-index="3"></div>
+<span></span>
+<script>
+    $(function () {
+        //element.prop("属性名")获取属性名
+        console.log($('a').prop("href"))
+        $('a').prop("title", "都挺好")
+        console.log($('a').prop("title"));
+        // 当复选框发生改变的时候输出复选框的值
+        $("input").change(function () {
+            console.log($("input").prop("checked"))
+        })
+        // 获取自定义属性
+        console.log($('div').attr("index"))
+        $('div').attr("index", "2")
+        console.log($('div').attr("index"))
+        console.log($('div').attr("data-index"))//3  H5
+
+        // 数据缓存 data()这个里面的 数据时存在数据的缓存里面 在 DOM里面看不到
+        $("span").data("uname", "andy")
+        console.log($('span').attr("uname"))//undefine
+        console.log($('div').data("index"))//3      H5
+    })
+</script>
+
+</body>
+</html>

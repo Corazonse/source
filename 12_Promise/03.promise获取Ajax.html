@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<button class="btn2">获取请求</button>
+<script>
+    //接口地址 https://api.apiopen.top/getJoke
+    //获取对象
+    const btn = document.querySelector('.btn2')
+    btn.addEventListener('click', function () {
+        //    绑定ajax的四个操作
+
+        //创建 promise 进行异步封装
+        const p = new Promise((resolve, reject) => {
+            // 创建对象
+            const xhr = new XMLHttpRequest()
+            // 初始化
+            xhr.open('GET', 'https://api.apiopen.top/getJoke')
+            // 发送
+            xhr.send()
+            // 4.处理响应结果
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // 控制台输出响应体
+                        // 控制台输出响应体
+
+                        resolve(xhr.response)
+                    } else {
+                        // 控制台输出响应状态吗
+                        reject(xhr.status)
+                    }
+                }
+            }
+        })
+        p.then((value) => {
+                console.log("成功")
+                console.log(value)
+            },
+            (reason) => {
+                console.log("失败")
+                console.log(reason)
+            })
+
+
+    })
+
+    /*
+    * 封装ajax 发送get AJax请求
+    * 参数 URL
+    * 返回promise对象
+    * */
+    function sendAJAX(url) {
+        // 返回结果
+        return new Promise((resolve, reject) => {
+            // 创建对象
+            const xhr = new XMLHttpRequest()
+            // 初始化
+            xhr.open('GET', 'https://api.apiopen.top/getJoke')
+            // 发送
+            xhr.send()
+            // 4.处理响应结果
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // 控制台输出响应体
+                        // 控制台输出响应体
+
+                        resolve(xhr.response)
+                    } else {
+                        // 控制台输出响应状态吗
+                        reject(xhr.status)
+                    }
+                }
+            }
+        })
+    }
+    sendAJAX("4399.com").then((value)=>{
+        console.log(value)
+    },(reason)=>{
+        console.log("失败")
+        console.log(reason)
+    })
+</script>
+</body>
+
+</html>

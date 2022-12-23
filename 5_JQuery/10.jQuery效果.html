@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+    <style>
+        div {
+            height: 200px;
+            width: 120px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+<!-- jQuery 封装的各种动画效果
+       显示隐藏
+        show() show([speed],[easing],[fn]) 分别s时间或者slow 效果 回调函数
+        hide()  参数同上  easing -> swing linear
+        toggle()
+
+        滑动
+        slideDown()
+        slideUp()
+        slideToggle()
+
+        淡入淡出
+        fadeIn()
+        fadeOut()
+        fadeToggle()
+        fadeTo()
+
+        自定义动画
+        animate()
+
+-->
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div>
+
+</div>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+            $("div").show(2000, function () {
+                console.log("显示！")
+            })
+        })
+        $("button").eq(1).click(function () {
+            $("div").hide(2000, function () {
+                console.log("隐藏！")
+            })
+        })
+        // hide() 和 show() 之间切换
+        $("button").eq(2).click(function () {
+            $("div").toggle(2000, function () {
+                console.log("切换！")
+            })
+        })
+
+
+    })
+
+
+</script>
+</body>
+</html>

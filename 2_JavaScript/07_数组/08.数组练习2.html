@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  数组去除相同的元素
+        var arr = [1, 5, 5, 7, 3, 6, 2, 3, 5, 6, 6, 2, 8, 9, 4, 5, 6, 1, 2, 3, 4];
+        for (var index = 0; index < arr.length; index++) {
+            for (var index2 = 0; index2 < index; index2++) {
+                // 该方法的缺陷 注意删除元素后 后面索引的元素会补上去 就会要忽略对比补上去的元素
+                if (arr[index] == arr[index2]) {
+                    arr.splice(index, 1);
+                    // 补杀漏网之鱼 新补上删除元素位置的
+                    index--;
+
+                }
+            }
+
+        }
+        console.log(arr);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

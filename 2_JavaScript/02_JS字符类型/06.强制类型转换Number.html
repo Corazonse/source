@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            将其他类型转换为Number
+                转换方式一
+                    使用Number()函数
+                        1.若果转换对象是数字构成就会直接成为数字 number
+                        2.如果存在非数字类容 则会 NaN
+                        3.如果字符串是空串 或者全是空格的字符串则转换为 0；
+                        4.若果是Boolean值 true 就是转成1 false转成0
+                        5.NULL 转换为数字  0
+                        6.undefined 转换为数字NaN
+                    Number有局限 稍微有点非数字内容就 Na
+                转换方式二：
+                    这种方式专门对付字符串
+                        -parseInt() 把一个字符串转换为一个整数,该函数能把有效的整数内容取出来
+                        -parseFloat() 吧字符串转换为一个小数,该函数能把字符串有效的小数内容取出来
+                            -上述parseInt()读到非整数就终止
+                            -上述parseFloat()读到非整数非有效小数就终止
+                        如果对非String类型使用parseInt()或者parseFloat()
+                        它会将其转换为String 然后再操作
+
+                        也可以对小数 利用 parseInt()取整
+        
+        
+        */
+        var a = "123.5.6px";
+        a = parseFloat(a)
+        console.log(typeof a);
+        console.log(a);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

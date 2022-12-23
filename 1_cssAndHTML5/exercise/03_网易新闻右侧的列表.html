@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易新闻右侧列表</title>
+    <style>
+        /* 去除下划线 */
+        body ul, span, a {
+            text-decoration: none;
+        }
+
+        .box4 {
+            width: 300px;
+            height: 400px;
+            text-decoration: none;
+            border-top: 1px solid #ddd;
+        }
+
+        .box0 a {
+            display: block;
+
+        }
+
+        .box1 {
+            width: 68px;
+            height: 50px;
+            font-size: 20px;
+            background-color: red;
+        }
+
+        .box2 {
+            width: 307px;
+            height: 50px;
+            background-color: aliceblue;
+            font-size: 20px;
+        }
+
+        .box5 li {
+            border: 10px;
+            margin-bottom: 17px;
+            color: #666;
+
+
+        }
+
+        .box5 li a:hover {
+            color: red;
+        }
+
+        .box6 a {
+            /* 设置一个行内块元素，使其顶上边框能根据
+            字体长度而改变 */
+            height: 30px;
+            display: inline-block;
+            border-top: 1px solid red;
+            margin-top: -1PX;
+            text-decoration: none;
+        }
+
+        /* font-wight:bold;加粗 */
+    </style>
+</head>
+
+<body>
+<div class="box4">
+    <h2 class="box6"><a href="超链接">体育</a></h2>
+    <a class="box0" href="https://c.m.163.com/news/s/S1653800872876.html" target="_blank"><img
+            src="./02.网易新闻右侧列表/1.png" alt="神州十四发射成功"></a>
+
+    <span class="box1">HOT</span><a href="https://c.m.163.com/news/s/S1653800872876.html" target="_blank"><span
+        class="box2">神舟十四号发射圆满成功</span></a>
+    <ul class="box5">
+        <li><a href="https://c.m.163.com/news/s/S1654147772197.html"><span>聚焦2022全国高考</span></a></li>
+        <li><a href="https://c.m.163.com/news/s/S1646906071661.html"><span>全国疫情呈稳定下降态势</span></a></li>
+        <li><a href="https://c.m.163.com/news/s/S1653210480693.html"><span>沿着总书记的足迹</span></a></li>
+        <li><a href="https://c.m.163.com/news/s/S1653895728686.html"><span>网安法实施五年来</span></a></li>
+    </ul>
+</div>
+</body>
+
+</html>

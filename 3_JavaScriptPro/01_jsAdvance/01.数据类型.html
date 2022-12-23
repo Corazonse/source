@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            基本(值)类型
+            string
+            number
+            boolean
+            undefined
+            null
+            对象(引用)类型
+            object  任意对象
+            function    一种特别可执行对象
+            array    一种特对象（内部数据有序 数值有下标）
+
+            判断
+            typeof 返回数据性的字符串表达  能判断 数值 字符 布尔值 function 不能判断 null object array function
+            
+            instanceof(实例) 判断对象具体类型
+
+            === 判断是否完全相等 
+                可判断 undefine null
+        
+        */
+    </style>
+    <script>
+        var a;
+        console.log(a, typeof a, typeof a === "undefined");
+        // 对象
+        var b1 = {
+            b2: [1, "asd", console.log],
+            b3: function () {
+                console.log("b3");
+                return function () {
+                    return 'xfzhang'
+                }
+            }
+        }
+        console.log(b1 instanceof Object, b1 instanceof Array);//TRUE FALSE
+        console.log(b1.b2 instanceof Object, b1.b2 instanceof Array);//TRUE TRUE
+        console.log(b1.b3 instanceof Function, b1.b3 instanceof Object);//TRUE TRUE
+        console.log(b1.b3()());//xfzhang
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

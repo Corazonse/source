@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+w {
+    margin: 0 auto;
+}
+
+html {
+    font-size: 5.33333333vw;
+    background-color: #eff0f0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.top-bar {
+    display: flex;
+    height: 4.375rem;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 4.375rem;
+}
+
+.top-bar a {
+    color: #24253d;
+    font-size: 1.25rem;
+}
+
+.top-bar i {
+    color: #999;
+    font-size: 1rem;
+}
+
+.banner img {
+    width: 100%;
+    border-radius: 0.25rem;
+}
+
+.menu {
+    height: 8.225rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+}
+
+.menu a {
+    width: 8.175rem;
+    height: 2.6rem;
+    color: white;
+    border-radius: 0.25rem;
+    line-height: 2.6rem;
+}
+
+.menu a i {
+    margin: 0 0.8rem 0 0.925rem;
+}
+
+.menu .course {
+    background-color: #f97053;
+}
+
+.menu .aa {
+    background-color: #cd6efe;
+}
+
+.menu .bb {
+    background-color: #bfa;
+}
+
+.menu .cc {
+    background-color: #f1bc4f;
+}
+
+.course-list {
+    height: 9.825rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin-bottom: 1.15rem;
+}
+
+.course-list .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-list .title h2 {
+    font-size: 0.825rem;
+    color: #24253d;
+    border-left: 2px solid #3a84ff;
+    padding-left: 5px;
+}
+
+.course-list .title a {
+    font-size: 0.7rem;
+    color: #656565;
+}
+
+.item-list {
+    width: 18rem;
+    display: flex;
+    overflow: auto;
+}
+
+.item {
+    flex: none;
+    box-sizing: border-box;
+    width: 8rem;
+    height: 8.1rem;
+    padding: 0 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    margin-right: 0.6rem;
+}
+
+.item img {
+    width: 100%;
+}
+
+.item .course-title {
+    font-size: 0.8rem;
+    color: #24253d;
+}
+
+.item .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.item .user-info .avatar {
+    width: 1.05rem;
+    height: 1.05rem;
+}
+
+.item .user-info .nickname {
+    margin-left: 4px;
+    font-size: 0.6rem;
+    color: #969393;
+}
+
+/*# sourceMappingURL=./style.css.map */

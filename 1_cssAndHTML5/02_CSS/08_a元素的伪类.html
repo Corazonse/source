@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            :link 用来表示没访问过的连接（正常连接）
+            :visited 用来表示访问过的连接
+
+            由于隐私的原因:visited这个伪类只能修改链接的颜色
+{}
+            :hover 用于鼠标移入状态（其他元素都可以用）
+
+            :active 表示鼠标正在鼠标点击的（其他元素都可以用）
+
+        */
+        a:hover {
+
+            color: yellow;
+            font-size: 70px;
+        }
+
+        a:active {
+
+            color: yellowgreen;
+            font-size: 10px;
+        }
+
+        /* a:link{
+            color: red;
+        }
+        a:visited{
+            color: aquamarine;
+        } */
+
+    </style>
+
+
+</head>
+<body>
+
+<a href="https://www.bilibili.com/video/BV1XJ411X7Ud?p=35&vd_source=dfcfd9518603e4ac4c02f9b41178d1e4"
+   target="_blank">b站</a>
+<br><br>
+<a href="https://www.bilibili.com/video/BV1XJ411aX7Ud?p=35&vd_source=dfcfd9518603e4ac4c02f9b41178d1e4" target="_blank">c站</a>
+</body>
+</html>

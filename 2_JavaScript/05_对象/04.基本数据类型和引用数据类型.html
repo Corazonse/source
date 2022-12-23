@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            基本数据类型
+            String Number Undefined Null Boolean
+
+            引用数据类型
+            Object
+
+            JS中的变量都是保存到栈内存的
+                基本数据类型直接保存在
+                值与值之间数独立存在的 修改一个变量时不会影响其他的变量
+
+                对象时保存在堆内存的
+                变量中的值存放在堆内存中，变量具有指针指向堆内存的值
+                修改值的时候 是修改堆内存里面的值 但是 地址不变
+                如果两个变量爆粗你的是同一个对象引用（地址）通过一个变量
+                修改变量值时 另外一个也会改变
+
+                    栈内存（var b = a  a++）    堆内存         
+                变量        值              堆内存内开辟一个空间
+                a          124              然后 变量保存的是对象内存的地址
+                b          123 
+                obj
+           */
+        var a = 123;
+        var b = a;
+        a++;
+        console.log("a = " + a)
+        console.log("b = " + b)
+
+        var obj = new Object();
+        obj.name = "孙悟空";
+        var obj2 = obj;
+        obj.name = "猪八戒";
+
+
+        console.log(obj);
+        console.log(obj2);
+
+        obj2 = null;
+        // （）obj2的值设置为 null 等于单独断出了 obj2的 地址 不影响 obj1
+        //  两个obj 值相等 不一定内容相等
+        // 也就是说 基本数据类型 比  值
+        // 引用数据类型比    地址
+        console.log();
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+    1.H5规范提供了js分线程的实现，取名为：Web Workers
+       (但是子线程完全受到主线程控制，且不得操作DOM
+       所以没有改变js单线程的本质)
+    2.相关API
+        Worker：构造函数，加载分线程执行的js文件
+        Worker.prototype.onmessage:用于接收另一个线程的回调函数
+        Worker.prototype.postMessage:向另一个线程发消息
+    3.不足
+        慢 总时间的差距（相对于主线程）
+        worker内代码不能操作DOM（更新UI）
+        不能跨域加载JS
+        不是每个浏览器都支持这个新特性
+ -->
+<input type="text" placeholder="数值" id="number">
+<button id="btn">计 算</button>
+<SCript>
+    // 递归1 1 2 3 5 8 13 21 34
+    function fn(n) {
+        if (n == 0) {
+            return 0
+        }
+        return n <= 2 && n > 0 ? 1 : fn(n - 1) + fn(n - 2)
+    }
+
+    // console.log(fn(10));
+    // 因为主线程运行递归导致页面被冻结
+    let input = document.getElementById("number")
+    document.getElementById("btn").onclick = function () {
+        let number = input.value
+        if (number > 0) {
+            number -= 1
+        }
+        let result = fn(number)
+        alert(result)
+    }
+
+
+    // 土方法
+    // function fn(number){
+    //     let i = 0
+    //     let j = 1
+    //     let array = [];
+    //     array[0] = 0
+    //     array[1] = 1
+    //     for(let x = 3;x < 1000+1;x++){
+    //         if(x%2==0){
+    //             i = i + j
+    //             array[x-1] = i
+    //         }else{
+    //             j = j + i
+    //             array[x-1] = j
+    //         }
+    //     }
+    //     return array[number-1]
+    // }
+    // console.log("第x位 = "+fn(10));
+
+
+</SCript>
+
+</body>
+</html>

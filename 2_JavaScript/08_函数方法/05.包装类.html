@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            基本数据类型
+            5 个
+            引用数据类型
+
+            在JS提供了三个包装类 通过包装类可以将基本数据类型的数据转换为对象
+                可以让基本数据类型转换为一下对应对象
+            String()    
+            Number()
+            Boolean()
+
+            但是在开发中基本不用基本数据类型对象 可能出现等式误会
+
+        */
+        //    不能用下面方法
+        var num = new Number(3);
+        num.hello = "你好";
+        console.log(typeof num);
+        console.log(num.hello);
+        // 但是在开发中基本不用基本数据类型对象 可能出现等式误会
+        var str = new String("j");
+        var str2 = new String("j");
+        console.log(str == str2); //false
+        // 方法属性只能添加给对象
+        // 给基本数据类型使用属性方法浏览器会临时转换包装转换为对象
+        // 然后调用属性和方法
+
+        // 包装类是给浏览器用的
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

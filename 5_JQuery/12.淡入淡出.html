@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+    <style>
+        div {
+            height: 200px;
+            width: 120px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+<!-- jQuery 封装的各种动画效果
+        淡入淡出
+        fadeIn() 淡入
+        fadeOut()淡出
+        fadeToggle()  淡入淡出切换
+        fadeTo() 吧元素透明度修改为多少 (speed,opacity,[easing],[fn])
+        前三个参数([speed],[easing],[fn]) 分别s时间或者slow 效果 回调函数
+
+        自定义动画
+        animate()
+
+-->
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<button>修改透明度一次向</button>
+<div>
+
+</div>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+            $("div").fadeIn(2000, function () {
+                console.log("显示！")
+            })
+        })
+        $("button").eq(1).click(function () {
+            $("div").fadeOut(2000, function () {
+                console.log("隐藏！")
+            })
+        })
+        // fadeIn() 和 fadeOut() 之间切换
+        $("button").eq(2).click(function () {
+            $("div").fadeToggle(2000, function () {
+                console.log("切换！")
+            })
+        })
+        // 修改透明度 渐进方式调整到指定的透明度 透明度必须写 0-1
+        $("button").eq(3).click(function () {
+            $("div").fadeTo(1000, 0.5)
+        })
+
+
+    })
+
+
+</script>
+</body>
+</html>

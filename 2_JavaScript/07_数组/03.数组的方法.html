@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建数组
+        var arr = ["1", "2", "3"];
+        // 数组方法
+        /*
+            push()
+                -该方法可以向数组的末尾添加一个或多个元素，并返回数组的长度
+                -可以将添加的元素作为方法的参数传递
+                 这样这些元素会自动添加到数组末尾
+        */
+        //    他的返回值是数组长度
+        arr.push("唐僧", 1, 2, 3);
+        var res = arr.push("唐僧", 1, 2, 3);//res等于数组长度 9
+
+        console.log(arr);
+        /*
+            pop()
+                -删除数组的最后的元素
+                -并将删除的元素返回  就是类似弹出最后一个元素
+
+            shift()
+                -可以删除数组的第一个元素
+                    并将被删除的元素作为的值返回
+                        弹出第一个元素
+
+                */
+        arr.pop();
+        console.log(arr);
+        /*
+            unshift()
+                -向数组开头添加一个或者多个元素 并返回数组新的长度
+                就是push()的相反过来
+                向前边插入元素后其他的元素的索引会以此添加
+
+        */
+        arr.unshift("唐僧", 1, 2, 3);
+        console.log(arr);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

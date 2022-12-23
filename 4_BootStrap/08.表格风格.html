@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+<!-- Bootstrap 提供了 1 种 基础样式和4种附加样式以及1个支持响应式的表格。
+在使用Bootstrap的表格过程中，只需要添加对应的类名就可以得到不同的表格风格
+基础样式
+    .table ：基础表格
+附加样式
+    1 .table-striped ：斑马线表格
+    2 .table-bordered： 带边框的表格
+    3 .table-hover ：鼠标悬停高亮的表格
+    4 .table-condensed ：紧凑型表格，单元格没有内距或者内距比较其他地方小
+tr th td样式
+    提供了五中不同的类名，每种类名控制了行的不同背景颜色
+.active 将悬停的颜色应用在行或者单元格上 #f5f5f5
+.success 表示成功的操作 #dff0d8
+.info 表示信息变化的操作 #d9edf7
+.warning 表示一个警告操作
+.danger 表示微信操作 #f2dede
+-->
+<!--           基础样式       边框     换色    -->
+<table class="table table-bordered table-hover">
+    <tr class="info">
+        <th>数据库</th>
+        <th>数据库</th>
+        <th>数据库</th>
+    </tr>
+    <tr class="danger">
+        <th>下饭</th>
+        <th>下饭</th>
+        <th>下饭</th>
+    </tr>
+    <tr class="success">
+        <th>吃饭</th>
+        <th>吃饭</th>
+        <th>吃饭</th>
+    </tr>
+
+</table>
+<!-- 简单的隔行换色                                   格子变扁了 -->
+<table class="table table-bordered table-striped table-condensed ">
+    <tr>
+        <th>数据库</th>
+        <th>数据库</th>
+        <th>数据库</th>
+    </tr>
+    <tr>
+        <th>下饭</th>
+        <th>下饭</th>
+        <th>下饭</th>
+    </tr>
+    <tr>
+        <th>吃饭</th>
+        <th>吃饭</th>
+        <th>吃饭</th>
+    </tr>
+
+</table>
+</body>
+</html>

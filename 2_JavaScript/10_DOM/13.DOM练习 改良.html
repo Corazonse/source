@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="css/mui.css" rel="stylesheet"/>
+    <style type="text/css">
+        .box1 {
+            width: 250px;
+            height: 200px;
+            margin: 50px auto;
+            border: #000000 1px solid;
+            padding: auto auto;
+
+        }
+
+        .box1 input {
+            margin: 2px auto;
+            align-items: center;
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+<!-- P105有简洁方法  舍去tbody的标签 然后在tr基础上 直接添加th -->
+<table border="1" width="50%" align="center" id="table">
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>邮箱</th>
+        <th>薪水</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>张三</th>
+        <th>123@qq.com</th>
+        <th>500</th>
+        <th><a href="javaScript:;">Delete</a></th>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr>
+        <th>李四</th>
+        <th>123@qq.com</th>
+        <th>10</th>
+        <th><a href="deleteEmp?id=002">Delete</a></th>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr>
+        <th>王五</th>
+        <th>123@qq.com</th>
+        <th>10</th>
+        <th><a href="deleteEmp?id=003">Delete</a></th>
+    </tr>
+    </tbody>
+
+
+</table>
+
+<div class="box1">
+    <p>添加新员工</p>
+
+    <span>
+				name:
+			</span><input type="text" name="name1" id="emp" value=""/>
+    <span>
+				email:
+			</span><input type="text" name="email" id="em" value=""/>
+    <span>
+				salary:
+			</span><input type="text" name="money" id="sal" value=""/>
+    <br>
+    <input type="submit" name="提交" id="addEmpButton" value="提交"/>
+
+</div>
+
+<script type="text/javascript">
+    function delA() {
+        // 获取他的爷爷节点
+        var tr = this.parentNode.parentNode;
+        // 获取员工姓名
+        var name = tr.getElementsByTagName("th")[0].innerHTML;
+        // 获取他爸的儿子节点 自杀式删除
+        var flag = confirm("确定要删除" + name + "吗？");
+        // 确认和取消按钮提示框 返回是布尔类型
+        if (flag) {
+            // 获取他爸的儿子节点 自杀式删除
+            tr.parentNode.removeChild(tr);
+        }
+
+        /*
+         点击超链接会跳转页面(默认行为)
+         当不希望出现默认行为可以在响应函数后 return false; 消除行为
+         this作为点击
+         */
+        return false;
+    }
+
+    // 点击一个连接后删除一个员工信息
+    // 获取所有的超链接
+    var allA = document.getElementsByTagName("a");
+    // 为每一个超链接都绑定一个单击相应函数
+    for (var i = 0; i < allA.length; i++) {
+        /*
+            for循环会在页面加载完成之后立即执行
+            而响应函数会在超链接被点击时才执行
+            当响应函数执行时，for循环早已执行完毕。
+
+
+
+        */
+
+
+        allA[i].onclick = delA;
+    }
+
+    // 为了点击按钮绑定能提交的单机响应函数
+    var addEmpButton = document.getElementById("addEmpButton");
+    addEmpButton.onclick = function () {
+        // 获取输入框的值
+        var emp = document.getElementById("emp").value;
+        var em = document.getElementById("em").value;
+        var sal = document.getElementById("sal").value;
+        // 获取表格 为表格添加新的元素
+        var table = document.getElementById("table");
+        var body2 = document.createElement("tbody");
+        var name2 = document.createElement("tr");
+        var name3 = document.createElement("th");
+        // var email2 = document.createElement("tr");
+        var email3 = document.createElement("th");
+        // var salary2 = document.createElement("tr");
+        var salary3 = document.createElement("th");
+        var a2 = document.createElement("th");
+        var a3 = document.createElement("a");
+        a3.href = "javascript:;";
+        a3.onclick = delA;
+        // 创建文本节点
+        var nameText = document.createTextNode(emp);
+        var emailText = document.createTextNode(em);
+        var salText = document.createTextNode(sal);
+        var aText = document.createTextNode("Delete");
+        table.appendChild(body2).appendChild(name2).appendChild(name3).appendChild(nameText);
+        table.appendChild(body2).appendChild(name2).appendChild(email3).appendChild(emailText);
+        table.appendChild(body2).appendChild(name2).appendChild(salary3).appendChild(salText);
+        table.appendChild(body2).appendChild(name2).appendChild(a2).appendChild(a3).appendChild(aText);
+
+    }
+
+</script>
+</body>
+
+</html>

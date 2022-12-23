@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 主界面 重置样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: rgb(233, 240, 250);
+            height: 80px;
+            width: 100%;
+            position: relative;
+
+        }
+
+        .computer {
+            float: right;
+        }
+
+        .line {
+            float: left;
+
+        }
+
+        .study {
+            font-size: 30px;
+            color: red;
+            margin: 0 auto;
+            position: absolute;
+            left: 42%;
+            top: 20px;
+        }
+
+        .study2 {
+            float: left;
+            position: relative;
+            top: 50px;
+            left: -350px;
+            color: rgb(75, 142, 167);
+        }
+
+        .study3 {
+            float: left;
+            position: relative;
+            top: 50px;
+            left: -340px;
+            color: rgb(75, 142, 167);
+        }
+
+        .nav {
+            height: 30px;
+            width: 100%;
+            background-color: rgb(238, 238, 238);
+        }
+
+        /* 开启弹性盒子 */
+        .list1 {
+            list-style: none;
+            height: 30px;
+            width: 400px;
+            float: left;
+            display: flex;
+        }
+
+        /* 弹性等级 */
+        .nav ul li {
+            flex-grow: 1;
+        }
+
+        /* 导航左侧样式 以及居中 */
+        .nav ul li a {
+            margin-left: 10px;
+            display: block;
+            float: left;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+
+        }
+
+        /* 时间标签 */
+        .time {
+            line-height: 30px;
+            float: right;
+
+        }
+
+        /* 左内联框架 */
+        .left {
+            width: 30%;
+            height: 600px;
+            background-color: rgb(244, 236, 255);
+            display: block;
+
+        }
+
+        /* 右内敛框架 */
+        .right {
+            width: 69%;
+            height: 600px;
+            display: block;
+
+        }
+
+        .body-div iframe {
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+        }
+
+        /*弹性布局 */
+        .body-div {
+            display: flex;
+            align-content: space-between;
+        }
+
+        /* 响应式 */
+        @media only screen and (max-width: 850px) {
+            .study {
+                height: 0;
+                width: 0;
+                overflow: hidden;
+            }
+
+            .time {
+                height: 0;
+                width: 0;
+                overflow: hidden;
+            }
+        }
+    </style>
+    <!-- <script>
+        window.onload = function(){
+            
+        var show= function(){
+         var date = new Date();
+         var year = date.getFullYear();
+         var month = date.getMonth()+1;
+         month= month<10?"0"+month:month;
+         var day = date.getDate();//获取日期
+         day= day<10?"0"+day:day;
+         var hour = date.getHours();
+         hour= hour<10?"0"+hour:hour;
+         var minute = date.getMinutes();
+         minute= minute<10?"0"+minute:minute;
+         var week = date.getDay();//获取星期
+         var second=date.getSeconds();
+         second= second<10?"0"+second:second;
+         week = "日一二三四五六".charAt(week);
+         week="星期"+week;
+         result=year+"-"+month+"-"+day+" "+week+" "+hour+":"+minute+":"+second;
+         document.getElementById("time").innerHTML=result;
+        }
+        show();
+        setInterval("show()",1000);
+        }
+    </script> -->
+</head>
+
+<body>
+<!-- 头部栏 -->
+<div class="header">
+
+
+    <img src="./images/logo.gif" alt="" class="line">
+
+    <span class="study2">2015年春学期</span>
+    <span class="study3">当前用户: 小李（管理员）</span>
+
+    <div class="study">好好学习,天天向上</div>
+
+    <img src="./images/head.gif" alt="" class="computer">
+
+</div>
+
+<div class="nav">
+    <ul class="list1">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">在线学习</a></li>
+        <li><a href="#">通知公告</a></li>
+        <li><a href="#">个人信息修改</a></li>
+        <li><a href="#">注销</a></li>
+    </ul>
+    <span class="time"> 2022年9月19日 星期一</span>
+
+</div>
+
+
+<div class="body-div">
+    <div class="left">
+        <iframe src="./user.html" frameborder="0">
+
+        </iframe>
+    </div>
+
+    <div class="right">
+        <iframe src="./webIntroduce.html" frameborder="0"></iframe>
+    </div>
+</div>
+
+
+</body>
+
+</html>

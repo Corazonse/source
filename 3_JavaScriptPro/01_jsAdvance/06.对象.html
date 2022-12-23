@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!--
+    对象：
+        多个对象的封装体，用来保存多个数据的容器
+        对象代表现实的一个事物
+    为什么用对象:
+        方便使用和管理对象
+    对象的组成
+    属性：属性名(字符串)和属性值(任意)组成
+    方法:一种特别的属性（属性值是函数）
+    如何访问对象内部数据
+    .属性名  :编码简单，有时不能用
+    ['属性名'] :通用
+        理由 属性名包含特殊字符： - 空格 或者变量名不确定
+
+
+
+
+ -->
+
+
+<script>
+    var p = {
+        name: 'TOM',
+
+        age: 12,
+
+        setName: function (name) {
+            this.name = name
+        },
+    }
+    // P.content type = "type" //报错
+    p['content type'] = 'type';
+    console.log(p['content type']);
+
+    var propName = 'myAge';// 变量名不确定
+    var value = 18;
+    p.propName = value;//不能用 因为在p里面访问不到
+    p[propName] = value;//所以用这个
+    console.log(p[propName]);
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 大部分使用的都是 内建对象 和宿主对象 （浏览器定义的）
+        /*
+            内建
+                数组（Array）
+                    -数组也是对象捏
+                    -它和我们普普通通对象功能类似，也用来存储一些
+                    -普通的对象通过字符串存储 属性名 对应 属性值
+                    -数组不同的是她是通过索引来操作元素 索引（index） 对应 值
+                        -从 0 开始的整数就是索引
+                        -数组的存储的性能比普通的对象要好，在开发中我们经常使用数组存储数据
+
+        
+        */
+        //    创建数组对象 typeof : object
+        var arr = new Array();
+        console.log(arr);
+        /*向我们的数组中添加元素
+        语法: 数组[索引] = 值
+            如果读取不存在的索引，不会报错 而是返回undefined
+        */
+        arr[0] = 10;
+        arr[1] = 10;
+        arr[2] = 10;
+
+
+        console.log(arr);
+        // 读取数组中的元素
+        console.log(arr[2]);
+        // 尽量不要创建非连续数组
+        //对于连续的数组 可以 获取元素长度 个数
+        // 对于非连续的数组，使用length会获取到最大的索引+1
+        console.log(arr.length);
+
+        // 修改length,大于原数组就会空出很多空数组
+
+        console.log(arr);
+        // 如果修改长度小于原数组 多出的元素就会被删除
+        // arr.length = 2;
+        console.log(arr);
+        // arr.length = 10;
+        // 向素组最大索引位置 的 next 添加元素
+        arr[arr.length] = 30;
+        console.log(arr);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+</head>
+<body>
+<!-- 寻找指定祖先元素 -->
+<div class="one">
+    <div class="two">
+        <div class="three">
+            <div class="four">
+                你干嘛！
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // 找到one
+    console.log($(".four").parent().parent().parent())
+    // 找祖先
+    console.log($(".four").parents())
+    // 找one
+    console.log($(".four").parents("one"))
+</script>
+</body>
+</html>

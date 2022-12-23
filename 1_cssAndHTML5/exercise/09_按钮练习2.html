@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            雪碧图的使用不走：
+                1.首先确定好使用图标
+                2.测量图标大小
+                3.根据测量结果创建一个元素
+                4.将雪碧图设置为元素的背景图片
+                5.设置偏移量以显示图标
+                background-positon
+                复数 显示框往下 右
+                正数 显示框往上 左
+            雪碧图的特点：
+                一次性将多个图片加载进图片，降低请求次数，加快响应速度，提升用户体验。
+        
+        
+        */
+        a:link {
+            display: block;
+            height: 29px;
+            width: 93px;
+            background-image: url(./03.京东轮播图/按钮.jpg);
+        }
+
+        a:hover {
+            background-position: -93px 0;
+        }
+
+        a:active {
+
+            background-position: -186px 0;
+
+        }
+
+        /*
+            我们可以将多个小图片统一保存到一个大图片，所有图片统一加载到
+            网页中就可以避免缓存慢出现闪烁
+            通过调整 background-position 偏移量来切换显示图片哪个部分得到效果
+            这个技术在网页中应用极为广泛
+            被称为CSS-Sprict 雪碧图
+        */
+
+    </style>
+</head>
+<body>
+
+<a href="javascript:;"></a>
+</body>
+</html>

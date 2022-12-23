@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery-3.6.1.js"></script>
+    <script src="./toDolist.js"></script>
+    <style>
+        .box1 {
+            margin: 100px auto;
+            width: 360px;
+            overflow: hidden;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<!-- 实现思路 利用本地存储 localStorage 存储输入框的内容 做出删除按钮 -->
+<div class="box1">
+    今天需要完成的事情：
+    <input type="text" class="in">
+    <button class="add">添加</button>
+    <hr>
+    未完成的事情
+    <ul class="not">
+    </ul>
+    <hr>
+    已完成的事情
+    <ul class="yep">
+
+    </ul>
+</div>
+</body>
+</html>

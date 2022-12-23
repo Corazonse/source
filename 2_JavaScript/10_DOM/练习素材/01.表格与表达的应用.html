@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table {
+            margin: 0 auto;
+        }
+
+        .name, .password {
+            display: flex;
+        }
+
+        .comment {
+            height: 100px;
+            width: 300px;
+
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        #btn1, #btn2, #btn3 {
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+<table class="table-all" border="1">
+    <thead>
+    <tr>
+        <th>属性</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody class="body-all">
+    <tr>
+        <th>姓名</th>
+        <th class="th1">
+            <input type="text" class="name">
+        </th>
+    </tr>
+    <tr>
+        <th>密码</th>
+        <th><input type="password" class="password"></th>
+    </tr>
+    <tr>
+        <th>性别</th>
+        <th class="flex">男<input type="radio" name="sex" value="男"> 女<input type="radio" name="sex" value="女"></th>
+    </tr>
+    <tr>
+        <th>兴趣</th>
+        <th class="flex">体育<input type="checkbox"> 美术<input type="checkbox"> 音乐<input type="checkbox"></th>
+    </tr>
+    <tr>
+        <th>学历</th>
+        <th class="flex"><select name="学历" id="study">
+            <option value="1">研究生</option>
+            <option value="2">本科</option>
+            <option value="3">大专</option>
+            <option value="4">高中</option>
+            <option value="5">初中</option>
+            <option value="6">搬砖</option>
+        </select></th>
+    </tr>
+    <tr>
+        <th>评论</th>
+        <th><textarea name="评论" class="comment"></textarea></th>
+    </tr>
+    <tr>
+        <th>文件上传</th>
+        <th class="flex"><input type="file"></th>
+    </tr>
+    <tr>
+        <th id="btn" colspan="2"><input id="btn1" type="submit" value="提交"><input id="btn2" type="submit"
+                                                                                  value="重置"><input id="btn3"
+                                                                                                    type="submit"
+                                                                                                    value="按钮"></th>
+        <th></th>
+    </tr>
+
+    </tbody>
+
+
+</table>
+</body>
+</html>

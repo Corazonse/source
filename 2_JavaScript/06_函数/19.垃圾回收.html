@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 垃圾回收 GC
+        /*
+             -程序运行过程中也会产生垃圾，
+             -这些垃圾积攒过多以后，会导致程勋的运行运行速度过慢
+             -所以我们需要一个垃圾回收的机制，来处理运行过程中的垃圾
+             -当一个变量没有任何一个对象和属性对他进行引用 操作，那么它就会变成垃圾
+             -这种对象过多就是垃圾，大量积攒就会占用内存，导致程序运行慢
+        
+
+             在JS 中会有自动的垃圾回收机制，会自动将这些垃圾对象从内存中销毁
+            我们不需要也不能进行垃圾回收操作
+             */
+        var obj = new Object();
+        //    对对象进项各种操作 那么此时obj的栈内存 的值（地址）就会变成 null 它原有的
+        //    堆内存的东西就变成了废物了 ，变量无用时
+        // ！！！我们需要做的就是把不再使用的对象设置为 null 过了一定时间就会自动收回
+        obj = null;
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

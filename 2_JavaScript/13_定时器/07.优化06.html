@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            position: absolute;
+            left: 0px;
+
+
+        }
+
+        #box2 {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 130px;
+
+        }
+    </style>
+    <!--引用js文件 -->
+    <script src="./08.定时器练习.js"></script>
+    <script>
+        window.onload = function () {
+            // 获取box1
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            // 获取btn01
+            var btn01 = document.getElementById("btn01");
+            var btn02 = document.getElementById("btn02");
+            var btn03 = document.getElementById("btn03");
+            var btn04 = document.getElementById("btn04");
+            var btn05 = document.getElementById("btn05");
+
+            // 先定义timer
+            var timer;
+
+            // 实现点击按钮使得 box1向右移动
+            btn01.onclick = function () {
+                move(box1, 500, 5, "left", function () {
+                    console.log("收工");
+                });
+
+            };
+
+            btn02.onclick = function () {
+                move(box1, 0, 5, "left", function () {
+                    console.log("收工");
+                });
+
+            };
+            btn04.onclick = function () {
+                move(box2, 500, 5, "left", function () {
+                    console.log("收工");
+                })
+
+            };
+
+            btn03.onclick = function () {
+                move(box2, 0, 5, "left", function () {
+                    console.log("收工");
+                });
+
+            };
+            // 回调函数套娃
+            btn05.onclick = function () {
+                move(box2, 500, 5, "width", function () {
+                    move(box2, 500, 5, "height", function () {
+                        console.log("变身！");
+                    })
+                });
+
+            };
+
+
+        };
+
+    </script>
+</head>
+
+<body style="position: relative;">
+<button id="btn02">box1向左移动</button>
+<button id="btn01">box1向右移动</button>
+<button id="btn03">box2向左移动</button>
+<button id="btn04">box2向右移动</button>
+<button id="btn05">测试按钮</button>
+
+<div id="box1"></div>
+<div id="box2"></div>
+
+
+</body>
+
+</html>

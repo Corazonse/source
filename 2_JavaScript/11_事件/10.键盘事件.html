@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div绑定不了键盘事件
+            键盘事件一般都是绑定给一些可以获取的焦点事件
+        
+        */
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            // 键盘事件 onkeydown 按下 可以一直按着一直触发 第一 二次 触发间隔比较长防止误操作
+            // 键盘事件 onkeyup 松开
+
+            document.onkeydown = function (event) {
+                // 获取按键值
+                event = event || window.event;//兼容
+                // 通过keyCode获取编码 可以判断哪个按键被按下
+                // if(event.keyCode === 89){
+                //     console.log("y被按爆啦?");
+                // }
+                /*
+                    用altKey
+                    用ctrlKey
+                    用shiftKey
+                        -让这三个判断 alt ctrl shift是否按下 按下返回true 否则false
+                
+                
+                */
+                if (event.keyCode === 89 && event.ctrlKey) {
+                    console.log("ctrl 和 y 都被摁啊啊");
+                }
+                console.log(event.keyCode);
+            };
+            document.onkeyup = function () {
+                console.log("起来");
+            }
+
+            // 给input绑定事件
+            var input = document.getElementsByTagName("input")[0];
+
+            input.onkeydown = function (event) {
+                event = event || window.event;
+                // 仅仅输入非数字
+                if (event.keyCode >= 48 && event.keyCode <= 57) {
+                    return false;
+                }
+                console.log("你好");
+                // return 可以选择是否默认行为
+
+            }
+        };
+    </script>
+</head>
+
+<body>
+<div id="box1">
+
+
+</div>
+键盘事件：<input type="text">
+</body>
+
+</html>

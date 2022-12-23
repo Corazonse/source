@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<!--
+    回调函数
+        1自己定义 2自己没有调用 3但最终执行(在某个时刻或某个条件下)
+        回调函数的this
+
+        dom事件 this是用户操作的元素
+        定时器回调函数
+
+        ajax请求回调函数   后台交互
+        生命周期回调函数
+
+
+
+
+ -->
+<button id="btn">测试点击事件</button>
+<script>
+    document.getElementById("btn").onclick = function () {
+        alert(this.innerHTML)
+    }
+
+
+    //定时器
+    // 超时定时器
+    // 循环定时器
+    setTimeout(function () {
+        alert('到点了')
+    }, 3000)
+</script>
+</body>
+</html>

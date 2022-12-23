@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+点击抽奖
+<button class="btn">抽 奖</button>
+点击抽奖2
+<button class="btn2">抽 奖</button>
+<script>
+    /**
+     *  Promise 是ES6引入的异步编程的新解决档案 语法上Promise是一个构造函数
+     *  可以链式调用 防止回调地狱
+     *
+     *  指定回调函数的方式更加灵活
+     *  更方便用来封装异步操作并可以获取成功或者失败的结果
+     *
+     * 通过下面的操作可以把异步操作封装在 promise 中
+     *
+     */
+    //点击按钮后 2s后显示是否中奖 30%概率
+    function rand(m, n) {
+        return Math.ceil(Math.random() * (n - m + 1)) + m - 1
+    }
+    const btn = document.querySelector('.btn')
+    const btn2 = document.querySelector('.btn2')
+    btn.addEventListener('click',function () {
+       setTimeout(()=>{
+           let n = rand(1,100)
+           if(n <= 30){
+               alert("恭喜你中奖")
+           }else{
+               alert('你什么都不剩')
+           }
+       },1000)
+    })
+
+//    promise
+    btn2.addEventListener('click',function (){
+    //    函数类型参数 包裹了异步操作
+    const p = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let n = rand(1,100)
+            if(n <= 30){
+                //可以抛出结果值 在then()  以便于处理
+                resolve(n) //promise 状态设置为成功
+            }else{
+                reject(n) //promise 状态设置为失败
+            }
+        },1000)
+    })
+        //then() 两个参数函数 分别代表成功和失败
+        p.then(
+            (value)=>{
+            alert("成功，你的号码是"+value)
+        },
+            (reson)=>{
+                alert("失败,你的号码是"+reson)
+        })
+
+    })
+</script>
+
+</body>
+</html>

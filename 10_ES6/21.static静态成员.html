@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        函数对象属性 和 实例对象属性是不相通的
+
+    */
+    function Phone() {
+
+    }
+
+
+    // 函数对象属性 属于函数对象的 属于类 静态成员
+    Phone.name = "手机"
+    Phone.change = function () {
+        console.log("科技改变生活");
+    }
+
+
+    // 函数对象 添加到原型才能添加到函数里面去
+    Phone.prototype.size = "6.5inch"
+    // 实例对象属性
+    let iphone = new Phone() //6.5inch
+    console.log(iphone.size);
+    // iphone.change()  报 错 直接添加的是
+
+
+</script>
+
+</body>
+</html>

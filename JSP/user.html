@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<style>
+
+    /* 左侧内联样式 */
+
+    .online {
+        position: absolute;
+        margin: 0 auto;
+        top: -50px;
+        left: 140px;
+    }
+
+    .table-user {
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+        border: 1px solid black;
+
+    }
+
+    .table-user tr:nth-child(2n+1) {
+        background-color: rgb(102, 204, 255);
+    }
+
+    @media only screen and (max-width: 300px) {
+        .online {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+        }
+    }
+</style>
+
+
+</body>
+<div class="user" style="position: relative;">
+    <div class="online">在线人数:0,登录用户数:0</div>
+    <table class="table-user">
+        <thead>
+        <tr>
+            <th>用户列表</th>
+        </tr>
+        <tr>
+            <th>无</th>
+        </tr>
+        <tr>
+            <th>匿名用户列表</th>
+        </tr>
+        <tr>
+            <th>无</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+</html>

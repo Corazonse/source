@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+<!--
+    3.列排序
+        其实就是改变列的方向 可以左右浮动，并设置浮动的距离
+        push往右    pull往左
+        在Bootstrap的框架系统中可以通过添加类名col-md-push-*（*移动的列距离）
+        移动左会覆盖 移动右会被覆盖(后面的肯定覆盖前面的)
+    4.列嵌套
+        一行可以分为12列 一列里面还可以再分12列无限嵌套
+
+
+ -->
+<div class="row">
+    <div class="col-md-1 col-md-push-4" style="background-color:red ;">1</div>
+    <div class="col-md-1" style="background-color: yellow;">1</div>
+    <div class="col-md-1" style="background-color:black ;">1</div>
+    <div class="col-md-1 col-md-pull-1" style="background-color:blue ;">1</div>
+</div>
+<hr>
+<div class="row">
+    <!-- 这一行不能有东西 不然会把嵌套内容挤下去 -->
+    <div class="col-md-6 col-xs-6" style="background-color:red ;">
+        <div class="row">
+            <div class="col-md-6" style="background-color:blue ;"></div>
+            <div class="col-md-6" style="background-color: blueviolet;">1</div>
+        </div>
+    </div>
+    <!-- 调成xs就能在小屏适应一下 -->
+    <div class="col-md-6 col-xs-6" style="background-color: yellow;">1</div>
+
+</div>
+<hr>
+</body>
+
+</html>

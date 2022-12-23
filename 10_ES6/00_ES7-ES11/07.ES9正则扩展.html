@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则扩展-命名捕获分组</title>
+</head>
+
+<body>
+<ul>
+    <li><a href="">肖生克的救赎</a>
+        <p>上映时间:1994-09-10</p>
+    </li>
+    <li><a href="">阿甘正传</a>
+        <p>上映时间:1994-09-10</p>
+    </li>
+</ul>
+<script>
+    /*
+        声明一个字符串  d对命名的结果进行捕获分组 pass了
+    */
+    let str = '<a href="https://limestart.cn/">测试<a>'
+    // 提取 url 与 标签文本
+    // const result = reg.exec(str)
+
+    // console.log(result[1]);
+    // console.log(result[2]);
+
+
+    let str2 = "123456789"
+    // 正向断言 123456789 你好不见了
+    const reg = /\d+(?=你)/
+    // 反向断言 正则扩展
+    const reg2 = /(?=4)\d+/
+
+    const result = reg2.exec(str2)
+    console.log(result);
+
+    /*
+        dotAll模式 . 元字符 除换行符意外的任意单个字符
+    */
+    let str3 = `
+    <ul>
+        <li><a href="">肖生克的救赎</a>
+            <p>上映时间:1994-09-10</p>
+        </li>
+        <li><a href="">阿甘正传</a>
+            <p>上映时间:1994-09-10</p>
+        </li>
+    </ul>`
+    // dotALL模式  多了以个模式修正符号 .*? 加了s .就能匹配任何字符
+    const reg3 = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/gs;
+    let result3;
+    let data = [];
+    while (result3 = reg.exec(str)) {
+        data.push({title: result[1], time: result[2]})
+    }
+    //输出结果
+    console.log(data);
+</script>
+</body>
+
+</html>

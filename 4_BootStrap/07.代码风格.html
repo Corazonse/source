@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+<!-- 用于显示代码的风格
+    1.<code></code> 显示单行内敛代码
+
+    2.<pre></pre> 显示多行块代码
+        样式：pre-scrollable（height,max-height高度固定为340，超过就会产生滚动条）
+    3.<kbd></kdb>   来显示用户输入代码 如快捷键
+-->
+<div class="container">
+    <!-- 单行代码 -->
+    <code>meta charset="UTF-8"</code>
+    <code>meta charset="UTF-8"</code>
+    <hr>
+    <!-- 快捷键 -->
+    <p>使用<kbd>control+s</kbd>保存</p>
+    <!-- 显示所有代码 保存所有格式   如果想要显示html代码就要使用字符字体 < 代 &lt;  > 代 &gt; -->
+    <pre class="pre-scrollable">
+            if (typeof jQuery === 'undefined') {
+                throw new Error('Bootstrap\'s JavaScript requires jQuery')
+              }
+              
+              +function ($) {
+                'use strict';
+                var version = $.fn.jquery.split(' ')[0].split('.')
+                if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
+                  throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
+                }
+              }(jQuery);
+              if (typeof jQuery === 'undefined') {
+                throw new Error('Bootstrap\'s JavaScript requires jQuery')
+              }
+              
+              +function ($) {
+                'use strict';
+                var version = $.fn.jquery.split(' ')[0].split('.')
+                if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
+                  throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
+                }
+              }(jQuery);
+        </pre>
+</div>
+</body>
+</html>

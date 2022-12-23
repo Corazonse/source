@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+    <style>
+        /* div{
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            margin-bottom:10px ;
+        } */
+    </style>
+</head>
+<body>
+<!--  隐式迭代
+    JQuery 选择器
+        $("选择器") # * . div 并集选择器div,p,li 交集选择器li.current
+        子代选择器 $("ul>li") 后代选择器("ul li")
+
+        筛选选择器一般方法
+        parent() 找父亲 find(selector)后代 siblings('selector')兄弟
+        children(selector)亲儿子   nextALL([expr]) prevALL([expr]) 查所有之后和之前
+        eq(index) 找索引  hsaClass(class)检查当前元素是否还有特定的类 有返回TRUE
+
+    JQuery 样式操作
+
+    JQuery 效果
+
+    JQuery 属性操作
+
+    JQuery文本属性值
+
+    JQuery元素操作
+
+    JQuery尺寸 位置操作
+
+ -->
+<ul class="father">
+    <li class="son"></li>
+    <li class="son"></li>
+</ul>
+<div class="rgb">颈部惊喜</div>
+<div>颈部惊喜</div>
+<div>颈部惊喜</div>
+<div>颈部惊喜</div>
+<div class="box1">
+    <span>你好</span>
+</div>
+<script>
+    $('.box1')
+    console.log($('.box1'))
+
+    console.log($('div'))
+    // 下面一条语句就给所有的div更改了样式 隐式迭代
+    // 遍历内部的DOM元素(伪数组的形式储存的过程叫做隐式迭代)
+    // 给匹配到的所有的元素进行循环遍历执行相应的方法 而不用我们再进行循环 简化了操作
+    // 给div设置为背景粉色 jquery是不能使用style来说修改样式
+    $('div').css('background', "pink")
+    $('div').css('color', "red")
+
+    // 选择第一个div 和最后一个
+    $('div:first').css('background', "blue")
+    $('div:last').css('background', "yellow")
+
+    // 选择第二个 索引是0开始
+    // $("div:eq(1)").css('background',"red")
+    $("div").eq(1).css('background', "red")
+
+    // 选择奇数行索引号odd  偶数even
+    // $("div:odd").css('background',"red")
+
+    // 查找父亲选择器ul
+    console.log($(".son").parent())
+
+    //    判断是否有类
+    console.log($("div:first").hasClass("rgb"))//true
+
+</script>
+</body>
+</html>

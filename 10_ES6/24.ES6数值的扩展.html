@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    /*
+        Number.EPSILON 是 JAVASCRIPT 表示的最小精度
+        EPSILON 属性的值接近于 2.220446049250313080847263361816E-16
+        用于解决浮点型的误差
+    */
+    // 验证他们的函数
+    function equal(a, b) {
+        // 如果 a与b两者间的值绝对值小于 最小精度值则判断他们为相等
+        if (Math.abs(a - b) < Number.EPSILON) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    console.log(0.1 + 0.2);
+    console.log(0.1 + 0.2 === 0.3);
+    // 如果 a与b两者间的值绝对值小于 最小精度值则判断他们为相等
+    console.log(equal(0.1 + 0.2, 0.3));
+    console.log("---------------");
+    // 八进制和二进制
+    let b = 0b1010//二进制
+    let o = 0o777//八进制
+    let x = 0xff//十六进制
+    console.log(b);
+    console.log(o);
+    console.log(x);
+    console.log("--------------");
+    //2.Number.isFinite 检测一个数值是否为有限数
+    console.log(Number.isFinite(100));
+    console.log(Number.isFinite(100 / 0));
+    console.log(Number.isFinite(Infinity));
+    console.log("--------------");
+    //3.Number.isNaN 检测一个数值是否为 NaN
+
+    //4.Number.parseInt Number.parseFloat字符串转整数
+    console.log(Number.parseInt('54654love'));
+    console.log(Number.parseFloat('3.14159265哈哈'));
+    console.log("--------------");
+
+    //5. Number.isInteger 判断一个数是否为整数
+
+    // 6. Math.trunc 将数字的小数部分抹掉
+
+    //7. ,Math.sign 判断一个数到底是正数 负数 还是0
+
+</script>
+
+</body>
+
+</html>

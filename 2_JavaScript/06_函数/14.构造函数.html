@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            创建一个构造函数，专门用离开创建Person对象
+            构造函数就是一个普通冻的函数，创建方式和普通的函数没有区别
+            不同的是 构造函数 习惯上首字母大写
+
+            构造函数和普通函数的区别就是调用的方式不同
+            普通函数是直接调用，构造函数需要使用 new 关键字调用
+
+            构造函数的执行流程:
+                1.立刻创建一个新的对象
+                2.将新进的对象设置为函数中的this，在构造函数可以用this引用新建的对象
+                3.逐行执行代码
+                4.将新建的对象作为返回值返回
+            使用同一个构造函数创建的对象我们称之为一类对象，也将一个构造函数称之为一个类
+            我们将通过一个构造函数创建的对象，称为是该类的实例
+
+            this的情况
+                1.当以函数的形式调用，this是window
+                2.当以方法的形式调用时，谁调用方法this就是谁
+                3.当以构造函数的形式调用时，this就是新创建的那个对象
+        */
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = function () {
+                alert(this.name);
+            }
+        }
+
+        //    dog 类对象
+        function Dog(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = function () {
+                alert(this.name);
+            }
+        }
+
+        var per = new Person("孙悟空", 18, "女");
+        console.log(per.sayName());
+
+        //    使用 instanceof 可以检查一个对象是否是一个类的实例
+        //      下列语法 返回的是 BOOlearn
+        console.log(per instanceof Person);
+        console.log(per instanceof Object);//true
+        console.log(per instanceof Object);//true
+        // Object 万物皆对象
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

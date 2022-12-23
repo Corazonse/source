@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02_CSS/reset.css">
+    <link rel="stylesheet" href="../06_font&background/css/all.css">
+    <style>
+        /* 防止塌陷，也可以设置高度防止 */
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* 设置字体样式 */
+        .top-bar-wrapper .top-left .top-city,
+        .top-bar-wrapper li, .top-bar-wrapper a {
+            font: 12px/1.5 Microsoft Yahei, Heiti SC;
+            color: #999;
+            position: relative;;
+
+        }
+
+        .top-bar-wrapper a:hover {
+            color: red;
+        }
+
+        /* 外部容器样式 */
+        .top-bar-wrapper {
+            /*设置宽度 */
+
+            width: 100%;
+            /* 设置行高，没有设置高度，使文字居中 */
+            line-height: 30px;
+            height: 30px;
+            border-bottom: 1px solid #ddd;
+            background-color: #E3E4E5;
+        }
+
+        .top-bar {
+            width: 1190px;
+            /* 设置水平居中 */
+            margin: 0 auto;
+        }
+
+        .top-city a {
+            float: left;
+            text-decoration: none;
+
+        }
+
+        .top-city:hover {
+            background-color: #ddd;
+        }
+
+        .city-list {
+            width: 320px;
+            height: 436px;
+            background-color: #999;
+            display: none;
+            border: 1px solid rgb(204, 204, 204);
+            top: none;
+            /* 不撑开父元素 就要其脱离文档流 开启定位！
+             */
+            position: absolute;
+            top: 30px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+        }
+
+        .top-city:hover + .city-list {
+            display: block;
+        }
+
+        .top-left {
+            padding: 0 10px;
+            border: 1px solid rgb(204, 204, 204);
+            bottom: none;
+        }
+
+        .city-list:hover {
+            display: block;
+        }
+
+        /* .top-left .city-list{
+            display: block;
+        } */
+        /* 先让右侧全部向右浮动，然后里面的li再往左浮动 */
+        .top-right {
+            float: right;
+        }
+
+        .top-right li {
+            float: left;
+
+        }
+
+        .top-right li a {
+            text-decoration: none;
+        }
+
+        /* 设置分割的线 */
+        .top-bar-wrapper .line {
+            width: 1px;
+            height: 10px;
+            background-color: #999;
+            margin: 13px 12px 2px;
+
+        }
+    </style>
+</head>
+
+<body>
+<!-- 创建外部容器 -->
+<div class="top-bar-wrapper clearfix">
+    <!-- 创建内部容器 -->
+    <div class="top-bar">
+        <!-- 左侧容器 -->
+        <div class="top-left">
+            <div class="top-city">
+                <a href="javascrip:;"><i class="fas fa-map-marker-alt" style="color: red;"></i> 广东</a>
+            </div>
+            <!-- 放置城市列表的下拉框 -->
+            <div class="city-list">
+
+
+            </div>
+        </div>
+        <!-- 右侧容器 脱离文档流防止他也塌陷 -->
+        <ul class="top-right clearfix">
+
+
+            <li>
+                <a href="javascrip:;">
+                    你好,请登录
+                </a>
+                <a style="color: #f20215;" href="javascrip:;">
+                    免费注册
+                </a>
+            </li>
+            <!-- 分割线 -->
+            <li class="line">
+
+            </li>
+            <li><a href="javascrip:;">我的订单</a></li>
+            <li class="line">
+            <li><a href="javascrip:;">我的京东<i class="fas fa-angle-down"></i></a></li>
+            <li class="line">
+            <li><a href="javascrip:;">京东会员</a></li>
+            <li class="line">
+            <li><a style="color: red;" href="javascrip:;">企业采购<i class="fas fa-angle-down"></i></a></li>
+            <li class="line">
+            <li>客户服务
+                <i class="fas fa-angle-down"></i>
+            </li>
+            <li class="line">
+            <li>网站导航
+                <i class="fas fa-angle-down"></i>
+            </li>
+            <li class="line"></li>
+            <li>手机京东</li>
+
+        </ul>
+    </div>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+.box1 {
+  .box2 {
+    color: aqua;
+  }
+
+  > .box3 {
+    color: aquamarine;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  // 为box1设置hover效果
+  &:hover {
+    //  & 表示外层的元素
+    color: black;
+  }
+
+  div & {
+    color: tan;
+  }
+}
+
+//   扩展
+.p1 {
+  height: 200px;
+  width: 200px;
+}
+
+.p2:extend(.p1) {
+  color: red;
+}
+
+.p3 {
+  // 直接对指定样式引用复制了 p1
+  // mixin混合p1的样式过来 一般不会这么用
+  .p1();
+}
+
+// 使用类选择器时 可以在选择器后年添加一个括号，
+// 这时我们实际上创建了一个mixins(工具人 类似变量) 可以不写 ()
+.p4() {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+}
+
+.p5 {
+  .p4;
+}
+
+.p6 {
+  color: aqua;
+}
+
+.p7 {
+  &:extend(.p6);
+}
+
+//  -----------混合函数
+// 在混合函数可以直接设置变量,也可以给下列@设置默认值
+.test(@w,@h,@color) {
+  width: @w;
+  height: @h;
+  border: 1px solid @color;
+}
+
+// 函数传值
+div {
+  // 调用混合函数，按顺序传递参数
+  .test(@w:100px, @h:100px, @color:red);
+  .test(500px, 500px, red);
+}
+
+span {
+  color: average(red, yellow);
+}
+
+body {
+  color: #bfa;
+}
+
+
+// 匹配模式  利用前面匹配模式可以实现灵活调用
+.span(L,@W,@H) {
+  width: @W;
+  height: @H;
+}
+
+.span(W,@W,@H) {
+  width: @H;
+  height: @W;
+}

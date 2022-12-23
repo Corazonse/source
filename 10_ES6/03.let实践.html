@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 300px;
+        }
+
+
+        .item {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            float: left;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2 class="page">点击切换颜色</h2>
+    <hr>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+<script>
+    let btn = document.querySelectorAll(".item")
+    // 这里 var 改成let 可以更好的适应层级作用域
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].onclick = function () {
+            this.style.backgroundColor = 'pink'
+        }
+    }
+
+
+</script>
+</body>
+</html>

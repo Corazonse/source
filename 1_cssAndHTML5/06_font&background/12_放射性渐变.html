@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            /* 
+                radial-gradient()径向渐变（放射性效果）
+
+                默认情况下径向渐变圆心的形状是根据元素的形状来计算的
+                    正方形-->圆形
+                    长方形-->椭圆形
+                        -也可以手动指定径向渐变的大小
+                        circle 圆
+                        elipse 椭圆
+                    指定位置（原点）
+                    at 0px 0px,
+                可选值：
+                    closest-side近角有远 有中
+                语法：
+                    raduak-gradient（大小 at 位置，颜色 位置，颜色 位置，颜色 位置）
+                    大小：
+                        circle圆形  
+                        ellipse椭圆
+                        closest-side近边
+                        closest-corner近角
+                        farthest-side远边
+                        farthest-corner远角
+                    位置：
+                     用at开头 也可以用px
+                        top right left center bottom
+
+
+
+            */
+            background-image: radial-gradient(100px 100px, red, yellow);
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="box1">
+
+</div>
+</body>
+</html>

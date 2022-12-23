@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            在JS中所有的数值都是Number类型
+            包括整数和浮点数（小数）
+
+            可以使用运算符typeof
+                来检查一个变量的类型
+            语法:typeof 变量
+            检查字符串时，会返回 string   
+            检查数值时会返回  number     
+        
+        */
+        var a = 123;
+        a = 123.456;
+        console.log(a);
+        console.log(typeof a);
+        // JS中能表示的最大值，超过最大值 
+        // 就会 返回一个 "Infinity" 正无穷(字面量 number类型)
+        // -Infinity 就表示负无穷 
+        // NAN 字符串相乘后返回的结果 表示Not A Number 但是用typeof检测也是number值
+
+        // console.log(Number.MAX_VALUE);
+
+        a = Number.MIN_VALUE;
+        // 输出的最小的正值 就是最小的小数
+        console.log(a);
+        // 在JS在整数中的运算基本可以保证精确
+        // 但是如果进行浮点值元素 可能得到一个不精确的结果 二进制难搞喔
+        // 一般钱不能进行四舍五入，所以千万不用JS进行精确度要求较高的运算。
+        var c = 123312 + 12234;
+
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

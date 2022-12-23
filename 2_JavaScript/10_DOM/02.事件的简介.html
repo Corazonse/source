@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+    </script>
+</head>
+<body>
+<!--
+    处理事件
+    我们可以在事件对应属性中设置一些js代码
+        这样当时间被触发时，这些代码将会执行
+        onclick 点击
+        ondblclick 点击
+
+
+ -->
+<!-- js代码和html的结构行为耦合，不方便维护 -->
+<button id="btn" ondblclick="alert('nmm')">
+    按钮
+</button>
+<script>
+    /*
+        事件就是浏览器和用户的交互行为
+            点击 拖动 移入。。。
+        可以为按钮的对应时间绑定处理函数的形式来相应函数
+
+    */
+    var btn = document.getElementById("btn");
+    // 当事件触发时，其对应的函数将会被调用  单击相应函数
+    btn.onclick = function () {
+        alert("nmnmmd");
+    };
+</script>
+</body>
+</html>

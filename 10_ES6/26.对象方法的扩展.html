@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    /*
+        1
+
+
+    */
+    //1.object.is 判断两个值是否完全相等
+    //he全等===有点像 又不完全像 他NAN能 true
+    console.log(Object.is(12, 12));
+
+
+    //2.object.assign 对象的合并
+    const config = {
+        host: 'localhost:8080',
+        port: '3306',
+        name: 'root',
+        pass: 'root'
+    }
+    const config2 = {
+        host: 'localhost:80801',
+        port: '33060',
+        name: '456',
+        pass: '123'
+    }
+    // 合并两个对象 后边的会把前边的覆盖掉 没得覆盖就不覆盖
+    console.log(Object.assign(config, config2));
+
+    console.log("==================");
+    // 设置原型对象
+    //3.Object.setPrototypeOf   Object.getPrototypeOf
+    const school = {
+        name: "小周的学校"
+    }
+    const schoolName = {
+        sname: ["技校", "洗浴", "大专"]
+    }
+    // 把第二个参数设置原型对象到第一个参数
+    Object.setPrototypeOf(school, schoolName)
+    console.log(school);
+    console.log("--");
+    // 获取设置的原型对象
+    console.log(Object.getPrototypeOf(school));
+
+
+</script>
+</body>
+
+</html>

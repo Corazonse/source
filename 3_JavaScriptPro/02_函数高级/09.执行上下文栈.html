@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+    1.全局代码执行前，JS引擎会创建一个栈来存储管理所有的执行上下文对象
+    2.在全局执行上下文 window确定后 将其添加到栈中（压栈）
+    3.在函数执行上下文创建后 将其添加到栈中 （压栈）
+    4.在当前函数执行完后 将栈顶对象移出（出栈）永远执行栈顶的对象
+    5.当所有代码执行完毕 栈中还剩下window  栈底永远是window
+
+
+
+ -->
+
+<script>
+    var a = 10 //window bar foo foo出 bar出 window ==10
+    var bar = function (x) {
+        var b = 5
+        foo(x + b)
+    }
+    var foo = function (y) {
+        var c = 5
+        console.log(a + c + y)
+    }
+    bar(10)
+
+
+</script>
+
+</body>
+</html>

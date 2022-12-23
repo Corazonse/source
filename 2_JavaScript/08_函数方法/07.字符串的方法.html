@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            在底层字符串是以数组的形式保存的
+                属性 length
+        
+        */
+        // ["h","e","l"]
+        var str = "hello";
+        var str2 = "hello";
+        console.log(str[1]);
+        console.log("length =" + str.length);
+        /*  
+            字符串的大部分方法都不会改变原字符
+            charAt() 根据索引获取指定字符
+            charCodeAt() 返回指定索引的Unicode编码
+            formCharCode() 根据字符编码获取字符 这个通过构造函数String来调用
+            concat() 连接字符串
+            indexOf() 寻找指定内容 有则返回第一次出现的索引 如果没找到指定的内容则返回-1
+                -可以指定第二个参数 返回 第 n 个指定参数 indexOf(x,n)
+        
+            lastIndexOf() 从最后一个索引寻找并返回指定内容   没找到返回-1 
+            slice(a,b)  字符串截取指定内容 不会影响字符串 a开始（包括） b结束（不包括）
+                =第二个参数省略不写则会就会截取完 -1则倒数第一个
+            substring(a,b) 和slice相似可以截取一个字符串 a开始(包括)b（不包括）
+                -不同的是这个方法不能接受负值 
+                -可以自动调整参数的位置 帮助ab重置从大到小。
+            substr() 还是用于截取字符串 好像兼容性不好
+                */
+
+
+        console.log(str.charAt(2));
+        console.log(String.fromCharCode(0x2682));
+        console.log(str.concat(str2));
+        console.log(str.indexOf("c"));
+        console.log(str.slice(1, 4));
+
+        /*
+            split()
+            -可以将一个字符串拆分成一个数组
+            -参数
+                -需要一个字符串参数，将根据该字符串拆分数组
+        */
+        str3 = "asd,rgg,ht,,r,,rt,hello";
+        console.log(str3.split(","));//若果传一个空串则每个字符都组成数组的一个元素
+        /*
+            -toUpperCase()
+                -将字符串全部转换为大写
+            -toLowerCase()
+                -将字符串全部转换为小写
+
+
+        */
+        console.log(str3.toUpperCase());
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

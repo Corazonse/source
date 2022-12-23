@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery-3.6.1.js"></script>
+    <style>
+        div {
+            height: 200px;
+            width: 120px;
+            background-color: pink;
+            /* 默认隐藏 */
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<!-- jQuery 封装的各种动画效果
+        滑动
+        slideDown()  hove(fn,fn)  fn1鼠标 fn2鼠标离开
+        slideUp()
+        slideToggle()
+        以上参数([speed],[easing],[fn]) 分别s时间或者slow 效果 回调函数
+    动画队列 动画会一定执行完
+        stop() 能只保证执行最新的一个动画  方法必须执行才动画的前面
+
+-->
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<button>hover</button>
+
+<div>
+
+</div>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+            $("div").slideDown(2000, function () {
+                console.log("显示！")
+            })
+        })
+        $("button").eq(1).click(function () {
+            $("div").slideUp(2000, function () {
+                console.log("隐藏！")
+            })
+        })
+        // slideUp() 和 slideDown() 之间切换
+        $("button").eq(2).click(function () {
+            $("div").slideToggle(2000, function () {
+                console.log("切换！")
+            })
+        })
+        // 鼠标经过 就切换 离开恢复hide
+        $("button").eq(3).hover(function () {
+            $("div").stop().slideToggle(200, function () { //加伤stop()
+                console.log("经过")
+            })
+        })
+
+
+    })
+
+
+</script>
+</body>
+</html>

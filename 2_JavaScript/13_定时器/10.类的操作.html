@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            // 获取box1
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01")
+            btn01.onclick = function () {
+                // 每修改一次样式浏览器重新渲染一次页面 执行性能比较差的
+                // box1.style.width = "200px";
+                // box1.style.height = "200px"; 一行代码同时修改多个样式
+
+                // 修改box的class的属性 间接修改样式 这样修改一次即可同时修改多个样式 只需重新渲染一次页面
+                // 这种修为可以让表现和行为具体分离 减少耦合
+                // box1.className = "b2";
+
+                // 还可以拼着写
+                // box1.className = "b1 b2";  注意别漏空格
+                // box1.className += " b2";
+
+                // 函数形式添加
+                // addClass(box1, "b2");
+                // console.log(hasClass(box1,"b2")); 
+
+                // 删除
+                // removeClass(box1, "b2")
+
+                toggleClass(box1, "b2");
+
+            };
+        };
+        // 定义一个函数,用来向一个元素中添加指定class属性值
+        /*  问题多点几次就会疯狂添加 addClass
+            参数：
+                obj 要添加class属性的元素
+                cn 要添加的class值
+        */
+        function addClass(obj, cn) {
+            if (!hasClass(obj, cn)) {
+                obj.className += " " + cn;
+            }
+        }
+
+        /*
+           判断元素中是否有指定的class属性值
+           hasClass
+           若果有返回true
+           否则     false
+        */
+        function hasClass(obj, cn) {
+            // 创建正则表达式
+            //判断obj中有没有cn class 
+            // var reg = /\bb2\b/ //判断有仅有b2
+            var reg = new RegExp("\\b" + cn + "\\b") //动态生成正则表达式
+            return reg.test(obj.className);
+
+        }
+
+        function removeClass(obj, cn) {
+            // 创建正则表达式
+            var reg = new RegExp("\\b" + cn + "\\b")
+            // 删除class 空串替换术
+            obj.className = obj.className.replace(reg, "")
+        }
+
+        // 如果有就删除 没有就添加
+        function toggleClass(obj, cn) {
+            if (hasClass(obj, cn)) {
+                removeClass(obj, cn);
+            } else {
+                addClass(obj, cn);
+            }
+
+        }
+
+    </script>
+    <style>
+        .b1 {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+        }
+
+        .b2 {
+
+            width: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+<button id="btn01">点击按钮后修改样式</button>
+<br>
+<br>
+<div id="box1" class="b1">
+
+</div>
+</body>
+
+</html>

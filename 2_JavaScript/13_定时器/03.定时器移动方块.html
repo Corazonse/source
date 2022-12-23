@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            position: absolute;
+
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            // 通过修改dir 改变移动方向
+            var dir = 0;
+
+            var space = 10;
+            setInterval(function () {
+
+                // 只控制方向
+                if (dir === 37) {
+                    // offsetLeft 用于获取当前值
+                    box1.style.left = box1.offsetLeft - space + "px";
+                } else if (dir === 38) {
+                    box1.style.top = box1.offsetTop - space + "px";
+                } else if (dir === 39) {
+                    box1.style.left = box1.offsetLeft + space + "px";
+                } else if (dir === 40) {
+                    box1.style.top = box1.offsetTop + space + "px";
+                } else {
+                    return false;
+                }
+
+            }, 30);
+            var box1 = document.getElementById("box1")
+
+            document.onkeydown = function (event) {
+                event = event || window.event;
+
+                // 摁ctrl会加速 松手减速正常
+                if (event.ctrlKey) {
+                    space = 20;
+                } else {
+                    space = 10;
+                }
+                dir = event.keyCode;
+            }
+            document.onkeyup = function () {
+                dir = 0;
+            }
+        }
+
+
+    </script>
+</head>
+
+<body style="position: relative;">
+<div id="box1">
+</div>
+</body>
+
+</html>
